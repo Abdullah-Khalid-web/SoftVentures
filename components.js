@@ -1,6 +1,6 @@
 // components.js — loads header.html and footer.html into placeholders
 (function () {
-  var THEME_KEY = 'nexa-theme'; // 'light' | 'dark' | null (null = follow system)
+  var THEME_KEY = 'nexa-theme';
 
   function loadComponent(url, placeholderId, callback) {
     var el = document.getElementById(placeholderId);
@@ -19,27 +19,18 @@
       });
   }
 
-  /* ---------- THEME: apply BEFORE header loads to avoid flash ---------- */
   function applyStoredOrSystemTheme() {
     var html = document.documentElement;
     var stored = null;
     try { stored = localStorage.getItem(THEME_KEY); } catch (e) {}
 
-    var prefersDark = window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    var theme;
-    if (stored === 'dark' || stored === 'light') {
-      theme = stored;               // user already picked
-    } else {
-      theme = prefersDark ? 'dark' : 'light'; // follow system
-    }
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = (stored === 'dark' || stored === 'light') ? stored : (prefersDark ? 'dark' : 'light');
 
     html.setAttribute('data-theme', theme);
     html.classList.toggle('dark', theme === 'dark');
   }
 
-  // Run immediately (before DOMContentLoaded) so there's no flash of wrong theme
   applyStoredOrSystemTheme();
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -49,53 +40,31 @@
     initBentoGlow();
   });
 
-  /* ---------- HEADER BEHAVIOUR ---------- */
   function initHeader() {
     var html = document.documentElement;
+    
+    // 1. Theme Toggle
     var themeToggle = document.getElementById('theme-toggle');
-
     if (themeToggle) {
       themeToggle.addEventListener('click', function () {
-        var current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-        var next = current === 'dark' ? 'light' : 'dark';
+        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
         html.classList.toggle('dark', next === 'dark');
         try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
       });
     }
 
-    // If the user has NOT manually chosen, follow live OS theme changes.
-    if (window.matchMedia) {
-      var mq = window.matchMedia('(prefers-color-scheme: dark)');
-      var onChange = function (e) {
-        var stored = null;
-        try { stored = localStorage.getItem(THEME_KEY); } catch (err) {}
-        if (stored === 'dark' || stored === 'light') return; // user override wins
-        var theme = e.matches ? 'dark' : 'light';
-        html.setAttribute('data-theme', theme);
-        html.classList.toggle('dark', theme === 'dark');
-      };
-      if (mq.addEventListener) mq.addEventListener('change', onChange);
-      else if (mq.addListener) mq.addListener(onChange); // older Safari
-    }
-
-    var header = document.getElementById('site-header');
-    if (header) {
-      var onScroll = function () {
-        if (window.scrollY > 10) header.classList.add('scrolled');
-        else header.classList.remove('scrolled');
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    }
-
+    // 2. Mobile Menu Toggle
     var mobileBtn = document.getElementById('mobile-menu-btn');
     var mobileMenu = document.getElementById('mobile-menu');
+    
     if (mobileBtn && mobileMenu) {
       mobileBtn.addEventListener('click', function () {
-        var open = mobileMenu.classList.toggle('open');
-        document.body.style.overflow = open ? 'hidden' : '';
+        var isOpen = mobileMenu.classList.toggle('open');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        if (isOpen) mobileMenu.scrollTop = 0;
       });
+      
       mobileMenu.querySelectorAll('.mobile-link').forEach(function (link) {
         link.addEventListener('click', function () {
           mobileMenu.classList.remove('open');
@@ -103,15 +72,22 @@
         });
       });
     }
+
+    // 3. Scroll Header Border
+    var header = document.getElementById('site-header');
+    if (header) {
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 10) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+      }, { passive: true });
+    }
   }
 
-  /* ---------- FOOTER BEHAVIOUR ---------- */
   function initFooter() {
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
-  /* ---------- SCROLL REVEAL ---------- */
   function initReveal() {
     var els = document.querySelectorAll('.reveal');
     if (!els.length) return;
@@ -122,11 +98,10 @@
           obs.unobserve(entry.target);
         }
       });
-    }, { root: null, threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     els.forEach(function (el) { observer.observe(el); });
   }
 
-  /* ---------- BENTO HOVER GLOW ---------- */
   function initBentoGlow() {
     document.querySelectorAll('.bento-card').forEach(function (card) {
       card.addEventListener('mousemove', function (e) {
