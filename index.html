@@ -58,7 +58,7 @@
             overflow-x: hidden;
         }
 
-        /* --- NEW HERO BACKGROUND: Flowing Luminous Waves --- */
+        /* --- HERO BACKGROUND: quiet motion, fine detail, no visual noise --- */
         .hero-animation-container {
             position: absolute;
             inset: 0;
@@ -66,148 +66,180 @@
             pointer-events: none;
             z-index: 0;
             isolation: isolate;
-            background: var(--color-bg);
+            background:
+                radial-gradient(ellipse at 78% 46%, rgba(71, 123, 154, 0.10), transparent 42%),
+                linear-gradient(115deg, transparent 35%, rgba(71, 123, 154, 0.025) 70%, transparent);
         }
 
-        .hero-wave {
+        [data-theme="dark"] .hero-animation-container {
+            background:
+                radial-gradient(ellipse at 78% 46%, rgba(106, 159, 191, 0.16), transparent 44%),
+                linear-gradient(115deg, transparent 35%, rgba(106, 159, 191, 0.035) 70%, transparent);
+        }
+
+        .hero-grid {
             position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background: radial-gradient(circle at 30% 40%, rgba(71, 123, 154, 0.12) 0%, transparent 40%),
-                        radial-gradient(circle at 75% 60%, rgba(71, 123, 154, 0.08) 0%, transparent 45%),
-                        radial-gradient(circle at 50% 80%, rgba(71, 123, 154, 0.06) 0%, transparent 50%);
-            animation: waveShift 18s ease-in-out infinite alternate;
-            will-change: transform;
-        }
-
-        [data-theme="dark"] .hero-wave {
-            background: radial-gradient(circle at 30% 40%, rgba(106, 159, 191, 0.18) 0%, transparent 45%),
-                        radial-gradient(circle at 75% 60%, rgba(106, 159, 191, 0.12) 0%, transparent 50%),
-                        radial-gradient(circle at 50% 80%, rgba(106, 159, 191, 0.08) 0%, transparent 55%);
-        }
-
-        .hero-wave-secondary {
-            animation: waveShiftReverse 22s ease-in-out infinite alternate;
-            background: radial-gradient(circle at 60% 30%, rgba(71, 123, 154, 0.08) 0%, transparent 40%),
-                        radial-gradient(circle at 20% 70%, rgba(71, 123, 154, 0.10) 0%, transparent 45%);
-        }
-
-        [data-theme="dark"] .hero-wave-secondary {
-            background: radial-gradient(circle at 60% 30%, rgba(106, 159, 191, 0.12) 0%, transparent 45%),
-                        radial-gradient(circle at 20% 70%, rgba(106, 159, 191, 0.15) 0%, transparent 50%);
-        }
-
-        .hero-grid-lines {
-            position: absolute;
-            inset: 0;
-            opacity: 0.15;
+            inset: -15%;
+            opacity: 0.22;
             background-image:
-                linear-gradient(rgba(71, 123, 154, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(71, 123, 154, 0.08) 1px, transparent 1px);
-            background-size: 80px 80px;
-            mask-image: radial-gradient(ellipse at 50% 50%, #000 10%, transparent 70%);
-            -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 10%, transparent 70%);
-            animation: gridPulse 8s ease-in-out infinite alternate;
+                linear-gradient(rgba(71, 123, 154, 0.10) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(71, 123, 154, 0.10) 1px, transparent 1px);
+            background-size: 64px 64px;
+            transform: perspective(900px) rotateX(8deg) scale(1.08);
+            transform-origin: center;
+            mask-image: radial-gradient(ellipse at 72% 48%, #000 0%, transparent 68%);
+            -webkit-mask-image: radial-gradient(ellipse at 72% 48%, #000 0%, transparent 68%);
         }
 
-        [data-theme="dark"] .hero-grid-lines {
-            opacity: 0.12;
+        [data-theme="dark"] .hero-grid {
+            opacity: 0.18;
             background-image:
-                linear-gradient(rgba(106, 159, 191, 0.12) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(106, 159, 191, 0.12) 1px, transparent 1px);
+                linear-gradient(rgba(106, 159, 191, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(106, 159, 191, 0.15) 1px, transparent 1px);
         }
 
-        .hero-glow-orb {
+        .hero-light {
             position: absolute;
-            width: 45vw;
-            height: 45vw;
-            max-width: 600px;
-            max-height: 600px;
-            border-radius: 50%;
-            right: -5%;
+            width: min(58vw, 760px);
+            aspect-ratio: 1;
+            right: -8%;
             top: 50%;
+            border-radius: 50%;
             transform: translateY(-50%);
-            background: radial-gradient(circle, rgba(71, 123, 154, 0.15) 0%, rgba(71, 123, 154, 0.05) 40%, transparent 70%);
-            filter: blur(30px);
-            animation: orbFloat 14s ease-in-out infinite alternate;
+            background: radial-gradient(circle, rgba(71, 123, 154, 0.17) 0%, rgba(71, 123, 154, 0.07) 32%, transparent 69%);
+            filter: blur(10px);
+            animation: lightBreathe 11s ease-in-out infinite alternate;
             will-change: transform, opacity;
         }
 
-        [data-theme="dark"] .hero-glow-orb {
-            background: radial-gradient(circle, rgba(106, 159, 191, 0.22) 0%, rgba(106, 159, 191, 0.08) 40%, transparent 70%);
+        [data-theme="dark"] .hero-light {
+            background: radial-gradient(circle, rgba(106, 159, 191, 0.23) 0%, rgba(106, 159, 191, 0.08) 34%, transparent 70%);
         }
 
-        .hero-accent-line {
+        .hero-orbit {
             position: absolute;
+            width: clamp(300px, 42vw, 590px);
+            aspect-ratio: 1;
+            right: 2%;
+            top: 50%;
+            border: 1px solid rgba(71, 123, 154, 0.16);
+            border-radius: 50%;
+            transform: translateY(-50%) rotate(-24deg);
+            animation: orbitDrift 34s linear infinite;
+        }
+
+        .hero-orbit::before,
+        .hero-orbit::after {
+            content: "";
+            position: absolute;
+            inset: 9%;
+            border: 1px solid rgba(71, 123, 154, 0.13);
+            border-radius: 50%;
+        }
+
+        .hero-orbit::after {
+            inset: 21%;
+            border-style: dashed;
+            border-color: rgba(71, 123, 154, 0.20);
+            animation: orbitDrift 48s linear infinite reverse;
+        }
+
+        .hero-orbit-two {
+            width: clamp(210px, 29vw, 410px);
+            right: 13%;
+            border-style: dashed;
+            border-color: rgba(71, 123, 154, 0.12);
+            transform: translateY(-50%) rotate(35deg);
+            animation-duration: 48s;
+            animation-direction: reverse;
+        }
+
+        [data-theme="dark"] .hero-orbit,
+        [data-theme="dark"] .hero-orbit::before,
+        [data-theme="dark"] .hero-orbit::after {
+            border-color: rgba(145, 190, 215, 0.20);
+        }
+
+        .hero-signal {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            right: 19%;
+            top: 27%;
+            border-radius: 50%;
+            background: var(--color-primary);
+            box-shadow: 0 0 0 6px rgba(71, 123, 154, 0.10), 0 0 24px rgba(71, 123, 154, 0.45);
+            animation: signalPulse 3.8s ease-in-out infinite;
+        }
+
+        .hero-signal-two {
+            width: 5px;
+            height: 5px;
+            right: 39%;
+            top: 70%;
+            animation-delay: -1.8s;
+            animation-duration: 4.6s;
+        }
+
+        .hero-sweep {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 70%;
             width: 1px;
-            height: 30vh;
-            background: linear-gradient(to bottom, transparent, var(--color-primary), transparent);
-            opacity: 0.25;
-            left: 15%;
-            top: 20%;
-            animation: lineDrift 12s ease-in-out infinite alternate;
+            opacity: 0.45;
+            background: linear-gradient(transparent, rgba(71, 123, 154, 0.30), transparent);
+            transform: rotate(24deg);
+            transform-origin: center;
+            animation: sweepAcross 12s ease-in-out infinite;
         }
 
-        .hero-accent-line-two {
-            left: 85%;
-            top: 60%;
-            height: 25vh;
-            animation-delay: -4s;
-            animation-duration: 15s;
+        @keyframes lightBreathe {
+            0% { opacity: 0.55; transform: translate3d(0, -50%, 0) scale(0.92); }
+            100% { opacity: 0.95; transform: translate3d(-24px, -50%, 0) scale(1.08); }
         }
 
-        @keyframes waveShift {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(3%, -3%) scale(1.08); }
+        @keyframes orbitDrift {
+            from { rotate: 0deg; }
+            to { rotate: 360deg; }
         }
 
-        @keyframes waveShiftReverse {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-3%, 2%) scale(1.05); }
+        @keyframes signalPulse {
+            0%, 100% { opacity: 0.55; scale: 0.85; }
+            50% { opacity: 1; scale: 1.18; }
         }
 
-        @keyframes gridPulse {
-            0% { opacity: 0.10; }
-            100% { opacity: 0.20; }
-        }
-
-        @keyframes orbFloat {
-            0% { transform: translateY(-50%) scale(0.95); opacity: 0.7; }
-            100% { transform: translateY(-50%) translateX(-30px) scale(1.1); opacity: 1; }
-        }
-
-        @keyframes lineDrift {
-            0% { opacity: 0.15; transform: translateY(0); }
-            100% { opacity: 0.35; transform: translateY(-20px); }
+        @keyframes sweepAcross {
+            0%, 100% { translate: -80px 0; opacity: 0; }
+            35%, 65% { opacity: 0.45; }
+            50% { translate: 80px 0; }
         }
 
         @media (max-width: 767px) {
-            .hero-grid-lines { background-size: 50px 50px; opacity: 0.10; }
-            .hero-glow-orb { width: 80vw; height: 80vw; right: -20%; top: 45%; filter: blur(20px); }
-            .hero-accent-line { left: 5%; }
-            .hero-accent-line-two { left: 95%; }
+            .hero-grid { background-size: 44px 44px; opacity: 0.16; }
+            .hero-light { width: 100vw; right: -38%; top: 42%; }
+            .hero-orbit { width: 330px; right: -34%; top: 42%; opacity: 0.7; }
+            .hero-orbit-two { width: 230px; right: -15%; }
+            .hero-signal { right: 14%; top: 23%; }
+            .hero-signal-two { right: 42%; top: 72%; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .hero-wave, .hero-wave-secondary, .hero-grid-lines,
-            .hero-glow-orb, .hero-accent-line {
+            .hero-light, .hero-orbit, .hero-orbit::after,
+            .hero-signal, .hero-sweep {
                 animation: none !important;
             }
         }
 
-        /* --- CTA background variant --- */
+
         .cta-background {
-            opacity: 0.45;
+            opacity: 0.42;
             background: radial-gradient(ellipse at 70% 80%, rgba(71, 123, 154, 0.10), transparent 55%);
         }
-        .cta-background .hero-glow-orb {
-            width: 400px;
-            height: 400px;
-            right: 8%;
-            top: 80%;
-            filter: blur(24px);
+        .cta-background .hero-light {
+            width: 420px;
+            right: 12%;
+            top: 85%;
         }
         [data-theme="dark"] .cta-background {
             opacity: 0.55;
@@ -402,6 +434,7 @@
             transform: translateY(-1px);
         }
 
+        
         /* --- REDESIGNED PROMISE CARD --- */
         .promise-card {
             background-color: var(--color-surface);
@@ -513,12 +546,13 @@
         <!-- ============ HERO ============ -->
         <section class="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 min-h-[85vh] flex items-center">
             <div class="hero-animation-container" aria-hidden="true">
-                <div class="hero-wave"></div>
-                <div class="hero-wave hero-wave-secondary"></div>
-                <div class="hero-grid-lines"></div>
-                <div class="hero-glow-orb"></div>
-                <div class="hero-accent-line"></div>
-                <div class="hero-accent-line hero-accent-line-two"></div>
+                <div class="hero-grid"></div>
+                <div class="hero-light"></div>
+                <div class="hero-orbit"></div>
+                <div class="hero-orbit hero-orbit-two"></div>
+                <div class="hero-signal"></div>
+                <div class="hero-signal hero-signal-two"></div>
+                <div class="hero-sweep"></div>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -767,7 +801,7 @@
         <!-- ============ CONTACT CTA ============ -->
         <section id="contact" class="py-24 md:py-32 border-t relative overflow-hidden" style="border-color: var(--color-border);">
             <div class="hero-animation-container cta-background" aria-hidden="true">
-                <div class="hero-glow-orb" style="right: 12%; top: 85%;"></div>
+                <div class="hero-light" style="right: 12%; top: 85%;"></div>
             </div>
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Tell us what you need.</h2>
