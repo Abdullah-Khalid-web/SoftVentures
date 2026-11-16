@@ -1,5 +1,7 @@
 // components.js — loads header.html and footer.html into placeholders
 (function () {
+  var THEME_KEY = 'nexa-theme'; // 'light' | 'dark' | null (null = follow system)
+
   function loadComponent(url, placeholderId, callback) {
     var el = document.getElementById(placeholderId);
     if (!el) return;
@@ -17,6 +19,29 @@
       });
   }
 
+  /* ---------- THEME: apply BEFORE header loads to avoid flash ---------- */
+  function applyStoredOrSystemTheme() {
+    var html = document.documentElement;
+    var stored = null;
+    try { stored = localStorage.getItem(THEME_KEY); } catch (e) {}
+
+    var prefersDark = window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    var theme;
+    if (stored === 'dark' || stored === 'light') {
+      theme = stored;               // user already picked
+    } else {
+      theme = prefersDark ? 'dark' : 'light'; // follow system
+    }
+
+    html.setAttribute('data-theme', theme);
+    html.classList.toggle('dark', theme === 'dark');
+  }
+
+  // Run immediately (before DOMContentLoaded) so there's no flash of wrong theme
+  applyStoredOrSystemTheme();
+
   document.addEventListener('DOMContentLoaded', function () {
     loadComponent('header.html', 'header-placeholder', initHeader);
     loadComponent('footer.html', 'footer-placeholder', initFooter);
@@ -29,20 +54,29 @@
     var html = document.documentElement;
     var themeToggle = document.getElementById('theme-toggle');
 
-    // Respect system preference on first load
-    if (!html.hasAttribute('data-theme') || html.getAttribute('data-theme') === 'light') {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        html.setAttribute('data-theme', 'dark');
-        html.classList.add('dark');
-      }
-    }
-
     if (themeToggle) {
       themeToggle.addEventListener('click', function () {
-        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        var current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        var next = current === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
         html.classList.toggle('dark', next === 'dark');
+        try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
       });
+    }
+
+    // If the user has NOT manually chosen, follow live OS theme changes.
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var onChange = function (e) {
+        var stored = null;
+        try { stored = localStorage.getItem(THEME_KEY); } catch (err) {}
+        if (stored === 'dark' || stored === 'light') return; // user override wins
+        var theme = e.matches ? 'dark' : 'light';
+        html.setAttribute('data-theme', theme);
+        html.classList.toggle('dark', theme === 'dark');
+      };
+      if (mq.addEventListener) mq.addEventListener('change', onChange);
+      else if (mq.addListener) mq.addListener(onChange); // older Safari
     }
 
     var header = document.getElementById('site-header');
