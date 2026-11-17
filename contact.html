@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start a project | NextGen Tech Solutions</title>
+  <meta name="description" content="Tell us about your project, the issue you need fixed, or the system you want maintained. We reply within one business day.">
+  <meta name="theme-color" content="#477B9A">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="components/header.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body data-page="contact" class="bg-paper font-sans text-ink antialiased">
+  <site-header></site-header>
+
+  <main id="main">
+    <section class="mx-auto grid max-w-site gap-14 px-5 pb-8 pt-14 sm:px-8 lg:grid-cols-[1fr_1.35fr] lg:gap-20 lg:pt-20">
+
+      <div>
+        <h1 class="display">Start a project</h1>
+        <p class="lede mt-6">Tell us what you need. We reply within one business day, usually to set up a free 30 minute call.</p>
+
+        <dl class="mt-12 space-y-7">
+          <div class="flex gap-4">
+            <i data-lucide="mail" class="mt-1 h-5 w-5 shrink-0 text-brand"></i>
+            <div><dt class="font-semibold">Email</dt><dd class="mt-1"><a class="link" data-site="email" href="#"></a></dd></div>
+          </div>
+          <div class="flex gap-4">
+            <i data-lucide="message-circle" class="mt-1 h-5 w-5 shrink-0 text-brand"></i>
+            <div><dt class="font-semibold">WhatsApp</dt><dd class="mt-1"><a class="link" data-whatsapp-link href="#" target="_blank" rel="noopener"><span data-site="phone"></span></a></dd></div>
+          </div>
+          <div class="flex gap-4">
+            <i data-lucide="clock" class="mt-1 h-5 w-5 shrink-0 text-brand"></i>
+            <div><dt class="font-semibold">Hours</dt><dd class="mt-1 text-muted" data-site="hours"></dd></div>
+          </div>
+          <div class="flex gap-4">
+            <i data-lucide="map-pin" class="mt-1 h-5 w-5 shrink-0 text-brand"></i>
+            <div><dt class="font-semibold">Based in</dt><dd class="mt-1 text-muted"><span data-site="city"></span>, working with clients worldwide</dd></div>
+          </div>
+        </dl>
+      </div>
+
+      <form class="rounded-[var(--radius-lg)] border border-line bg-surface p-6 sm:p-9" data-contact-form novalidate>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="name" class="text-sm font-medium">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required class="field mt-2">
+          </div>
+          <div>
+            <label for="email" class="text-sm font-medium">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required class="field mt-2">
+          </div>
+          <div>
+            <label for="company" class="text-sm font-medium">Business name <span class="font-normal text-muted">(optional)</span></label>
+            <input id="company" name="company" type="text" autocomplete="organization" class="field mt-2">
+          </div>
+          <div>
+            <label for="country" class="text-sm font-medium">Country <span class="font-normal text-muted">(optional)</span></label>
+            <input id="country" name="country" type="text" autocomplete="country-name" class="field mt-2">
+          </div>
+          <div class="sm:col-span-2">
+            <label for="need" class="text-sm font-medium">What do you need?</label>
+            <select id="need" name="need" class="field mt-2">
+              <option>An AI agent (WhatsApp ordering, booking, support)</option>
+              <option>A management system</option>
+              <option>Fix an issue in existing software</option>
+              <option>A maintenance contract</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="budget" class="text-sm font-medium">Budget <span class="font-normal text-muted">(optional, helps us suggest the right scope)</span></label>
+            <select id="budget" name="budget" class="field mt-2">
+              <option value="">Not sure yet</option>
+              <option>Under $1,000</option>
+              <option>$1,000 to $5,000</option>
+              <option>$5,000 to $15,000</option>
+              <option>$15,000 and above</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="message" class="text-sm font-medium">Tell us about it</label>
+            <textarea id="message" name="message" rows="5" required class="field mt-2" placeholder="What does your business do, and what should the software handle?"></textarea>
+          </div>
+        </div>
+
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <button type="submit" class="btn btn-primary">Send by email</button>
+          <button type="button" class="btn btn-ghost" data-send-whatsapp>Send on WhatsApp</button>
+        </div>
+        <p class="mt-4 min-h-[1.5rem] text-sm text-muted" data-form-status role="status" aria-live="polite"></p>
+        <p class="mt-2 text-xs leading-relaxed text-muted">We use your details only to reply to you. See our <a href="privacy.html" class="link">privacy policy</a>.</p>
+      </form>
+
+    </section>
+  </main>
+
+  <site-footer no-cta></site-footer>
+</body>
+</html>
