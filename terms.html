@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -147,3 +148,74 @@
   <site-footer></site-footer>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Nexa Solutions</title>
+    <meta name="color-scheme" content="light dark">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { colors: { brand: { dark: '#1A1A1A', light: '#F4F9F9', primary: '#477B9A' } } }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --color-bg: #F4F9F9;
+            --color-text: #1A1A1A;
+            --color-primary: #477B9A;
+            --color-surface: #FFFFFF;
+            --color-muted: #6B7280;
+            --color-border: #E5E7EB;
+        }
+        [data-theme="dark"] {
+            --color-bg: #1A1A1A;
+            --color-text: #F4F9F9;
+            --color-primary: #6A9FBF;
+            --color-surface: #262626;
+            --color-muted: #9CA3AF;
+            --color-border: #374151;
+        }
+        body { background-color: var(--color-bg); color: var(--color-text); font-family: 'Inter', sans-serif; }
+        .prose h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1rem; line-height: 1.7; color: var(--color-muted); }
+        .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: var(--color-muted); }
+        .prose li { margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="header-placeholder"></div>
+    <main class="max-w-3xl mx-auto px-4 py-16">
+        <h1 class="text-3xl font-bold mb-2">Terms of Service</h1>
+        <p class="text-sm mb-8" style="color: var(--color-muted);">Last updated: January 2025</p>
+        <div class="prose">
+            <h2>1. Services</h2>
+            <p>Nexa Solutions provides custom software development, AI agent implementation, and related maintenance services. The specific scope of work for each project will be outlined in a separate Statement of Work (SOW) or project proposal agreed upon by both parties.</p>
+            
+            <h2>2. Project Engagements</h2>
+            <p>All projects begin with a discovery phase to define requirements. A deposit may be required before work commences. Timelines are estimates and may be adjusted based on client feedback or unforeseen technical challenges.</p>
+            
+            <h2>3. Maintenance and Support</h2>
+            <p>Unless otherwise specified in the SOW, we provide a 30-day warranty period post-deployment for bug fixes related to the original scope. Long-term maintenance contracts are available separately and cover ongoing updates, security patches, and minor enhancements.</p>
+            
+            <h2>4. Intellectual Property</h2>
+            <p>Upon full payment, the client owns the final deliverables (source code, designs). Nexa Solutions retains the right to use generic, non-proprietary code libraries and frameworks in future projects.</p>
+            
+            <h2>5. Limitation of Liability</h2>
+            <p>We are not liable for indirect or consequential damages arising from the use of our software. Our total liability is limited to the fees paid for the specific project in question.</p>
+            
+            <h2>6. Governing Law</h2>
+            <p>These terms are governed by the laws of Pakistan, without regard to conflict of law principles. Any disputes will be handled through mutual negotiation first.</p>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> f2b7405ebd5752a6be092a2941654d56714390f5

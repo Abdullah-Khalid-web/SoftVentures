@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NextGen Tech Solutions website
 
 Static website (HTML + Tailwind CSS + vanilla JS). No build step, no backend yet.
@@ -17,3 +18,6 @@ Upload the folder to Netlify (drag and drop), Vercel, Cloudflare Pages or GitHub
 Replace the placeholders listed in `AGENT.md` section 10, and have a lawyer review `terms.html` and `privacy.html`.
 
 For full conventions (for developers and AI coding agents), read **AGENT.md**.
+=======
+# SoftwareHouse
+>>>>>>> f2b7405ebd5752a6be092a2941654d56714390f5
