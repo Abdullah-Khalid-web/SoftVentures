@@ -46,7 +46,7 @@
               <div class="line-deep grid gap-12 border-t py-14 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
                 <div class="max-w-xs">
                   <p class="text-lg font-bold">${site.name}</p>
-                  <p class="muted-deep mt-3 leading-relaxed">AI agents, management systems and long-term support for businesses in any country. Built in ${site.city}.</p>
+                  <p class="muted-deep mt-3 leading-relaxed">Management systems, AI agents and long-term support for businesses in any country, built by PEC-registered engineers.</p>
                   <div class="mt-6 space-y-2 text-[0.95rem]">
                     <a class="muted-deep flex items-center gap-2" href="mailto:${site.email}"><i data-lucide="mail" class="h-4 w-4"></i>${site.email}</a>
                     <a class="muted-deep flex items-center gap-2" href="https://wa.me/${site.whatsapp}" target="_blank" rel="noopener"><i data-lucide="message-circle" class="h-4 w-4"></i>${site.phone}</a>
@@ -60,6 +60,7 @@
                 ])}
                 ${col('Company', [
                   ['About', 'about.html'],
+                  ['Our work', 'work.html'],
                   ['How we work', 'about.html#process'],
                   ['Contact', 'contact.html'],
                 ])}

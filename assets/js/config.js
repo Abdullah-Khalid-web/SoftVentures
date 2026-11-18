@@ -9,11 +9,11 @@ window.SITE = {
   name: 'NextGen Tech Solutions',
   shortName: 'NextGen',
   legalName: 'NextGen Tech Solutions',           // as it appears on contracts
-  city: 'Karachi, Pakistan',
+  city: 'Pakistan',                              // used only on the legal pages; don't name a city
   email: 'hello@yourdomain.com',                 // TODO: replace with your real address
   phone: '+92 300 0000000',                      // TODO: shown as text
   whatsapp: '923000000000',                      // TODO: digits only, with country code, no +
-  hours: '11:00 to 23:00 Karachi time, Monday to Saturday',
+  hours: '06:00 to 18:00 UTC, Monday to Saturday', // same as 11:00 to 23:00 in Pakistan; also update the "Our engineers" clock in main.js
   legalUpdated: '17 November 2026',
 
   social: {
@@ -25,6 +25,7 @@ window.SITE = {
     { id: 'agents',  label: 'AI agents',          href: 'agents.html' },
     { id: 'systems', label: 'Management systems', href: 'systems.html' },
     { id: 'support', label: 'Fixes & maintenance', href: 'support.html' },
+    { id: 'work',    label: 'Work',               href: 'work.html' },
     { id: 'about',   label: 'About',              href: 'about.html' },
   ],
 };

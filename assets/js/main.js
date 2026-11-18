@@ -63,13 +63,13 @@
   if (demo) {
     const scenarios = [
       {
-        business: 'Karahi House',
-        place: 'Restaurant in Karachi',
+        business: 'Saffron Grill',
+        place: 'Restaurant in Toronto',
         messages: [
-          ['customer', 'Salam, 2 chicken karahi (half) and 6 naan. Delivery to Gulshan Block 13.'],
-          ['agent', 'Got it. 2 × chicken karahi (half) Rs 2,400, 6 × naan Rs 360, delivery Rs 150. Total Rs 2,910. Cash or card on delivery?'],
-          ['customer', 'Cash'],
-          ['agent', 'Confirmed, order #1042. Your rider will reach you in about 35 minutes.'],
+          ['customer', 'Hi! 2 butter chicken and 4 garlic naan, delivery to 88 King St W please.'],
+          ['agent', 'Got it. 2 × butter chicken $37.98, 4 × garlic naan $15.96, delivery $4.99. Total $58.93. Card on delivery or pay online?'],
+          ['customer', 'Online'],
+          ['agent', 'Here’s your payment link: pay.example/K42X. Order #1042 goes to the kitchen as soon as it’s paid, about 35 minutes to you.'],
         ],
         log: ['Order #1042 created in the POS', 'Ticket sent to the kitchen screen', 'Rider assigned and customer notified'],
       },
@@ -94,6 +94,18 @@
           ['agent', 'Reserved for Emma, pickup tomorrow from 9 am. Here’s your payment link: pay.example/7KQ2'],
         ],
         log: ['Stock reserved, 2 left for tomorrow', 'Payment link sent', 'Added to tomorrow’s pickup list'],
+      },
+      {
+        // Process automation: the manager talks to an internal agent, not a customer
+        business: 'Northline Pharmacy',
+        place: 'Back-office agent, 3 branches',
+        messages: [
+          ['customer', 'MedCo’s invoice just came in by email. Anything I should know?'],
+          ['agent', 'Read and checked: 48 items, $3,420, all match purchase order #318. Two prices went up since last time: gauze +12%, amoxicillin +8%.'],
+          ['customer', 'Approve it and flag those two for the owner.'],
+          ['agent', 'Done. Stock is updated in all 3 branches, payment is scheduled for Friday, and both price rises are in tomorrow’s owner report.'],
+        ],
+        log: ['Invoice matched to purchase order #318', 'Stock updated for 48 items', 'Payment scheduled, owner report updated'],
       },
     ];
 
@@ -265,14 +277,149 @@
         const hour = Number(new Intl.DateTimeFormat('en-GB', { hour: 'numeric', hourCycle: 'h23', timeZone: tz }).format(now));
         const state = el.querySelector('[data-state]');
         if (state) {
-          const working = hour >= 9 && hour < 18;
-          state.textContent = working ? 'Working hours' : 'After hours';
-          state.classList.toggle('text-brand-ink', working);
+          if (el.hasAttribute('data-team')) {
+            // Our team: online 06:00 to 18:00 UTC, Monday to Saturday (keep in step with SITE.hours)
+            const online = now.getUTCDay() !== 0 && hour >= 6 && hour < 18;
+            state.textContent = online ? 'Online now' : 'Back at 06:00 UTC';
+            state.classList.toggle('text-brand-ink', online);
+          } else {
+            const working = hour >= 9 && hour < 18;
+            state.textContent = working ? 'Working hours' : 'After hours';
+            state.classList.toggle('text-brand-ink', working);
+          }
         }
       });
     }
     tick();
     setInterval(tick, 30000);
+  }
+
+  /* ---------- Projects showcase (data lives in assets/js/projects.js) ----------
+   * [data-projects="featured"]  home page, first 3 projects with featured: true
+   * [data-projects="all"]       work.html, every project, with [data-project-filter] buttons
+   * [data-project-detail]       project.html?id=...
+   * A wrapping [data-projects-section] is hidden when there is nothing to show.
+   */
+  const projects = (window.PROJECTS || []).filter(p => p && p.id && p.title);
+  const TYPE_LABELS = { system: 'Management system', agent: 'AI agent', automation: 'Process automation', rescue: 'Takeover and fix' };
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const projectUrl = p => 'project.html?id=' + encodeURIComponent(p.id);
+  const metaTags = p => [TYPE_LABELS[p.type] || 'Software', p.industry, p.country]
+    .filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+
+  function projectCard(p) {
+    const soon = p.status !== 'live';
+    return `
+      <a href="${projectUrl(p)}" class="project group block" data-type="${esc(p.type)}">
+        <div class="zoom relative">
+          <img class="photo project-img w-full" src="${esc(p.cover)}" alt="${esc(p.coverAlt || p.title)}" loading="lazy">
+          ${soon ? '<span class="project-badge tag">Case study coming soon</span>' : ''}
+        </div>
+        <div class="mt-5 flex flex-wrap gap-2">${metaTags(p)}</div>
+        <h3 class="mt-3 flex items-start gap-2 text-xl font-semibold tracking-tight sm:text-2xl">${esc(p.title)}<i data-lucide="arrow-up-right" class="mt-1 h-5 w-5 shrink-0 text-brand transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"></i></h3>
+        <p class="mt-2 max-w-xl leading-relaxed text-muted">${esc(p.summary)}</p>
+      </a>`;
+  }
+
+  document.querySelectorAll('[data-projects]').forEach(list => {
+    const featuredOnly = list.dataset.projects === 'featured';
+    const items = featuredOnly ? projects.filter(p => p.featured).slice(0, 3) : projects;
+    const section = list.closest('[data-projects-section]');
+    if (!items.length) { if (section) section.hidden = true; return; }
+    list.innerHTML = items.map(projectCard).join('');
+  });
+
+  const filterBtns = Array.from(document.querySelectorAll('[data-project-filter]'));
+  filterBtns.forEach(btn => btn.addEventListener('click', () => {
+    const type = btn.dataset.projectFilter;
+    filterBtns.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    let shown = 0;
+    document.querySelectorAll('[data-projects="all"] .project').forEach(card => {
+      const on = type === 'all' || card.dataset.type === type;
+      card.hidden = !on;
+      if (on) shown++;
+    });
+    const empty = document.querySelector('[data-projects-empty]');
+    if (empty) empty.hidden = shown > 0;
+  }));
+
+  const detail = document.querySelector('[data-project-detail]');
+  if (detail) {
+    const id = new URLSearchParams(location.search).get('id');
+    const p = projects.find(x => x.id === id);
+    if (!p) {
+      detail.innerHTML = `
+        <h1 class="display max-w-3xl">We couldn't find that project.</h1>
+        <p class="lede mt-6">It may have been renamed. Have a look at the rest of our work.</p>
+        <a href="work.html" class="btn btn-primary mt-9">See all projects</a>`;
+    } else {
+      document.title = `${p.title} | ${site.name || 'Our work'}`;
+      const soon = p.status !== 'live';
+      const list = (title, arr) => arr && arr.length ? `
+        <div>
+          <h2 class="text-lg font-semibold">${title}</h2>
+          <ul class="rows mt-4">${arr.map(x => `<li class="flex gap-3 py-3"><i data-lucide="check" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i><span>${esc(x)}</span></li>`).join('')}</ul>
+        </div>` : '';
+      const para = (title, text) => text ? `<div><h2 class="text-lg font-semibold">${title}</h2><p class="mt-3 leading-relaxed text-muted">${esc(text)}</p></div>` : '';
+      const facts = [['Client', p.client], ['Industry', p.industry], ['Country', p.country], ['Year', p.year], ['Built with', (p.stack || []).join(', ')]]
+        .filter(([, v]) => v).map(([k, v]) => `<div><dt class="text-sm text-muted">${k}</dt><dd class="mt-1 font-medium">${esc(v)}</dd></div>`).join('');
+
+      detail.innerHTML = `
+        <a href="work.html" class="link text-sm font-medium">All projects</a>
+        <div class="mt-6 flex flex-wrap gap-2">${metaTags(p)}</div>
+        <h1 class="display mt-5 max-w-5xl">${esc(p.title)}</h1>
+        <p class="lede mt-7">${esc(p.summary)}</p>
+        <div class="zoom relative mt-12">
+          <img class="photo aspect-[16/9] w-full sm:aspect-[21/9]" src="${esc(p.cover)}" alt="${esc(p.coverAlt || p.title)}">
+        </div>
+        <div class="mt-14 grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
+          <div>
+            ${facts ? `<dl class="grid grid-cols-2 gap-6 lg:grid-cols-1">${facts}</dl>` : ''}
+            ${p.link ? `<a href="${esc(p.link)}" class="btn btn-ghost mt-8" target="_blank" rel="noopener">Visit the live project</a>` : ''}
+          </div>
+          <div class="grid gap-12">
+            ${soon ? `<div class="rounded-[var(--radius-lg)] border border-line bg-sunken p-6 sm:p-8">
+                <h2 class="text-lg font-semibold">The full case study is on its way</h2>
+                <p class="mt-2 leading-relaxed text-muted">We're writing this one up. Want to see something similar working? We'll walk you through a live demo on a free call.</p>
+                <a href="contact.html" class="btn btn-primary mt-6">Book a free call</a>
+              </div>` : ''}
+            ${para('The problem', p.problem)}
+            ${para('What we built', p.solution)}
+            ${list('What it does', p.features)}
+            ${list('Results', p.results)}
+            ${p.quote && p.quote.text ? `<figure class="border-l-2 border-brand pl-6"><blockquote class="text-xl font-medium leading-relaxed">“${esc(p.quote.text)}”</blockquote><figcaption class="mt-3 text-sm text-muted">${esc(p.quote.name)}${p.quote.role ? ', ' + esc(p.quote.role) : ''}</figcaption></figure>` : ''}
+          </div>
+        </div>
+        ${p.gallery && p.gallery.length ? `<div class="mt-16 grid gap-6 sm:grid-cols-2">${p.gallery.map(g => `<div class="zoom"><img class="photo aspect-[4/3] w-full" src="${esc(g.src)}" alt="${esc(g.alt)}" loading="lazy"></div>`).join('')}</div>` : ''}`;
+    }
+  }
+  renderIcons();
+
+  /* ---------- Photo strip: clone the items so the marquee loops seamlessly ---------- */
+  document.querySelectorAll('[data-photo-strip]').forEach(track => {
+    Array.from(track.children).forEach(item => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('img').forEach(img => { img.alt = ''; });
+      track.appendChild(clone);
+    });
+  });
+
+  /* ---------- Photos wipe into view as they scroll in (images only, never text) ---------- */
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    root.classList.add('reveal-on');
+    // Observe each photo's parent: a fully clipped image counts as invisible
+    // to IntersectionObserver, so watching the image itself would never fire.
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll(':scope > img.photo').forEach(img => img.classList.add('is-in'));
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    const parents = new Set();
+    document.querySelectorAll('img.photo').forEach(img => img.parentElement && parents.add(img.parentElement));
+    parents.forEach(el => io.observe(el));
   }
 
   /* ---------- Contact form (no backend yet: opens email or WhatsApp) ---------- */
