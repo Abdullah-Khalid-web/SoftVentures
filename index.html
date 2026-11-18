@@ -1,67 +1,1415 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SoftVentures | Management, Desktop, SaaS & AI Automation Software</title><meta name="description" content="SoftVentures builds management software, desktop software, SaaS products, portfolio websites and AI agents that automate your business.">
-<meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23477B9A'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>S</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- COMMON CSS - same file on every page -->
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SoftVentures | Business Software, SaaS & AI Automation</title>
+
+  <meta name="description"
+    content="SoftVentures builds business management systems, desktop applications, SaaS products, websites and custom AI agents that automate business processes.">
+
+  <meta name="theme-color" content="#477B9A">
+
+  <link rel="icon" href="assets/img/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js"></script>
+
+  <!-- Tailwind (CDN) + config + theme colours -->
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/theme.css">
+
+  <!-- Icons, site config, layout components, behaviour -->
+  <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="components/header.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="assets/js/projects.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </head>
+
 <body data-page="index">
-<!-- HEADER loads from header.html -->
-<div id="site-header-slot"></div>
 
-<main>
-<section class="hero"><div class="wrap hero-grid"><div class="reveal"><span class="pill">● Available for new projects &nbsp;·&nbsp; Reply in 24h</span><h1 class="hero-title mt-5">We build <em>every type</em> of software.<br>And AI that builds it faster.</h1><p class="copy mt-6 max-w-[600px]">Management systems, desktop software, SaaS products &amp; portfolio websites — plus AI agents that automate your business and <strong style="color:var(--text)">auto-build your system in days, not months.</strong></p><div class="flex flex-wrap gap-3 mt-8"><a href="contact.html" class="btn btn-primary">Start a Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a><a href="ai-builder.html" class="btn btn-outline">See How AI Builds →</a></div><div class="flex flex-wrap gap-2 mt-7"><span class="tag">Management</span><span class="tag">Desktop</span><span class="tag">SaaS</span><span class="tag">Portfolio</span><span class="tag">AI Automation</span></div></div>
-<div class="demo reveal"><div class="demo-top"><span class="w-10 h-10 rounded-xl grid place-items-center" style="background:var(--primary-soft);color:var(--primary)"><i data-lucide="bot" class="w-5 h-5"></i></span><div><strong>SoftVentures AI Builder</strong><div class="text-sm" style="color:var(--muted)">Auto system builder · Live</div></div><span style="margin-left:auto;color:#4B9B79;font-size:.8rem">● Building</span></div><div style="padding:20px;display:grid;gap:12px"><div class="bubble incoming">I need a system for my clinic — appointments, patients &amp; billing.</div><div class="bubble reply">Got it. Building your clinic system: appointments + patient records + billing + WhatsApp reminders. Preview ready in 2 minutes.</div><div class="mock"><div class="mock-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:8px;font-size:.75rem;color:var(--muted)">Clinic System — Preview</span></div><div class="mock-row"><div class="mock-stat"><b>36</b><span>Today's bookings</span><div class="mock-bar"><i style="width:78%"></i></div></div><div class="mock-stat"><b>1,284</b><span>Patients</span><div class="mock-bar"><i style="width:64%"></i></div></div><div class="mock-stat"><b>Rs 84k</b><span>Collected</span><div class="mock-bar"><i style="width:92%"></i></div></div></div><div class="mock-line">✓ Appointment booked — Ahmed, 4:30 PM <small>Just now</small></div><div class="mock-line">✓ WhatsApp reminder sent <small>Just now</small></div></div></div></div></div></section>
+  <!-- HEADER -->
+  <div id="site-header-slot"></div>
 
-<section id="software" class="section section-white border-t" style="border-color:var(--border)"><div class="wrap"><div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 reveal"><div><span class="eyebrow">01 — What We Build</span><h2 class="h2">One software house.<br>Every type of software.</h2></div><p class="copy max-w-[440px]">Tell us what your business needs. We pick the right type — and build it clean, fast, and ready to grow.</p></div>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-<a href="services.html" class="card p-7 reveal" style="text-decoration:none;color:inherit"><span class="w-12 h-12 rounded-2xl grid place-items-center text-2xl" style="background:var(--primary-soft)">🧾</span><h3 class="text-xl font-bold mt-5">Management Software</h3><p class="copy mt-2 text-[.95rem]">POS, inventory, billing, staff, reports. Your whole business in one dashboard.</p><p class="mt-5 text-sm font-bold" style="color:var(--primary)">From 7 days →</p></a>
-<a href="services.html" class="card p-7 reveal" style="text-decoration:none;color:inherit"><span class="w-12 h-12 rounded-2xl grid place-items-center text-2xl" style="background:var(--primary-soft)">💻</span><h3 class="text-xl font-bold mt-5">Desktop Software</h3><p class="copy mt-2 text-[.95rem]">Fast offline Windows / Mac apps for shops, offices &amp; factories. No internet needed.</p><p class="mt-5 text-sm font-bold" style="color:var(--primary)">Windows + Mac →</p></a>
-<a href="services.html" class="card p-7 reveal" style="text-decoration:none;color:inherit"><span class="w-12 h-12 rounded-2xl grid place-items-center text-2xl" style="background:var(--primary-soft)">☁️</span><h3 class="text-xl font-bold mt-5">SaaS Products</h3><p class="copy mt-2 text-[.95rem]">Your idea as a subscription product. Login, payments, dashboards — ready to sell.</p><p class="mt-5 text-sm font-bold" style="color:var(--primary)">Launch &amp; sell →</p></a>
-<a href="services.html" class="card p-7 reveal" style="text-decoration:none;color:inherit"><span class="w-12 h-12 rounded-2xl grid place-items-center text-2xl" style="background:var(--primary-soft)">🌐</span><h3 class="text-xl font-bold mt-5">Portfolio &amp; Websites</h3><p class="copy mt-2 text-[.95rem]">Portfolio, business &amp; e-commerce websites that look premium and bring clients.</p><p class="mt-5 text-sm font-bold" style="color:var(--primary)">Live in 3 days →</p></a>
-</div></div></section>
+  <main>
 
-<section id="management" class="section section-soft border-t" style="border-color:var(--border)"><div class="wrap"><div class="max-w-3xl mb-10 reveal"><span class="eyebrow">02 — Management Systems</span><h2 class="h2">A management system for whatever you run.</h2><p class="copy mt-4">If it runs on spreadsheets today, it can run on a system tomorrow. <strong style="color:var(--text)">Click any business below</strong> — see exactly what your system will include.</p></div>
-<div class="mgmt"><div style="display:grid;gap:12px">
-<button class="mgmt-btn active" data-mgmt="retail"><span class="mgmt-icon"><i data-lucide="shopping-bag" class="w-5 h-5"></i></span><span><strong class="block">Retail</strong><small style="color:var(--muted)">Shops, chains &amp; wholesale</small></span><span style="margin-left:auto">→</span></button>
-<button class="mgmt-btn" data-mgmt="clinic"><span class="mgmt-icon"><i data-lucide="stethoscope" class="w-5 h-5"></i></span><span><strong class="block">Clinics</strong><small style="color:var(--muted)">Clinics, hospitals &amp; labs</small></span><span style="margin-left:auto">→</span></button>
-<button class="mgmt-btn" data-mgmt="school"><span class="mgmt-icon"><i data-lucide="graduation-cap" class="w-5 h-5"></i></span><span><strong class="block">Schools</strong><small style="color:var(--muted)">Schools &amp; academies</small></span><span style="margin-left:auto">→</span></button>
-<button class="mgmt-btn" data-mgmt="university"><span class="mgmt-icon"><i data-lucide="university" class="w-5 h-5"></i></span><span><strong class="block">Universities</strong><small style="color:var(--muted)">Colleges &amp; universities</small></span><span style="margin-left:auto">→</span></button>
-<button class="mgmt-btn" data-mgmt="restaurant"><span class="mgmt-icon"><i data-lucide="utensils" class="w-5 h-5"></i></span><span><strong class="block">Restaurants</strong><small style="color:var(--muted)">Cafés &amp; cloud kitchens</small></span><span style="margin-left:auto">→</span></button>
-<button class="mgmt-btn" data-mgmt="other"><span class="mgmt-icon"><i data-lucide="building-2" class="w-5 h-5"></i></span><span><strong class="block">Everything else</strong><small style="color:var(--muted)">Gyms, salons, logistics &amp; more</small></span><span style="margin-left:auto">→</span></button>
-</div>
-<div class="mgmt-panel" id="mgmt-panel"><div class="flex flex-wrap items-start justify-between gap-4"><div><span class="tag" id="mgmt-kicker">RETAIL • MOST POPULAR</span><h3 class="text-2xl md:text-[1.7rem] font-bold mt-3" id="mgmt-title">Shops, chains and wholesalers</h3><p class="copy mt-2" id="mgmt-desc">Know what's on the shelf in every branch, what sold today and what to reorder — from your phone.</p></div><span class="pill" id="mgmt-time">⏱ Ready in 7 days</span></div><div class="mock mt-6"><div class="mock-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:8px;font-size:.75rem;color:var(--muted)" id="mgmt-mock-title">Retail System — Live Preview</span></div><div class="mock-row"><div class="mock-stat"><b id="mgmt-stat1">1,284</b><span id="mgmt-stat1-label">Sales today</span><div class="mock-bar"><i style="width:82%"></i></div></div><div class="mock-stat"><b id="mgmt-stat2">7</b><span id="mgmt-stat2-label">Low stock items</span><div class="mock-bar"><i style="width:22%"></i></div></div><div class="mock-stat"><b id="mgmt-stat3">36</b><span id="mgmt-stat3-label">Orders today</span><div class="mock-bar"><i style="width:68%"></i></div></div></div><div class="mock-line">✓ <span id="mgmt-mock-line">New sale — Rs 4,200 • Branch 2</span> <small>Just now</small></div></div><div class="grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-6" id="mgmt-features"></div><div class="flex flex-wrap gap-3 mt-7"><a href="contact.html" class="btn btn-primary">Build My <span id="mgmt-cta">Retail</span> System →</a><a href="ai-builder.html" class="btn btn-outline">See AI Build It</a></div><p class="text-sm mt-4" style="color:var(--muted)">✓ Free demo &nbsp; ✓ Your data stays yours &nbsp; ✓ Works on mobile + desktop</p></div></div></div></section>
+    <!-- =========================================
+         HERO SECTION
+    ========================================== -->
 
-<section id="ai" class="section section-white border-t" style="border-color:var(--border)"><div class="wrap"><div class="max-w-3xl mb-10 reveal"><span class="eyebrow">03 — AI Automation • Our Superpower</span><h2 class="h2">Tell AI what you need.<br>It builds your system.</h2><p class="copy mt-4">No long meetings. No 3-month wait. Our AI agents understand your business, build the system, connect WhatsApp, and keep it running — automatically.</p></div>
-<div class="builder"><div class="builder-card reveal"><span class="builder-num">1</span><h3 class="font-bold text-lg mt-4">You Describe</h3><p class="copy mt-2 text-[.95rem]">In plain words, on WhatsApp or a call.</p><div class="mt-4 p-3 rounded-xl text-sm" style="background:var(--bg);border:1px solid var(--border)">💬 <em>“I need a system for my school…”</em></div></div><div class="builder-card reveal"><span class="builder-num">2</span><h3 class="font-bold text-lg mt-4">AI Builds</h3><p class="copy mt-2 text-[.95rem]">Database, screens, reports &amp; WhatsApp agent — in minutes.</p><div class="mt-4 p-3 rounded-xl text-sm" style="background:var(--primary-soft)">⚡ <strong>Auto-built:</strong> 24 screens • 8 reports</div></div><div class="builder-card reveal"><span class="builder-num">3</span><h3 class="font-bold text-lg mt-4">You Approve</h3><p class="copy mt-2 text-[.95rem]">Live preview. Say “change this” — AI fixes it instantly.</p><div class="mt-4 p-3 rounded-xl text-sm" style="background:var(--bg);border:1px solid var(--border)">👀 Live preview link — no install</div></div><div class="builder-card reveal" style="border-color:var(--primary);background:var(--primary-soft)"><span class="builder-num">4</span><h3 class="font-bold text-lg mt-4">You Go Live</h3><p class="copy mt-2 text-[.95rem]">We move your data, train your team, AI keeps automating.</p><div class="mt-4 p-3 rounded-xl text-sm font-bold" style="background:var(--card)">🚀 Live in 3–7 days</div></div></div>
-<div class="mt-8"><a href="ai-builder.html" class="btn btn-primary">Full AI Builder Details →</a></div></div></section>
+    <section class="hero">
+      <div class="wrap hero-grid">
 
-<section id="work" class="section section-soft border-t" style="border-color:var(--border)"><div class="wrap"><span class="eyebrow">04 — Featured Work</span><h2 class="h2">Systems in daily use.</h2><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-<div class="work-card"><div class="work-img"><span>🛒</span></div><div class="p-6"><div class="flex gap-2"><span class="tag">Retail</span><span class="tag">Management</span></div><h3 class="text-lg font-bold mt-3">Multi-branch POS + Inventory</h3><p class="copy mt-2 text-sm">12 branches, barcode, supplier POs, daily profit on WhatsApp.</p></div></div>
-<div class="work-card"><div class="work-img"><span>🏥</span></div><div class="p-6"><div class="flex gap-2"><span class="tag">Clinic</span><span class="tag">AI Agent</span></div><h3 class="text-lg font-bold mt-3">Clinic Booking Agent</h3><p class="copy mt-2 text-sm">Books on WhatsApp, sends reminders, updates EMR. 40% fewer no-shows.</p></div></div>
-<div class="work-card"><div class="work-img"><span>🎓</span></div><div class="p-6"><div class="flex gap-2"><span class="tag">School</span><span class="tag">Portal</span></div><h3 class="text-lg font-bold mt-3">School Fees &amp; Parent App</h3><p class="copy mt-2 text-sm">Attendance, report cards, fee reminders on WhatsApp.</p></div></div>
-<div class="work-card"><div class="work-img"><span>🍔</span></div><div class="p-6"><div class="flex gap-2"><span class="tag">Restaurant</span><span class="tag">Takeover</span></div><h3 class="text-lg font-bold mt-3">From Abandoned Code to 30 Orders/Day</h3><p class="copy mt-2 text-sm">Fixed ordering bugs, added kitchen display &amp; rider assignment.</p></div></div>
-<div class="work-card"><div class="work-img"><span>☁️</span></div><div class="p-6"><div class="flex gap-2"><span class="tag">SaaS</span><span class="tag">Product</span></div><h3 class="text-lg font-bold mt-3">SaaS: Gym Management</h3><p class="copy mt-2 text-sm">Memberships, payments, trainer schedules — sold as monthly subscription.</p></div></div>
-<div class="work-card"><div class="work-img"><span>💻</span></div><div class="p-6"><div class="flex gap-2"><span class="tag">Desktop</span><span class="tag">Offline</span></div><h3 class="text-lg font-bold mt-3">Desktop Billing for Factory</h3><p class="copy mt-2 text-sm">Offline Windows app for invoices, stock &amp; payroll. Works without internet.</p></div></div>
-</div></div></section>
+        <div class="reveal">
 
-<section id="takeover" class="section section-white border-t" style="border-color:var(--border)"><div class="wrap"><div class="grid lg:grid-cols-2 gap-10 items-center"><div class="reveal"><span class="eyebrow">05 — Takeover</span><h2 class="h2">Built by someone else?<br>We'll take it from here.</h2><p class="copy mt-4 max-w-lg">Developer stopped replying? Agency closed? We adopt your project — any language, any mess — and make it stable.</p><div class="grid gap-0 mt-6 divide-y" style="border-color:var(--border)"><div class="py-4 flex gap-4"><span class="w-9 h-9 rounded-full grid place-items-center font-bold border shrink-0">1</span><div><strong>Audit</strong><p class="copy text-sm mt-1">Plain report: what's there, what's risky, worth keeping.</p></div></div><div class="py-4 flex gap-4"><span class="w-9 h-9 rounded-full grid place-items-center font-bold border shrink-0">2</span><div><strong>Stabilise</strong><p class="copy text-sm mt-1">Urgent bugs, backups, security holes closed.</p></div></div><div class="py-4 flex gap-4"><span class="w-9 h-9 rounded-full grid place-items-center font-bold border shrink-0">3</span><div><strong>Document</strong><p class="copy text-sm mt-1">So you're never hostage to one person again. Including us.</p></div></div><div class="py-4 flex gap-4"><span class="w-9 h-9 rounded-full grid place-items-center font-bold border shrink-0">4</span><div><strong>Look after it</strong><p class="copy text-sm mt-1">Monthly contract, agreed response times.</p></div></div></div></div><div class="card p-7 reveal"><h3 class="text-xl font-bold">Takeover SLA</h3><p class="copy mt-2 text-sm">Audit in 72 hours • Fixes in 1 week</p><div class="mock mt-5"><div class="mock-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:8px;font-size:.75rem;color:var(--muted)">Health Check — Your App</span></div><div class="mock-row"><div class="mock-stat"><b>92%</b><span>Health score</span><div class="mock-bar"><i style="width:92%"></i></div></div><div class="mock-stat"><b>3</b><span>Critical bugs</span><div class="mock-bar"><i style="width:18%;background:#C87968"></i></div></div><div class="mock-stat"><b>100%</b><span>Backup</span><div class="mock-bar"><i style="width:100%"></i></div></div></div><div class="mock-line">✓ Security patched <small>Done</small></div><div class="mock-line">✓ Daily backup on <small>Done</small></div></div><a href="contact.html" class="btn btn-primary mt-6">Get Free Audit →</a></div></div></div></section>
+          <h1 class="hero-title mt-5">
+            We build <em>every type</em> of software.
+            <br>
+            And AI that works for you.
+          </h1>
 
-<section id="problems" class="section section-primary border-t" style="border-color:var(--border)"><div class="wrap"><span class="eyebrow">06 — Sound Familiar?</span><h2 class="h2" style="max-width:760px">Every business we meet has at least one of these.</h2><div class="problems"><article class="problem"><h3>“We're copying numbers between spreadsheets every evening.”</h3><p>One system for sales, stock, bookings &amp; reports. No more copying.</p></article><article class="problem"><h3>“We answer the same WhatsApp questions all day.”</h3><p>AI agent answers, books &amp; takes orders — even at 3am.</p></article><article class="problem"><h3>“Approvals wait in one person's inbox.”</h3><p>Automation reads, checks &amp; chases. Humans only when it matters.</p></article><article class="problem"><h3>“Our chatbot gives wrong prices.”</h3><p>We connect it to live data + add checks. Verified answers only.</p></article><article class="problem"><h3>“The developer stopped answering.”</h3><p>We audit, fix, document &amp; look after it. One team that answers.</p></article></div></div></section>
+          <p class="copy mt-6 max-w-[600px]">
+            Management systems, desktop applications, SaaS products,
+            portfolio websites and custom AI agents that automate your
+            business processes, reduce repetitive work and help your
+            business grow.
+          </p>
 
-<section id="contact" class="section section-white border-t" style="border-color:var(--border)"><div class="wrap"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8"><div><span class="eyebrow">Have a project in mind?</span><h2 class="h2">Let's build your system.</h2><p class="copy mt-3">Tell us your business in 2 lines. Get free advice + price + timeline.</p></div><a href="contact.html" class="btn btn-primary text-lg px-8 py-4">Talk To Our Team →</a></div></div></section>
-</main>
+          <div class="flex flex-wrap gap-3 mt-8">
 
-<!-- FOOTER loads from footer.html -->
-<div id="site-footer-slot"></div>
-<!-- COMMON JS - loads header/footer + theme + animations -->
-<script src="main.js"></script>
+            <a href="contact.html" class="btn btn-primary">
+              Start a Project
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+
+            <a href="services.html" class="btn btn-outline">
+              Explore Our Services →
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- HERO DEMO -->
+
+        <!-- <div class="demo reveal">
+
+          <div class="demo-top">
+
+            <span class="w-10 h-10 rounded-xl grid place-items-center"
+              style="background:var(--primary-soft);color:var(--primary)">
+
+              <i data-lucide="bot" class="w-5 h-5"></i>
+
+            </span>
+
+            <div>
+              <strong>SoftVentures AI Automation</strong>
+
+              <div class="text-sm" style="color:var(--muted)">
+                Custom business agent
+              </div>
+            </div>
+
+            <span style="margin-left:auto;color:#4B9B79;font-size:.8rem">
+              ● Workflow Active
+            </span>
+
+          </div>
+
+          <div style="padding:20px;display:grid;gap:12px">
+
+            <div class="bubble incoming">
+              I need an assistant for my clinic appointments,
+              patients and billing.
+            </div>
+
+            <div class="bubble reply">
+              We can build a custom AI agent that answers patient
+              questions, checks appointment availability, registers
+              bookings and sends WhatsApp confirmations.
+            </div>
+
+            <div class="mock">
+
+              <div class="mock-head">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+
+                <span style="margin-left:8px;font-size:.75rem;color:var(--muted)">
+                  Clinic Automation Preview
+                </span>
+              </div>
+
+              <div class="mock-row">
+
+                <div class="mock-stat">
+                  <b>36</b>
+                  <span>Today's bookings</span>
+
+                  <div class="mock-bar">
+                    <i style="width:78%"></i>
+                  </div>
+                </div>
+
+                <div class="mock-stat">
+                  <b>1,284</b>
+                  <span>Patients</span>
+
+                  <div class="mock-bar">
+                    <i style="width:64%"></i>
+                  </div>
+                </div>
+
+                <div class="mock-stat">
+                  <b>Rs 84k</b>
+                  <span>Collected</span>
+
+                  <div class="mock-bar">
+                    <i style="width:92%"></i>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="mock-line">
+                ✓ Appointment request processed
+                <small>Example</small>
+              </div>
+
+              <div class="mock-line">
+                ✓ WhatsApp confirmation sent
+                <small>Example</small>
+              </div>
+
+            </div>
+
+          </div>
+        </div> -->
+
+        <div class="hero-demo">
+          <div class="mb-4 flex flex-wrap items-center gap-2" role="group" aria-label="Choose an example conversation">
+            <span class="mr-1 text-sm text-muted">Watch it work</span>
+            <button type="button" data-scenario
+              class="scenario-btn rounded-full border border-line px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-ink"
+              aria-pressed="true">Restaurant</button>
+            <button type="button" data-scenario
+              class="scenario-btn rounded-full border border-line px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-ink"
+              aria-pressed="false">Clinic</button>
+            <button type="button" data-scenario
+              class="scenario-btn rounded-full border border-line px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-ink"
+              aria-pressed="false">Bakery</button>
+            <button type="button" data-scenario
+              class="scenario-btn rounded-full border border-line px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-ink"
+              aria-pressed="false">Back office</button>
+          </div>
+
+          <figure class="demo overflow-hidden" data-demo>
+            <figcaption class="sr-only">An example of one of our agents handling a conversation and updating the
+              business's system.</figcaption>
+            <div class="flex items-center gap-3 border-b border-line px-5 py-3.5">
+              <div class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-soft text-ink">
+                <i data-lucide="store" class="h-[18px] w-[18px]"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="truncate font-semibold leading-tight" data-demo-business>Saffron Grill</p>
+                <p class="truncate text-xs text-muted" data-demo-place>Restaurant in Toronto</p>
+              </div>
+              <span class="ml-auto hidden shrink-0 sm:block"><span class="tag"><span
+                    class="h-1.5 w-1.5 rounded-full bg-brand"></span>Agent on WhatsApp</span></span>
+            </div>
+
+            <div class="demo-chat flex flex-col gap-2.5 p-5" data-demo-chat aria-hidden="true"></div>
+
+            <div class="border-t border-line bg-sunken px-5 py-4">
+              <p class="text-sm font-semibold">What the agent did in the business's system</p>
+              <ul class="mt-3 space-y-2 text-sm" data-demo-log></ul>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================
+         01 - WHAT WE BUILD
+    ========================================== -->
+
+    <section id="software" class="section section-white border-t" style="border-color:var(--border)">
+
+      <div class="wrap">
+
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 reveal">
+
+          <div>
+            <span class="eyebrow">01 What We Build</span>
+
+            <h2 class="h2">
+              One software house.
+              <br>
+              Every type of software.
+            </h2>
+          </div>
+
+          <p class="copy max-w-[440px]">
+            Tell us what your business needs. We pick the right
+            technology and build it clean, fast and ready to grow.
+          </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <!-- Management -->
+
+          <a href="services.html" class="card p-7 reveal" style="text-decoration:none;color:inherit">
+
+            <span class="w-12 h-12 rounded-2xl grid place-items-center text-2xl" style="background:var(--primary-soft)">
+              🧾
+            </span>
+
+            <h3 class="text-xl font-bold mt-5">
+              Management Software
+            </h3>
+
+            <p class="copy mt-2 text-[.95rem]">
+              POS, inventory, billing, staff, reports and complete
+              business management systems.
+            </p>
+
+            <p class="mt-5 text-sm font-bold" style="color:var(--primary)">
+              Explore solutions →
+            </p>
+
+          </a>
+
+          <!-- Desktop -->
+
+          <a href="services.html" class="card p-7 reveal" style="text-decoration:none;color:inherit">
+
+            <span class="w-12 h-12 rounded-2xl grid place-items-center text-2xl" style="background:var(--primary-soft)">
+              💻
+            </span>
+
+            <h3 class="text-xl font-bold mt-5">
+              Desktop Software
+            </h3>
+
+            <p class="copy mt-2 text-[.95rem]">
+              Fast offline Windows and Mac applications for shops,
+              offices, factories and businesses.
+            </p>
+
+            <p class="mt-5 text-sm font-bold" style="color:var(--primary)">
+              Windows + Mac →
+            </p>
+
+          </a>
+
+          <!-- SaaS -->
+
+          <a href="services.html" class="card p-7 reveal" style="text-decoration:none;color:inherit">
+
+            <span class="w-12 h-12 rounded-2xl grid place-items-center text-2xl" style="background:var(--primary-soft)">
+              ☁️
+            </span>
+
+            <h3 class="text-xl font-bold mt-5">
+              SaaS Products
+            </h3>
+
+            <p class="copy mt-2 text-[.95rem]">
+              Turn your idea into a subscription-based product with
+              dashboards, users and payment integrations.
+            </p>
+
+            <p class="mt-5 text-sm font-bold" style="color:var(--primary)">
+              Build your product →
+            </p>
+
+          </a>
+
+          <!-- Websites -->
+
+          <a href="services.html" class="card p-7 reveal" style="text-decoration:none;color:inherit">
+
+            <span class="w-12 h-12 rounded-2xl grid place-items-center text-2xl" style="background:var(--primary-soft)">
+              🌐
+            </span>
+
+            <h3 class="text-xl font-bold mt-5">
+              Portfolio & Websites
+            </h3>
+
+            <p class="copy mt-2 text-[.95rem]">
+              Portfolio, business and e-commerce websites that
+              present your brand professionally.
+            </p>
+
+            <p class="mt-5 text-sm font-bold" style="color:var(--primary)">
+              Build your website →
+            </p>
+
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================
+         02 - MANAGEMENT SYSTEMS
+    ========================================== -->
+
+    <section id="management" class="section section-soft border-t" style="border-color:var(--border)">
+
+      <div class="wrap">
+
+        <div class="max-w-3xl mb-10 reveal">
+
+          <span class="eyebrow">02 Management Systems</span>
+
+          <h2 class="h2">
+            A management system for whatever you run.
+          </h2>
+
+          <p class="copy mt-4">
+            If it runs on spreadsheets today, it can run on a system
+            tomorrow.
+            <strong style="color:var(--text)">
+              Click any business below
+            </strong>
+            to see what your management system can include.
+          </p>
+
+        </div>
+
+        <div class="mgmt">
+
+          <!-- Business Selection -->
+
+          <div style="display:grid;gap:12px">
+
+            <button class="mgmt-btn active" data-mgmt="retail">
+
+              <span class="mgmt-icon">
+                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              </span>
+
+              <span>
+                <strong class="block">Retail</strong>
+                <small style="color:var(--muted)">
+                  Shops, chains & wholesale
+                </small>
+              </span>
+
+              <span style="margin-left:auto">→</span>
+
+            </button>
+
+            <button class="mgmt-btn" data-mgmt="clinic">
+
+              <span class="mgmt-icon">
+                <i data-lucide="stethoscope" class="w-5 h-5"></i>
+              </span>
+
+              <span>
+                <strong class="block">Clinics</strong>
+                <small style="color:var(--muted)">
+                  Clinics, hospitals & labs
+                </small>
+              </span>
+
+              <span style="margin-left:auto">→</span>
+
+            </button>
+
+            <button class="mgmt-btn" data-mgmt="school">
+
+              <span class="mgmt-icon">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              </span>
+
+              <span>
+                <strong class="block">Schools</strong>
+                <small style="color:var(--muted)">
+                  Schools & academies
+                </small>
+              </span>
+
+              <span style="margin-left:auto">→</span>
+
+            </button>
+
+            <button class="mgmt-btn" data-mgmt="university">
+
+              <span class="mgmt-icon">
+                <i data-lucide="university" class="w-5 h-5"></i>
+              </span>
+
+              <span>
+                <strong class="block">Universities</strong>
+                <small style="color:var(--muted)">
+                  Colleges & universities
+                </small>
+              </span>
+
+              <span style="margin-left:auto">→</span>
+
+            </button>
+
+            <button class="mgmt-btn" data-mgmt="restaurant">
+
+              <span class="mgmt-icon">
+                <i data-lucide="utensils" class="w-5 h-5"></i>
+              </span>
+
+              <span>
+                <strong class="block">Restaurants</strong>
+                <small style="color:var(--muted)">
+                  Cafés & cloud kitchens
+                </small>
+              </span>
+
+              <span style="margin-left:auto">→</span>
+
+            </button>
+
+            <button class="mgmt-btn" data-mgmt="other">
+
+              <span class="mgmt-icon">
+                <i data-lucide="building-2" class="w-5 h-5"></i>
+              </span>
+
+              <span>
+                <strong class="block">Everything else</strong>
+                <small style="color:var(--muted)">
+                  Gyms, salons, logistics & more
+                </small>
+              </span>
+
+              <span style="margin-left:auto">→</span>
+
+            </button>
+
+          </div>
+
+          <!-- Management Preview -->
+
+          <div class="mgmt-panel" id="mgmt-panel">
+
+            <div class="flex flex-wrap items-start justify-between gap-4">
+
+              <div>
+
+                <span class="tag" id="mgmt-kicker">
+                  RETAIL • MOST POPULAR
+                </span>
+
+                <h3 class="text-2xl md:text-[1.7rem] font-bold mt-3" id="mgmt-title">
+                  Shops, chains and wholesalers
+                </h3>
+
+                <p class="copy mt-2" id="mgmt-desc">
+                  Know what's on the shelf in every branch, what sold
+                  today and what to reorder from your phone.
+                </p>
+
+              </div>
+
+              <span class="pill" id="mgmt-time">
+                ⏱ Ready in 7 days
+              </span>
+
+            </div>
+
+            <div class="mock mt-6">
+
+              <div class="mock-head">
+
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+
+                <span style="margin-left:8px;font-size:.75rem;color:var(--muted)" id="mgmt-mock-title">
+                  Retail System Live Preview
+                </span>
+
+              </div>
+
+              <div class="mock-row">
+
+                <div class="mock-stat">
+                  <b id="mgmt-stat1">1,284</b>
+                  <span id="mgmt-stat1-label">Sales today</span>
+
+                  <div class="mock-bar">
+                    <i style="width:82%"></i>
+                  </div>
+                </div>
+
+                <div class="mock-stat">
+                  <b id="mgmt-stat2">7</b>
+                  <span id="mgmt-stat2-label">Low stock items</span>
+
+                  <div class="mock-bar">
+                    <i style="width:22%"></i>
+                  </div>
+                </div>
+
+                <div class="mock-stat">
+                  <b id="mgmt-stat3">36</b>
+                  <span id="mgmt-stat3-label">Orders today</span>
+
+                  <div class="mock-bar">
+                    <i style="width:68%"></i>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="mock-line">
+                ✓
+                <span id="mgmt-mock-line">
+                  New sale Rs 4,200 • Branch 2
+                </span>
+                <small>Example</small>
+              </div>
+
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-6" id="mgmt-features">
+            </div>
+
+            <div class="flex flex-wrap gap-3 mt-7">
+
+              <a href="contact.html" class="btn btn-primary">
+                Build My
+                <span id="mgmt-cta">Retail</span>
+                System →
+              </a>
+
+              <a href="#ai" class="btn btn-outline">
+                Explore AI Automation
+              </a>
+
+            </div>
+
+            <p class="text-sm mt-4" style="color:var(--muted)">
+              ✓ Free consultation &nbsp;
+              ✓ Your data stays yours &nbsp;
+              ✓ Mobile + desktop
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================
+         03 - AI AUTOMATION
+    ========================================== -->
+
+    <section id="ai" class="section section-white border-t" style="border-color:var(--border)">
+
+      <div class="wrap">
+
+        <div class="max-w-3xl mb-12 reveal">
+
+          <span class="eyebrow">
+            03 AI Automation • Intelligent Workflows
+          </span>
+
+          <h2 class="h2">
+            Let AI handle the repetitive work.
+            <br>
+            <em>Keep your business moving.</em>
+          </h2>
+
+          <p class="copy mt-4">
+            We build custom AI agents around your business processes.
+            From answering customer questions to managing bookings,
+            processing information and sending updates — your AI agent
+            handles repetitive tasks while you focus on growing your
+            business.
+          </p>
+
+        </div>
+
+        <!-- AI WORKFLOW -->
+
+        <div class="ai-workflow reveal">
+
+          <div class="ai-workflow-header">
+
+            <div class="flex items-center gap-3">
+
+              <span class="ai-icon">
+                <i data-lucide="bot"></i>
+              </span>
+
+              <div>
+                <strong>Custom AI Agent Workflow</strong>
+
+                <p>
+                  Designed around your business
+                </p>
+              </div>
+
+            </div>
+
+            <span class="ai-status">
+              <span></span>
+              Automation Workflow
+            </span>
+
+          </div>
+
+          <!-- Animated Process -->
+
+          <div class="ai-flow">
+
+            <!-- Step 1 -->
+
+            <div class="ai-step">
+
+              <div class="ai-step-number">01</div>
+
+              <div class="ai-step-icon">
+                <i data-lucide="message-square"></i>
+              </div>
+
+              <h3>Customer Interaction</h3>
+
+              <p>
+                A customer sends a WhatsApp message, submits a form
+                or makes a request.
+              </p>
+
+              <div class="ai-example">
+                <i data-lucide="message-circle"></i>
+                "I want to book an appointment."
+              </div>
+
+            </div>
+
+            <div class="ai-connector">
+              <span></span>
+              <i data-lucide="arrow-right"></i>
+            </div>
+
+            <!-- Step 2 -->
+
+            <div class="ai-step">
+
+              <div class="ai-step-number">02</div>
+
+              <div class="ai-step-icon">
+                <i data-lucide="brain-circuit"></i>
+              </div>
+
+              <h3>AI Agent Processes</h3>
+
+              <p>
+                Your custom agent understands the request, checks
+                available information and determines the next action.
+              </p>
+
+              <div class="ai-example">
+                <i data-lucide="sparkles"></i>
+                Understanding customer request...
+              </div>
+
+            </div>
+
+            <div class="ai-connector">
+              <span></span>
+              <i data-lucide="arrow-right"></i>
+            </div>
+
+            <!-- Step 3 -->
+
+            <div class="ai-step">
+
+              <div class="ai-step-number">03</div>
+
+              <div class="ai-step-icon">
+                <i data-lucide="workflow"></i>
+              </div>
+
+              <h3>Tasks Automated</h3>
+
+              <p>
+                The agent connects with your software, databases
+                and APIs to perform the required actions.
+              </p>
+
+              <div class="ai-example">
+                <i data-lucide="database"></i>
+                Checking availability & records...
+              </div>
+
+            </div>
+
+            <div class="ai-connector">
+              <span></span>
+              <i data-lucide="arrow-right"></i>
+            </div>
+
+            <!-- Step 4 -->
+
+            <div class="ai-step">
+
+              <div class="ai-step-number">04</div>
+
+              <div class="ai-step-icon">
+                <i data-lucide="check-circle-2"></i>
+              </div>
+
+              <h3>Action Completed</h3>
+
+              <p>
+                The agent completes the task and sends
+                confirmations or updates automatically.
+              </p>
+
+              <div class="ai-example ai-success">
+                <i data-lucide="check-circle"></i>
+                Appointment confirmed!
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- AI CAPABILITIES -->
+
+          <div class="ai-capabilities">
+
+            <div>
+
+              <span class="ai-cap-label">
+                WHAT WE AUTOMATE
+              </span>
+
+              <h3>
+                Built around the way your business works.
+              </h3>
+
+            </div>
+
+            <div class="ai-tags">
+
+              <span>
+                <i data-lucide="message-circle"></i>
+                WhatsApp Agents
+              </span>
+
+              <span>
+                <i data-lucide="calendar-check"></i>
+                Appointment Booking
+              </span>
+
+              <span>
+                <i data-lucide="shopping-cart"></i>
+                Order Processing
+              </span>
+
+              <span>
+                <i data-lucide="file-text"></i>
+                Document Processing
+              </span>
+
+              <span>
+                <i data-lucide="bell"></i>
+                Automated Notifications
+              </span>
+
+              <span>
+                <i data-lucide="database"></i>
+                Data & API Integration
+              </span>
+
+              <span>
+                <i data-lucide="chart-no-axes-combined"></i>
+                Reports & Insights
+              </span>
+
+              <span>
+                <i data-lucide="workflow"></i>
+                Business Workflows
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- AI CTA -->
+
+        <div class="ai-bottom reveal">
+
+          <div>
+
+            <h3>
+              Have a repetitive task you'd like to automate?
+            </h3>
+
+            <p>
+              Tell us how your business works. We'll build an AI agent
+              around it.
+            </p>
+
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">
+            Build My AI Agent
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================
+         04 - FEATURED WORK
+    ========================================== -->
+
+    <section id="work" class="section section-soft border-t" style="border-color:var(--border)">
+
+      <div class="wrap">
+
+        <span class="eyebrow">04 Featured Work</span>
+
+        <h2 class="h2">
+          Software built around real business needs.
+        </h2>
+
+        <p class="copy mt-4 max-w-2xl">
+          From business management systems to intelligent automation,
+          we build practical solutions that solve everyday problems.
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+
+          <div class="work-card">
+
+            <div class="work-img">
+              <span>🛒</span>
+            </div>
+
+            <div class="p-6">
+
+              <div class="flex gap-2">
+                <span class="tag">Retail</span>
+                <span class="tag">Management</span>
+              </div>
+
+              <h3 class="text-lg font-bold mt-3">
+                Multi-branch POS & Inventory
+              </h3>
+
+              <p class="copy mt-2 text-sm">
+                Centralized inventory, barcode management,
+                supplier purchases and sales reporting.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="work-card">
+
+            <div class="work-img">
+              <span>🏥</span>
+            </div>
+
+            <div class="p-6">
+
+              <div class="flex gap-2">
+                <span class="tag">Clinic</span>
+                <span class="tag">AI Agent</span>
+              </div>
+
+              <h3 class="text-lg font-bold mt-3">
+                Clinic Booking Automation
+              </h3>
+
+              <p class="copy mt-2 text-sm">
+                AI-powered appointment assistance, patient inquiries
+                and automated reminders.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="work-card">
+
+            <div class="work-img">
+              <span>🎓</span>
+            </div>
+
+            <div class="p-6">
+
+              <div class="flex gap-2">
+                <span class="tag">School</span>
+                <span class="tag">Portal</span>
+              </div>
+
+              <h3 class="text-lg font-bold mt-3">
+                School Management System
+              </h3>
+
+              <p class="copy mt-2 text-sm">
+                Student records, attendance, fee management,
+                academic reporting and parent communication.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="work-card">
+
+            <div class="work-img">
+              <span>🍔</span>
+            </div>
+
+            <div class="p-6">
+
+              <div class="flex gap-2">
+                <span class="tag">Restaurant</span>
+                <span class="tag">Development</span>
+              </div>
+
+              <h3 class="text-lg font-bold mt-3">
+                Restaurant Ordering System
+              </h3>
+
+              <p class="copy mt-2 text-sm">
+                Order management, kitchen display,
+                delivery assignment and operational improvements.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="work-card">
+
+            <div class="work-img">
+              <span>☁️</span>
+            </div>
+
+            <div class="p-6">
+
+              <div class="flex gap-2">
+                <span class="tag">SaaS</span>
+                <span class="tag">Product</span>
+              </div>
+
+              <h3 class="text-lg font-bold mt-3">
+                SaaS Business Platforms
+              </h3>
+
+              <p class="copy mt-2 text-sm">
+                Multi-tenant applications with user management,
+                subscriptions and centralized dashboards.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="work-card">
+
+            <div class="work-img">
+              <span>💻</span>
+            </div>
+
+            <div class="p-6">
+
+              <div class="flex gap-2">
+                <span class="tag">Desktop</span>
+                <span class="tag">Offline</span>
+              </div>
+
+              <h3 class="text-lg font-bold mt-3">
+                Desktop Business Applications
+              </h3>
+
+              <p class="copy mt-2 text-sm">
+                Offline-capable Windows applications for
+                billing, inventory and business operations.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================
+         05 - PROJECT TAKEOVER
+    ========================================== -->
+
+    <section id="takeover" class="section section-white border-t" style="border-color:var(--border)">
+
+      <div class="wrap">
+
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+          <div class="reveal">
+
+            <span class="eyebrow">05 Project Takeover & Support</span>
+
+            <h2 class="h2">
+              Built by someone else?
+              <br>
+              We'll take it from here.
+            </h2>
+
+            <p class="copy mt-4 max-w-lg">
+              Developer stopped replying? Agency closed?
+              We can take over your existing software, understand
+              its architecture, fix problems and make it stable.
+            </p>
+
+            <div class="grid gap-0 mt-6 divide-y" style="border-color:var(--border)">
+
+              <div class="py-4 flex gap-4">
+
+                <span class="w-9 h-9 rounded-full grid place-items-center font-bold border shrink-0">
+                  1
+                </span>
+
+                <div>
+                  <strong>Audit</strong>
+
+                  <p class="copy text-sm mt-1">
+                    Review your existing application, architecture
+                    and technical issues.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="py-4 flex gap-4">
+
+                <span class="w-9 h-9 rounded-full grid place-items-center font-bold border shrink-0">
+                  2
+                </span>
+
+                <div>
+                  <strong>Stabilize</strong>
+
+                  <p class="copy text-sm mt-1">
+                    Fix critical bugs, improve security and
+                    establish reliable backups.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="py-4 flex gap-4">
+
+                <span class="w-9 h-9 rounded-full grid place-items-center font-bold border shrink-0">
+                  3
+                </span>
+
+                <div>
+                  <strong>Improve & Document</strong>
+
+                  <p class="copy text-sm mt-1">
+                    Improve existing features, clean up code
+                    and document the application.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="py-4 flex gap-4">
+
+                <span class="w-9 h-9 rounded-full grid place-items-center font-bold border shrink-0">
+                  4
+                </span>
+
+                <div>
+                  <strong>Maintain</strong>
+
+                  <p class="copy text-sm mt-1">
+                    Ongoing maintenance, updates and technical support.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Takeover Preview -->
+
+          <div class="card p-7 reveal">
+
+            <h3 class="text-xl font-bold">
+              Software Health Check
+            </h3>
+
+            <p class="copy mt-2 text-sm">
+              Understand your software before making changes.
+            </p>
+
+            <div class="mock mt-5">
+
+              <div class="mock-head">
+
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+
+                <span style="margin-left:8px;font-size:.75rem;color:var(--muted)">
+                  Application Health Overview
+                </span>
+
+              </div>
+
+              <div class="mock-row">
+
+                <div class="mock-stat">
+                  <b>Review</b>
+                  <span>Code quality</span>
+
+                  <div class="mock-bar">
+                    <i style="width:85%"></i>
+                  </div>
+                </div>
+
+                <div class="mock-stat">
+                  <b>Check</b>
+                  <span>Security</span>
+
+                  <div class="mock-bar">
+                    <i style="width:65%"></i>
+                  </div>
+                </div>
+
+                <div class="mock-stat">
+                  <b>Verify</b>
+                  <span>Backups</span>
+
+                  <div class="mock-bar">
+                    <i style="width:90%"></i>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="mock-line">
+                ✓ Architecture review
+                <small>Audit</small>
+              </div>
+
+              <div class="mock-line">
+                ✓ Maintenance plan
+                <small>Review</small>
+              </div>
+
+            </div>
+
+            <a href="contact.html" class="btn btn-primary mt-6">
+              Discuss Your Project →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================
+         06 - BUSINESS PROBLEMS
+    ========================================== -->
+
+    <section id="problems" class="section section-primary border-t" style="border-color:var(--border)">
+
+      <div class="wrap">
+
+        <span class="eyebrow">06 Sound Familiar?</span>
+
+        <h2 class="h2" style="max-width:760px">
+          Every business has processes that could work better.
+        </h2>
+
+        <div class="problems">
+
+          <article class="problem">
+
+            <h3>
+              "We're copying numbers between spreadsheets every evening."
+            </h3>
+
+            <p>
+              Bring sales, stock, bookings and reports into one
+              centralized management system.
+            </p>
+
+          </article>
+
+          <article class="problem">
+
+            <h3>
+              "We answer the same WhatsApp questions all day."
+            </h3>
+
+            <p>
+              A custom AI agent can answer common questions,
+              handle requests and assist customers automatically.
+            </p>
+
+          </article>
+
+          <article class="problem">
+
+            <h3>
+              "Approvals wait in one person's inbox."
+            </h3>
+
+            <p>
+              Automate approval workflows, notifications,
+              reminders and task assignments.
+            </p>
+
+          </article>
+
+          <article class="problem">
+
+            <h3>
+              "Our chatbot gives wrong prices."
+            </h3>
+
+            <p>
+              Connect AI agents to verified business data,
+              APIs and databases for more reliable answers.
+            </p>
+
+          </article>
+
+          <article class="problem">
+
+            <h3>
+              "The developer stopped answering."
+            </h3>
+
+            <p>
+              We can audit, fix, improve, document and maintain
+              your existing software.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================
+         07 - FINAL CONTACT CTA
+    ========================================== -->
+
+    <section id="contact" class="section section-white border-t" style="border-color:var(--border)">
+
+      <div class="wrap">
+
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+
+          <div>
+
+            <span class="eyebrow">
+              Have a project in mind?
+            </span>
+
+            <h2 class="h2">
+              Let's build something useful.
+            </h2>
+
+            <p class="copy mt-3">
+              Tell us about your business, software idea or
+              automation needs. Let's find the right solution.
+            </p>
+
+          </div>
+
+          <a href="contact.html" class="btn btn-primary text-lg px-8 py-4">
+
+            Talk To Our Team
+            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <div id="site-footer-slot"></div>
+
+
+  <!-- COMMON JS -->
+  <script src="main.js"></script>
+
+  <!-- AI WORKFLOW ANIMATION + ICON REFRESH -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // Reveal animation observer
+      const revealElements = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver((entries) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
+            }
+
+          });
+
+        }, {
+          threshold: 0.12
+        });
+
+        revealElements.forEach(element => {
+          observer.observe(element);
+        });
+
+      } else {
+
+        revealElements.forEach(element => {
+          element.classList.add("active");
+        });
+
+      }
+
+    });
+  </script>
+
 </body>
+
 </html>
