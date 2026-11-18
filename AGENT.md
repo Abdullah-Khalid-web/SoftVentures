@@ -1,6 +1,6 @@
 # AGENT.md
 
-Instructions for any AI coding agent (Claude Code, Cursor, Copilot, etc.) or developer working on this website. Read this whole file before changing anything.
+Instructions for any developer or coding assistant working on this website. Read this whole file before changing anything.
 
 ---
 
@@ -126,7 +126,9 @@ Rules:
 </section>
 ```
 
-- Container: always `mx-auto max-w-site px-5 sm:px-8`. `max-w-site` is set to `100%` in `assets/js/tailwind.config.js`, so every page runs edge to edge with only the side padding. Change that one value (it was `78rem`) to go back to a centred column. From 1024px up, theme.css widens the side gutter with the screen (`clamp(2rem, 4.5vw, 6rem)`). Because the container no longer limits width, keep a `max-w-*` on paragraphs and on anything that looks wrong stretched. The home hero's column split, demo width and headline size live in `.hero-grid` / `.hero-demo` in theme.css.
+- Container: always `mx-auto max-w-site px-5 sm:px-8`. `max-w-site` is set to `120rem` in `assets/js/tailwind.config.js`: pages run edge to edge (with only the side padding) up to 1920px, then centre, so very wide screens don't stretch out. Section backgrounds stay full width.
+
+**Responsive rules (mobile first).** Base classes are the phone layout; add `sm:`/`md:`/`lg:`/`xl:` on top and never change the phone layout to fix a bigger screen. Check 360, 768, 1024, 1440 and 2560 wide. In any grid holding something that scrolls sideways (chip rows, tables), use `grid-cols-1` / `minmax(0,1fr)` columns and `min-w-0`, or the whole page overflows on phones. The home hero goes side by side only from 1200px (`.hero-grid` in theme.css), and "What we build" from `xl`. From 1024px up, theme.css widens the side gutter with the screen (`clamp(2rem, 4.5vw, 6rem)`). Because the container no longer limits width, keep a `max-w-*` on paragraphs and on anything that looks wrong stretched. The home hero's column split, demo width and headline size live in `.hero-grid` / `.hero-demo` in theme.css.
 - Vertical rhythm: `py-20 lg:py-24` (or `lg:py-28` on the home page).
 - Separate sections with either `border-t border-line` or a `bg-sunken` band. Don't stack two sunken bands.
 

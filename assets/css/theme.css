@@ -213,7 +213,14 @@ site-header, site-footer { display: block; }
    lines, and sits at the column's right edge to line up with the header.
    ===================================================================== */
 
-@media (min-width: 1024px) {
+/* Tablets and small laptops: the stacked demo keeps a comfortable chat width */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero-demo { max-width: 42rem; }
+}
+
+/* Side by side only from 1200px: between 1024 and 1200 the two columns were too
+   cramped (wrapping scenario buttons, squeezed chat), so they stack like on tablets. */
+@media (min-width: 1200px) {
   .hero-grid {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     column-gap: clamp(3rem, 6vw, 9rem);
