@@ -1,110 +1,42 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Start a project | NextGen Tech Solutions</title>
-  <meta name="description" content="Tell us about your project, the issue you need fixed, or the system you want maintained. We reply within one business day.">
-  <meta name="theme-color" content="#477B9A">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <script src="assets/js/theme-init.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/js/tailwind.config.js"></script>
-  <link rel="stylesheet" href="assets/css/theme.css">
-  <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
-  <script src="assets/js/config.js" defer></script>
-  <script src="components/header.js" defer></script>
-  <script src="components/footer.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Get a Free Quote | SoftVentures</title><meta name="description" content="Get a free quote from SoftVentures. Tell us your business in 2 lines — price + timeline in 1 business day.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23477B9A'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>S</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- COMMON CSS - same file on every page -->
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js"></script>
 </head>
-<body data-page="contact" class="bg-paper font-sans text-ink antialiased">
-  <site-header></site-header>
+<body data-page="contact">
+<!-- HEADER loads from header.html -->
+<div id="site-header-slot"></div>
 
-  <main id="main">
-    <section class="mx-auto grid max-w-site gap-14 px-5 pb-8 pt-14 sm:px-8 lg:grid-cols-[1fr_1.35fr] lg:gap-20 lg:pt-20">
+<main>
+<section class="page-hero"><div class="wrap"><p class="breadcrumb">Home / <b>Contact</b></p><h1 class="mt-4">Let's build<br><em>your system.</em></h1><p class="copy mt-4 max-w-2xl">2 lines likho — business kya hai, kya chahiye. 1 business day me price + timeline bhej denge. Free advice, no commitment.</p></div></section>
+<section class="section section-white border-t" style="border-color:var(--border)"><div class="wrap"><div class="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-start">
+<div><div class="card p-7"><h2 class="text-xl font-bold">Direct contact</h2><p class="copy mt-2 text-sm">Email is fastest.</p><div class="mt-5 grid gap-4"><div><small style="color:var(--muted)">EMAIL</small><p class="font-bold">hello@softventures.dev</p></div><div><small style="color:var(--muted)">RESPONSE</small><p class="font-bold">Within 1 business day</p></div><div><small style="color:var(--muted)">AREAS</small><p class="font-bold">US • UK • Middle East • Pakistan</p></div></div><div class="mt-6 p-4 rounded-xl" style="background:var(--primary-soft)"><strong>Free 15-min call</strong><p class="text-sm mt-1" style="color:var(--muted)">Batayein kya chahiye — hum batayenge kaunsa software, kitna price, kitna time.</p></div></div>
+<div class="mt-6"><h3 class="font-bold mb-3">FAQs</h3><div class="grid gap-3"><details class="faq"><summary>Kitna time lagega? <span>+</span></summary><p>Website 3 days, Management 7 days, SaaS MVP 14 days. AI Builder se aur fast.</p></details><details class="faq"><summary>Price kaise pata chalega? <span>+</span></summary><p>Form bharo — scope dekh ke written price + timeline bhejenge. Free, no commitment.</p></details><details class="faq"><summary>Mera data safe hai? <span>+</span></summary><p>Haan. Aapka data aapka hai. Backup + roles + privacy by default.</p></details></div></div></div>
+<div class="card p-7 md:p-8"><h2 class="text-xl font-bold">Get a free quote</h2><p class="copy mt-1 text-sm">Form submit karte hi aapke email app me draft khulega — send dabao, humein mil jayega.</p>
+<form class="mt-6 grid gap-4" onsubmit="sendQuote(event)"><div><label>Your name *</label><input id="q-name" class="input" required placeholder="Ahmed Khan"></div><div class="grid sm:grid-cols-2 gap-4"><div><label>WhatsApp / Email *</label><input id="q-contact" class="input" required placeholder="0300-1234567 / you@email.com"></div><div><label>What do you need?</label><select id="q-type" class="input"><option>Management Software</option><option>Desktop Software</option><option>SaaS Product</option><option>Portfolio / Website</option><option>AI Agent / Automation</option><option>Fix / Takeover</option></select></div></div><div><label>Your business *</label><input id="q-business" class="input" required placeholder="e.g. Clinic in Lahore, 2 branches"></div><div><label>What should the system do?</label><textarea id="q-msg" rows="4" class="input" placeholder="e.g. Appointments, patient records, billing + WhatsApp reminders..."></textarea></div><button class="btn btn-primary w-full" type="submit">Send Quote Request →</button><p class="text-xs text-center" style="color:var(--muted)">No spam. Sirf aapke project ka reply.</p></form></div>
+</div></div></section>
+</main>
+<script>
+function sendQuote(e){ e.preventDefault();
+  const n=document.getElementById('q-name').value, c=document.getElementById('q-contact').value, t=document.getElementById('q-type').value, b=document.getElementById('q-business').value, m=document.getElementById('q-msg').value;
+  const subject=encodeURIComponent('New Project - '+t+' - '+b);
+  const body=encodeURIComponent('Name: '+n+'\nContact: '+c+'\nType: '+t+'\nBusiness: '+b+'\n\nDetails:\n'+m);
+  window.location.href='mailto:hello@softventures.dev?subject='+subject+'&body='+body;
+}
+</script>
 
-      <div>
-        <h1 class="display">Start a project</h1>
-        <p class="lede mt-6">Tell us what you need. We reply within one business day, usually to set up a free 30 minute call.</p>
-
-        <dl class="mt-12 space-y-7">
-          <div class="flex gap-4">
-            <i data-lucide="mail" class="mt-1 h-5 w-5 shrink-0 text-brand"></i>
-            <div><dt class="font-semibold">Email</dt><dd class="mt-1"><a class="link" data-site="email" href="#"></a></dd></div>
-          </div>
-          <div class="flex gap-4">
-            <i data-lucide="message-circle" class="mt-1 h-5 w-5 shrink-0 text-brand"></i>
-            <div><dt class="font-semibold">WhatsApp</dt><dd class="mt-1"><a class="link" data-whatsapp-link href="#" target="_blank" rel="noopener"><span data-site="phone"></span></a></dd></div>
-          </div>
-          <div class="flex gap-4">
-            <i data-lucide="clock" class="mt-1 h-5 w-5 shrink-0 text-brand"></i>
-            <div><dt class="font-semibold">Hours</dt><dd class="mt-1 text-muted" data-site="hours"></dd></div>
-          </div>
-          <div class="flex gap-4">
-            <i data-lucide="map-pin" class="mt-1 h-5 w-5 shrink-0 text-brand"></i>
-            <div><dt class="font-semibold">Where we work</dt><dd class="mt-1 text-muted">Remotely with clients worldwide, on site when a project needs it</dd></div>
-          </div>
-        </dl>
-      </div>
-
-      <form class="rounded-[var(--radius-lg)] border border-line bg-surface p-6 sm:p-9" data-contact-form novalidate>
-        <div class="grid gap-5 sm:grid-cols-2">
-          <div>
-            <label for="name" class="text-sm font-medium">Your name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required class="field mt-2">
-          </div>
-          <div>
-            <label for="email" class="text-sm font-medium">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required class="field mt-2">
-          </div>
-          <div>
-            <label for="company" class="text-sm font-medium">Business name <span class="font-normal text-muted">(optional)</span></label>
-            <input id="company" name="company" type="text" autocomplete="organization" class="field mt-2">
-          </div>
-          <div>
-            <label for="country" class="text-sm font-medium">Country <span class="font-normal text-muted">(optional)</span></label>
-            <input id="country" name="country" type="text" autocomplete="country-name" class="field mt-2">
-          </div>
-          <div class="sm:col-span-2">
-            <label for="need" class="text-sm font-medium">What do you need?</label>
-            <select id="need" name="need" class="field mt-2">
-              <option>An AI agent (WhatsApp ordering, booking, support)</option>
-              <option>A management system</option>
-              <option>Fix an issue in existing software</option>
-              <option>A maintenance contract</option>
-              <option>Something else</option>
-            </select>
-          </div>
-          <div class="sm:col-span-2">
-            <label for="budget" class="text-sm font-medium">Budget <span class="font-normal text-muted">(optional, helps us suggest the right scope)</span></label>
-            <select id="budget" name="budget" class="field mt-2">
-              <option value="">Not sure yet</option>
-              <option>Under $1,000</option>
-              <option>$1,000 to $5,000</option>
-              <option>$5,000 to $15,000</option>
-              <option>$15,000 and above</option>
-            </select>
-          </div>
-          <div class="sm:col-span-2">
-            <label for="message" class="text-sm font-medium">Tell us about it</label>
-            <textarea id="message" name="message" rows="5" required class="field mt-2" placeholder="What does your business do, and what should the software handle?"></textarea>
-          </div>
-        </div>
-
-        <div class="mt-7 flex flex-wrap items-center gap-3">
-          <button type="submit" class="btn btn-primary">Send by email</button>
-          <button type="button" class="btn btn-ghost" data-send-whatsapp>Send on WhatsApp</button>
-        </div>
-        <p class="mt-4 min-h-[1.5rem] text-sm text-muted" data-form-status role="status" aria-live="polite"></p>
-        <p class="mt-2 text-xs leading-relaxed text-muted">We use your details only to reply to you. See our <a href="privacy.html" class="link">privacy policy</a>.</p>
-      </form>
-
-    </section>
-  </main>
-
-  <site-footer no-cta></site-footer>
+<!-- FOOTER loads from footer.html -->
+<div id="site-footer-slot"></div>
+<!-- COMMON JS - loads header/footer + theme + animations -->
+<script src="main.js"></script>
 </body>
 </html>
