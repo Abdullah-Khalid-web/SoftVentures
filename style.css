@@ -666,6 +666,8 @@ a {
   align-items: start
 }
 
+.mgmt-selector { display: grid; gap: 12px; min-width: 0; }
+
 .mgmt-list {
   display: grid;
   gap: 12px;
@@ -1649,6 +1651,28 @@ label {
 }
 
 /* Compact, aligned home hero controls on phones only. */
+@media (max-width: 639px) {
+  #management .mgmt-selector {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  #management .mgmt-btn {
+    justify-content: center;
+    min-height: 48px;
+    padding: 6px;
+    gap: 0;
+    border-radius: 12px;
+  }
+
+  #management .mgmt-btn > span:not(.mgmt-icon) { display: none; }
+  #management .mgmt-icon { width: 32px; height: 32px; border-radius: 8px; }
+}
+
+@media (min-width: 360px) and (max-width: 639px) {
+  #management .mgmt-selector { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
 @media (max-width: 639px) {
   .hero .hero-actions {
     display: grid;
