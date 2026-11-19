@@ -1390,6 +1390,23 @@ label {
 }
 
 /* ============ RESPONSIVE ============ */
+@media(max-width:1199px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-grid > *, .mgmt > *, .ai-capabilities > * {
+    min-width: 0;
+  }
+}
+
+@media(max-width:1023px) {
+  .mgmt { grid-template-columns: minmax(0, 1fr); }
+  .mgmt-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mobile-menu { max-height: calc(100dvh - 64px); overscroll-behavior: contain; }
+  .icon-btn { min-width: 44px; min-height: 44px; }
+}
+
 @media(max-width:1024px) {
   .hero-grid {
     gap: 40px
@@ -1530,7 +1547,9 @@ label {
   }
 
   .ai-connector {
+    width: 26px;
     height: 26px;
+    justify-self: center;
     transform: rotate(90deg)
   }
 
@@ -1587,6 +1606,18 @@ label {
   .takeover-card {
     padding: 20px 16px
   }
+
+  .ai-step { padding: 18px 16px; }
+  .ai-step p { font-size: .9375rem; line-height: 1.65; }
+  .ai-example { font-size: .875rem; overflow-wrap: anywhere; }
+  .ai-workflow-header > .flex { min-width: 0; }
+  .ai-workflow-header strong { overflow-wrap: anywhere; }
+  .ai-tags span { white-space: normal; }
+  .input { font-size: 1rem; }
+  .btn { white-space: normal; text-align: center; line-height: 1.35; }
+  #site-header > .wrap > .flex > a { font-size: 1rem; gap: .375rem; }
+  #site-header > .wrap > .flex > a img { height: 2rem; }
+  .scenario-btn { min-height: 44px; }
 }
 
 @media(max-width:400px) {
@@ -1615,6 +1646,48 @@ label {
     flex: 1 1 auto;
     text-align: center
   }
+}
+
+/* Compact, aligned home hero controls on phones only. */
+@media (max-width: 639px) {
+  .hero .hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 8px;
+  }
+
+  .hero .hero-actions .btn {
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px 12px;
+    gap: 6px;
+    font-size: .8125rem;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .hero .hero-actions .btn svg { flex-shrink: 0; width: 14px; height: 14px; }
+
+  .hero .hero-scenarios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .hero .hero-scenarios > span { grid-column: 1 / -1; margin: 0 0 2px; }
+
+  .hero .hero-scenarios .scenario-btn {
+    min-width: 0;
+    min-height: 36px;
+    padding: 7px 10px;
+    font-size: .8125rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .hero .hero-scenarios { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 @media(prefers-reduced-motion:reduce) {

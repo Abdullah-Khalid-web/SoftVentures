@@ -71,6 +71,18 @@ body { background: var(--paper); color: var(--ink); text-rendering: optimizeLegi
 /* Custom elements render as blocks */
 site-header, site-footer { display: block; }
 
+@media (max-width: 1023px) {
+  #mobile-nav { max-height: calc(100dvh - 4.25rem); overflow-y: auto; overscroll-behavior: contain; }
+  main .grid > *, main .flex > * { min-width: 0; }
+}
+
+@media (max-width: 639px) {
+  :root .field { font-size: 1rem; }
+  :root .btn { white-space: normal; text-align: center; line-height: 1.35; }
+  [data-theme-toggle], [data-menu-toggle] { min-width: 44px; min-height: 44px; }
+  .scenario-btn, .tab-btn { min-height: 44px; }
+}
+
 /* Skip link */
 .skip-link {
   position: absolute; left: 1rem; top: -4rem; z-index: 100;
