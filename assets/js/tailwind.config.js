@@ -27,7 +27,7 @@ tailwind.config = {
         // Width of the page container (`max-w-site`) on every page, header and footer included.
         // Edge to edge up to 1920px (only the side padding), then a centred column so
         // 2K/4K screens don't stretch lines and gaps out. Section backgrounds stay full width.
-        site: '120rem',
+        site: 'var(--site-max-width)',
       },
     },
   },

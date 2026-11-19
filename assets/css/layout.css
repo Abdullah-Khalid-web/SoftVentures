@@ -1,0 +1,22 @@
+/* Shared page width for both page layouts, including headers and footers. */
+:root {
+  --site-max-width: 120rem;
+  --site-gutter: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  :root { --site-gutter: 2rem; }
+}
+
+@media (min-width: 1024px) {
+  :root { --site-gutter: clamp(2rem, 4.5vw, 6rem); }
+}
+
+.wrap,
+.mx-auto.max-w-site {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
+}

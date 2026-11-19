@@ -3,14 +3,8 @@ async function loadPart(id, file){
   try{ const r=await fetch(file); if(!r.ok) return; document.getElementById(id).innerHTML=await r.text(); }catch(e){}
 }
 function initCommon(){
-  // theme
-  const html=document.documentElement;
-  const saved=localStorage.getItem('theme');
-  if(saved) html.setAttribute('data-theme',saved);
-  else if(window.matchMedia('(prefers-color-scheme: dark)').matches) html.setAttribute('data-theme','dark');
-  else html.setAttribute('data-theme','light');
-  const themeToggle=document.getElementById('theme-toggle');
-  if(themeToggle) themeToggle.addEventListener('click',()=>{const cur=html.getAttribute('data-theme');const nxt=cur==='dark'?'light':'dark';html.setAttribute('data-theme',nxt);localStorage.setItem('theme',nxt);});
+  // The shared pre-paint controller owns theme state and both toggle types.
+  window.SiteTheme.syncControls();
   // header scroll + mobile menu
   const header=document.getElementById('site-header');
   if(header) window.addEventListener('scroll',()=>{window.scrollY>10?header.classList.add('scrolled'):header.classList.remove('scrolled');});

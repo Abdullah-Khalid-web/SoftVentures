@@ -3,6 +3,7 @@
  * Each feature only runs if its markup exists on the page.
  */
 (function () {
+  const root = document.documentElement;
   const site = window.SITE || {};
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -23,22 +24,8 @@
   }
   renderIcons();
 
-  /* ---------- Theme toggle ---------- */
-  const root = document.documentElement;
-  function syncThemeLabel() {
-    const dark = root.classList.contains('dark');
-    document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
-      btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
-    });
-  }
-  syncThemeLabel();
-  document.addEventListener('click', e => {
-    const btn = e.target.closest('[data-theme-toggle]');
-    if (!btn) return;
-    const dark = root.classList.toggle('dark');
-    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (err) {}
-    syncThemeLabel();
-  });
+  /* ---------- Theme controls (state is owned by theme-init.js) ---------- */
+  window.SiteTheme.syncControls();
 
   /* ---------- Mobile menu ---------- */
   document.addEventListener('click', e => {

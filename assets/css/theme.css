@@ -1,3 +1,5 @@
+@import url("layout.css");
+
 /* =====================================================================
    THEME
    ---------------------------------------------------------------------
@@ -33,7 +35,8 @@
   color-scheme: light;
 }
 
-.dark {
+:root.dark,
+:root[data-theme="dark"] {
   --paper:      var(--c-dark);
   --ink:        var(--c-light);
   --brand:      color-mix(in oklab, var(--c-brand) 76%, #ffffff);
@@ -63,13 +66,6 @@ body { background: var(--paper); color: var(--ink); text-rendering: optimizeLegi
   outline: 2px solid var(--brand);
   outline-offset: 3px;
   border-radius: 4px;
-}
-
-/* Page container runs full width (max-w-site = 100%), so the side gutter
-   grows with the screen instead of content touching the far edges.
-   Two classes beat Tailwind's single-class px-5 / sm:px-8. */
-@media (min-width: 1024px) {
-  .mx-auto.max-w-site { padding-left: clamp(2rem, 4.5vw, 6rem); padding-right: clamp(2rem, 4.5vw, 6rem); }
 }
 
 /* Custom elements render as blocks */
@@ -263,8 +259,8 @@ site-header, site-footer { display: block; }
 .typing span:nth-child(3) { animation-delay: .3s; }
 @keyframes typing { 0%, 80%, 100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
 
-.log-item { opacity: .35; transition: opacity .4s ease; }
-.log-item.is-done { opacity: 1; }
+.log-item { color: var(--muted); transition: color .4s ease; }
+.log-item.is-done { color: var(--ink); }
 .log-item .log-check { color: var(--line); transition: color .4s ease; }
 .log-item.is-done .log-check { color: var(--brand); }
 
@@ -535,9 +531,9 @@ details.faq[open] .faq-icon { transform: rotate(45deg); }
   font: inherit;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
-.field::placeholder { color: color-mix(in oklab, var(--muted) 75%, var(--paper)); }
+.field::placeholder { color: var(--muted); opacity: 1; }
 .field:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
-.field[aria-invalid="true"] { border-color: #c2410c; }
+.field[aria-invalid="true"] { border-color: var(--alert); }
 
 /* =====================================================================
    REDUCED MOTION
