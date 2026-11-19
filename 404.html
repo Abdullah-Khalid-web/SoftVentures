@@ -1,38 +1,113 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found | NextGen Tech Solutions</title>
-  <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#477B9A">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <!-- Absolute paths here, because hosts serve this page from any URL depth -->
-  <script src="/assets/js/theme-init.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/assets/js/tailwind.config.js"></script>
-  <link rel="stylesheet" href="/assets/css/theme.css">
-  <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
-  <script src="/assets/js/config.js" defer></script>
-  <script src="/components/header.js" defer></script>
-  <script src="/components/footer.js" defer></script>
-  <script src="/assets/js/main.js" defer></script>
-  <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 - Page Not Found | SoftVentures</title>
+    <meta name="robots" content="noindex">
+
+    <!-- Theme: Load before CSS -->
+    <script src="assets/js/theme-init.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
+    <script src="assets/js/config.js" defer></script>
 </head>
-<body data-page="404" class="bg-paper font-sans text-ink antialiased">
-  <site-header></site-header>
-  <main id="main" class="mx-auto max-w-site px-5 pb-10 pt-20 sm:px-8 lg:pt-28">
-    <p class="text-sm font-medium text-brand-ink">Error 404</p>
-    <h1 class="display mt-4 max-w-3xl">This page doesn't exist.</h1>
-    <p class="lede mt-6">The link may be old or mistyped. Try the home page, or tell us what you were looking for.</p>
-    <div class="mt-9 flex flex-wrap gap-3">
-      <a href="index.html" class="btn btn-primary">Go to the home page</a>
-      <a href="contact.html" class="btn btn-ghost">Contact us</a>
-    </div>
-  </main>
-  <site-footer></site-footer>
+
+<body class="min-h-screen flex flex-col">
+
+    <main class="flex-1 flex items-center justify-center px-6 py-20">
+
+        <div class="w-full max-w-2xl text-center">
+
+            <!-- Brand -->
+            <a href="index.html"
+               class="inline-flex items-center gap-2 font-bold text-xl mb-12">
+                <img src="assets/images/logo.png"
+                     alt="SoftVentures"
+                     class="h-9 w-auto"
+                     onerror="this.style.display='none'">
+                <span>SoftVentures</span>
+            </a>
+
+            <!-- 404 -->
+            <div class="relative mb-8">
+
+                <div class="text-[130px] sm:text-[190px] font-black leading-none tracking-tighter text-brand opacity-20 select-none">
+                    404
+                </div>
+
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-brand text-white flex items-center justify-center shadow-xl rotate-[-8deg]">
+                        <i data-lucide="search-x"
+                           class="w-10 h-10 sm:w-12 sm:h-12"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Message -->
+            <div class="space-y-5">
+
+                <span class="tag inline-flex">
+                    Error 404
+                </span>
+
+                <h1 class="text-3xl sm:text-5xl font-bold tracking-tight">
+                    Page not found.
+                </h1>
+
+                <p class="text-muted text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
+                    Looks like this page has gone somewhere else.
+                    The link may be broken, or the page may have been moved.
+                </p>
+
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10">
+
+                <a href="index.html"
+                   class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand text-white font-semibold hover:opacity-90 transition w-full sm:w-auto">
+                    <i data-lucide="house" class="w-4 h-4"></i>
+                    Back to homepage
+                </a>
+
+                <button onclick="history.back()"
+                        class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-line font-semibold hover:bg-sunken transition w-full sm:w-auto">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Go back
+                </button>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-20 pt-6 border-t border-line">
+                <p class="text-sm text-muted">
+                    © <span id="year"></span> SoftVentures.
+                    Building software that works.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('year').textContent =
+            new Date().getFullYear();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
+
 </body>
 </html>

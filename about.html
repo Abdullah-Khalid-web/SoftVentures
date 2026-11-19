@@ -1,182 +1,551 @@
-<!doctype html>
-<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About us | NextGen Tech Solutions</title>
-  <meta name="description" content="PEC-registered software engineers building management systems and AI agents for businesses worldwide, fixing what breaks and supporting clients on site when needed.">
-  <meta name="theme-color" content="#477B9A">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <script src="assets/js/theme-init.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/js/tailwind.config.js"></script>
-  <link rel="stylesheet" href="assets/css/theme.css">
-  <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
-  <script src="assets/js/config.js" defer></script>
-  <script src="components/header.js" defer></script>
-  <script src="components/footer.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | SoftVentures — Software & AI Engineering</title>
+
+    <meta name="description"
+        content="Meet SoftVentures. We build business management systems, custom software, SaaS platforms and AI agents, and provide ongoing software support.">
+
+    <meta name="theme-color" content="#477B9A">
+    <meta name="color-scheme" content="light dark">
+
+    <script src="assets/js/theme-init.js"></script>
+    <link rel="icon" href="assets/img/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
+
+    <script src="assets/js/config.js" defer></script>
+
 </head>
-<body data-page="about" class="bg-paper font-sans text-ink antialiased">
-  <site-header></site-header>
 
-  <main id="main">
+<body data-page="about" class="about-page">
 
-    <section class="mx-auto max-w-site px-5 pb-14 pt-14 sm:px-8 lg:pb-16 lg:pt-20">
-      <p class="text-sm font-medium text-brand-ink">About</p>
-      <h1 class="display mt-4 max-w-5xl">Engineers who build your software, fix it, and stick around.</h1>
-      <p class="lede mt-7">We're a team of PEC-registered software engineers. We build management systems and AI agents for businesses around the world, rescue projects other teams left behind, and look after all of it for the long run. Remotely most days, and in person when the job needs hands on hardware.</p>
-      <img class="photo mt-12 aspect-[16/9] w-full sm:aspect-[21/9]" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=70" alt="A software team working together on laptops around a shared table" width="1800" height="771">
-    </section>
+    <div id="site-header-slot"></div>
 
-    <section class="border-t border-line">
-      <div class="mx-auto grid max-w-site gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 lg:py-24">
-        <h2 class="h2">Why we started</h2>
-        <div class="prose-width space-y-5 text-lg leading-relaxed text-muted">
-          <p>Most businesses we meet still run on a mix of notebooks, spreadsheets, WhatsApp groups and software nobody quite trusts. Staff lose hours answering the same messages and copying numbers from one place to another. And far too many own an app whose developer simply vanished.</p>
-          <p>We started <span data-site="name">NextGen Tech Solutions</span> to fix that. Management systems that keep a business's data in one reliable place. Agents that handle the repetitive conversations and the invisible back-office work. And a team that stays, because software that's abandoned after launch stops being useful within a year.</p>
-          <p>We're engineers first. We write plain proposals, give fixed quotes, show working software every two weeks, and tell you when something isn't worth building.</p>
-        </div>
-      </div>
-    </section>
+    <main id="main">
 
-    <!-- PEC -->
-    <section class="bg-sunken">
-      <div class="mx-auto grid max-w-site gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 lg:py-24">
-        <div>
-          <span class="tag"><i data-lucide="badge-check" class="h-3.5 w-3.5"></i>PEC registered</span>
-          <h2 class="h2 mt-5">Qualified engineers, not whoever was free this week.</h2>
-          <p class="mt-5 max-w-md leading-relaxed text-muted">Our software engineers are registered with the Pakistan Engineering Council (PEC), the statutory body that licenses professional engineers. Your system is designed by people with an accredited engineering degree and a professional code to answer to.</p>
-        </div>
-        <ul class="rows self-end">
-          <li class="flex gap-4 py-5">
-            <i data-lucide="graduation-cap" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i>
-            <div><h3 class="font-semibold">Accredited engineering degrees</h3><p class="mt-1 leading-relaxed text-muted">Registration needs a degree from a PEC-accredited engineering programme, not a weekend course.</p></div>
-          </li>
-          <li class="flex gap-4 py-5">
-            <i data-lucide="scale" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i>
-            <div><h3 class="font-semibold">A professional code of conduct</h3><p class="mt-1 leading-relaxed text-muted">Registered engineers are accountable to the council's code of ethics, on top of our contract with you.</p></div>
-          </li>
-          <li class="flex gap-4 py-5">
-            <i data-lucide="file-check-2" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i>
-            <div><h3 class="font-semibold">Check it yourself</h3><p class="mt-1 leading-relaxed text-muted">Ask for the registration numbers of the engineers on your project. We're happy to share them.</p></div>
-          </li>
-        </ul>
-      </div>
-    </section>
+        <!-- HERO -->
+        <section class="about-hero">
+            <div class="about-wrap">
 
-    <!-- ON SITE -->
-    <section>
-      <div class="mx-auto grid max-w-site gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:items-center lg:gap-20 lg:py-24">
-        <div>
-          <h2 class="h2">Remote by default. On site when it matters.</h2>
-          <p class="mt-5 max-w-lg leading-relaxed text-muted">Not every problem lives in the code. Sometimes it's the receipt printer, the network in the back office or a server under the stairs. We solve the physical side too, so you don't have to coordinate three different vendors.</p>
-          <ul class="rows mt-10">
-            <li class="flex gap-4 py-4"><i data-lucide="printer" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i><span><span class="font-semibold">Hardware setup.</span> <span class="text-muted">POS terminals, receipt printers, barcode scanners, kitchen screens, attendance devices.</span></span></li>
-            <li class="flex gap-4 py-4"><i data-lucide="network" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i><span><span class="font-semibold">Networks and servers.</span> <span class="text-muted">Wi-Fi and cabling, local servers, backups that actually run.</span></span></li>
-            <li class="flex gap-4 py-4"><i data-lucide="users" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i><span><span class="font-semibold">Go-live on the floor.</span> <span class="text-muted">An engineer with your staff on launch day, training in person.</span></span></li>
-            <li class="flex gap-4 py-4"><i data-lucide="wrench" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i><span><span class="font-semibold">Physical troubleshooting.</span> <span class="text-muted">When a remote fix isn't enough, we come and look.</span></span></li>
-          </ul>
-          <p class="mt-6 text-sm text-muted">On-site visits are planned per project. Tell us where you are and we'll tell you what's possible.</p>
-        </div>
-        <img class="photo aspect-[4/3] w-full lg:aspect-[4/5]" src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=70" alt="Two engineers with tablets checking equipment in a server room" width="1200" height="1500" loading="lazy">
-      </div>
-    </section>
+                <h1>
+                    Engineers who build your software,
+                    <span>fix it, and stick around.</span>
+                </h1>
 
-    <section class="bg-sunken">
-      <div class="mx-auto max-w-site px-5 py-20 sm:px-8 lg:py-24">
-        <h2 class="h2 max-w-2xl">How we work with clients</h2>
-        <div class="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
-          <div class="border-l-2 border-brand pl-6">
-            <h3 class="text-xl font-semibold">Fixed quotes, in writing</h3>
-            <p class="mt-2 leading-relaxed text-muted">You know the scope, timeline and price before work starts. If the scope changes, we agree the change in writing first.</p>
-          </div>
-          <div class="border-l-2 border-brand pl-6">
-            <h3 class="text-xl font-semibold">You own what you pay for</h3>
-            <p class="mt-2 leading-relaxed text-muted">Source code, data, accounts and domains are yours once the project is paid for. No lock-in.</p>
-          </div>
-          <div class="border-l-2 border-brand pl-6">
-            <h3 class="text-xl font-semibold">Working software every two weeks</h3>
-            <p class="mt-2 leading-relaxed text-muted">Not status reports. A link you can click, so you can steer early instead of being surprised at the end.</p>
-          </div>
-          <div class="border-l-2 border-brand pl-6">
-            <h3 class="text-xl font-semibold">We adopt other people's code</h3>
-            <p class="mt-2 leading-relaxed text-muted">Built by a freelancer or an agency that's gone quiet? We audit it, stabilise it and document it before we promise anything.</p>
-          </div>
-          <div class="border-l-2 border-brand pl-6">
-            <h3 class="text-xl font-semibold">AI that's checked, not trusted blindly</h3>
-            <p class="mt-2 leading-relaxed text-muted">Our agents work from your real data, follow written rules and hand off to a person when unsure. We test them on your actual customer questions.</p>
-          </div>
-          <div class="border-l-2 border-brand pl-6">
-            <h3 class="text-xl font-semibold">We stay after launch</h3>
-            <p class="mt-2 leading-relaxed text-muted">Every project includes a fix period after launch, and long-term maintenance contracts keep things running for years.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+                <p class="about-hero-text">
+                    We build management systems and AI-powered software
+                    for businesses that want to work smarter. From custom
+                    business applications and SaaS platforms to intelligent
+                    automation and ongoing technical support, we focus on
+                    practical solutions that solve real problems.
+                </p>
 
-    <section id="process" class="scroll-mt-20">
-      <div class="mx-auto max-w-site px-5 py-20 sm:px-8 lg:py-24">
-        <h2 class="h2 max-w-2xl">From first call to launch</h2>
-        <ol class="mt-12 rows">
-          <li class="grid gap-3 py-6 md:grid-cols-[6rem_16rem_1fr] md:gap-8">
-            <span class="text-sm font-semibold text-brand-ink">Week 0</span>
-            <h3 class="text-lg font-semibold">Discovery call</h3>
-            <p class="leading-relaxed text-muted">A free 30 minute call about your business, the problem and what success looks like.</p>
-          </li>
-          <li class="grid gap-3 py-6 md:grid-cols-[6rem_16rem_1fr] md:gap-8">
-            <span class="text-sm font-semibold text-brand-ink">Week 1</span>
-            <h3 class="text-lg font-semibold">Proposal and quote</h3>
-            <p class="leading-relaxed text-muted">Scope, screens, timeline, milestones and a fixed price. Sometimes a short paid workshop first, for larger systems.</p>
-          </li>
-          <li class="grid gap-3 py-6 md:grid-cols-[6rem_16rem_1fr] md:gap-8">
-            <span class="text-sm font-semibold text-brand-ink">Weeks 2+</span>
-            <h3 class="text-lg font-semibold">Design and build</h3>
-            <p class="leading-relaxed text-muted">Two-week sprints. Each ends with a demo you can try and feedback we act on in the next sprint.</p>
-          </li>
-          <li class="grid gap-3 py-6 md:grid-cols-[6rem_16rem_1fr] md:gap-8">
-            <span class="text-sm font-semibold text-brand-ink">Launch</span>
-            <h3 class="text-lg font-semibold">Go live</h3>
-            <p class="leading-relaxed text-muted">Data migration, hardware setup if needed, staff training, written guides and close support during the first weeks.</p>
-          </li>
-          <li class="grid gap-3 py-6 md:grid-cols-[6rem_16rem_1fr] md:gap-8">
-            <span class="text-sm font-semibold text-brand-ink">After</span>
-            <h3 class="text-lg font-semibold">Fix period and care</h3>
-            <p class="leading-relaxed text-muted">Bugs found after launch are fixed free during the fix period. After that, a maintenance contract keeps things running.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
+                <img
+                    class="about-hero-image"
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80"
+                    alt="A software team collaborating around a shared table"
+                    width="1800"
+                    height="771"
+                >
 
-    <section class="border-t border-line">
-      <div class="mx-auto grid max-w-site gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:gap-20 lg:py-24">
-        <div>
-          <h2 class="h2">Wherever you are</h2>
-          <p class="mt-5 max-w-md leading-relaxed text-muted">We work with clients across time zones, from the Gulf to Europe to North America. Calls are booked in your working day, and engineers travel for on-site work when a project needs it.</p>
-          <dl class="mt-8 space-y-4">
-            <div class="flex gap-3"><i data-lucide="clock" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i><div><dt class="font-semibold">Engineers online</dt><dd class="text-muted" data-site="hours"></dd></div></div>
-            <div class="flex gap-3"><i data-lucide="mail" class="mt-0.5 h-5 w-5 shrink-0 text-brand"></i><div><dt class="font-semibold">Email</dt><dd><a class="link" data-site="email" href="#"></a></dd></div></div>
-          </dl>
-        </div>
-        <div>
-          <h2 class="h2">What we build with</h2>
-          <p class="mt-5 max-w-md leading-relaxed text-muted">Proven, widely used tools, so any good developer can work on your system in the future.</p>
-          <dl class="mt-8 space-y-5">
-            <div><dt class="font-semibold">Web</dt><dd class="mt-1 text-muted">React, Next.js, Tailwind CSS</dd></div>
-            <div><dt class="font-semibold">Mobile</dt><dd class="mt-1 text-muted">React Native, Flutter</dd></div>
-            <div><dt class="font-semibold">Backend</dt><dd class="mt-1 text-muted">Node.js, Python, Laravel, PostgreSQL, MySQL</dd></div>
-            <div><dt class="font-semibold">Agents and automation</dt><dd class="mt-1 text-muted">WhatsApp Business Platform, Meta APIs, leading AI models, workflow automation</dd></div>
-            <div><dt class="font-semibold">Hosting</dt><dd class="mt-1 text-muted">AWS, DigitalOcean, Vercel, or your own servers</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
+            </div>
+        </section>
 
-  </main>
+        <!-- WHY WE STARTED -->
+        <section class="about-section">
 
-  <site-footer></site-footer>
+            <div class="about-wrap about-section-grid">
+
+                <div>
+                    <p class="about-eyebrow">Our story</p>
+                    <h2 class="mt-5">Why we started</h2>
+                </div>
+
+                <div class="about-copy">
+
+                    <p>
+                        Many businesses still depend on notebooks,
+                        spreadsheets, disconnected applications and
+                        repetitive manual processes. Staff spend hours
+                        copying information, answering the same questions
+                        and managing tasks that could be handled more
+                        efficiently.
+                    </p>
+
+                    <p>
+                        We started <strong data-site="name">SoftVentures</strong>
+                        to help businesses move beyond these limitations.
+                        We build management systems that organise business
+                        information, AI agents that handle repetitive
+                        conversations, and custom software that fits the
+                        way each organisation works.
+                    </p>
+
+                    <p>
+                        We believe software should remain useful long after
+                        launch. That's why we focus on maintainable
+                        architecture, practical engineering, clear
+                        communication and long-term technical support.
+                    </p>
+
+                    <p>
+                        We're engineers first. We understand the problem,
+                        recommend a sensible solution, build it in
+                        manageable stages and stay involved as the
+                        business grows.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ENGINEERING -->
+        <section class="about-section sunken">
+
+            <div class="about-wrap about-pec">
+
+                <div>
+
+                    <span class="about-tag">
+                        <i data-lucide="badge-check"></i>
+                        Engineering-led approach
+                    </span>
+
+                    <h2 class="mt-6">
+                        Software built with engineering discipline.
+                    </h2>
+
+                    <p class="mt-5 max-w-md text-sm leading-relaxed text-muted">
+                        Good software is more than a working interface.
+                        It requires thoughtful architecture, reliable
+                        data management, security, testing and a clear
+                        understanding of the business behind it.
+                    </p>
+
+                </div>
+
+                <ul class="about-pec-list">
+
+                    <li>
+                        <i data-lucide="graduation-cap" class="about-icon"></i>
+                        <div>
+                            <h3>Engineering knowledge</h3>
+                            <p>
+                                We apply software engineering principles
+                                to architecture, development, testing
+                                and maintenance.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <i data-lucide="layers" class="about-icon"></i>
+                        <div>
+                            <h3>Thoughtful system architecture</h3>
+                            <p>
+                                We design applications around maintainability,
+                                scalability, data integrity and real business
+                                workflows.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <i data-lucide="shield-check" class="about-icon"></i>
+                        <div>
+                            <h3>Responsible development</h3>
+                            <p>
+                                We care about security, access control,
+                                documentation and making systems easier
+                                to maintain.
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- ON SITE -->
+        <section class="about-section">
+
+            <div class="about-wrap about-onsite">
+
+                <div>
+
+                    <p class="about-eyebrow">Beyond the screen</p>
+
+                    <h2 class="mt-5">
+                        Remote by default. On site when it matters.
+                    </h2>
+
+                    <p class="mt-5 max-w-lg text-sm leading-relaxed text-muted">
+                        Not every technical problem lives in the code.
+                        Sometimes it's the receipt printer, the office
+                        network, a server or the hardware connected to
+                        your business operations. We consider the complete
+                        working environment when delivering a solution.
+                    </p>
+
+                    <ul class="about-service-list">
+
+                        <li>
+                            <i data-lucide="printer" class="about-icon"></i>
+                            <span>
+                                <strong>Hardware setup.</strong>
+                                POS terminals, receipt printers, barcode
+                                scanners, kitchen screens and attendance
+                                devices.
+                            </span>
+                        </li>
+
+                        <li>
+                            <i data-lucide="network" class="about-icon"></i>
+                            <span>
+                                <strong>Networks and servers.</strong>
+                                Wi-Fi, network configuration, local servers
+                                and backup solutions.
+                            </span>
+                        </li>
+
+                        <li>
+                            <i data-lucide="users" class="about-icon"></i>
+                            <span>
+                                <strong>Go-live support.</strong>
+                                Deployment assistance, staff guidance
+                                and support during implementation.
+                            </span>
+                        </li>
+
+                        <li>
+                            <i data-lucide="wrench" class="about-icon"></i>
+                            <span>
+                                <strong>Technical troubleshooting.</strong>
+                                Diagnosing software, hardware and
+                                infrastructure issues.
+                            </span>
+                        </li>
+
+                    </ul>
+
+                    <p class="about-small-note">
+                        On-site services are planned according to project
+                        requirements and location.
+                    </p>
+
+                </div>
+
+                <img
+                    class="about-onsite-image"
+                    src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80"
+                    alt="Technical professionals working together"
+                    width="1200"
+                    height="1500"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+        <!-- HOW WE WORK -->
+        <section class="about-section sunken">
+
+            <div class="about-wrap">
+
+                <p class="about-eyebrow">Our principles</p>
+
+                <h2 class="mt-5 max-w-2xl">
+                    How we work with our clients.
+                </h2>
+
+                <div class="about-principles">
+
+                    <div class="about-principle">
+                        <h3>Clear scope and expectations</h3>
+                        <p>
+                            We discuss requirements, priorities,
+                            deliverables and timelines before development
+                            begins.
+                        </p>
+                    </div>
+
+                    <div class="about-principle">
+                        <h3>You own what you pay for</h3>
+                        <p>
+                            We aim for transparent ownership of source
+                            code, business data, accounts and domains
+                            according to the project agreement.
+                        </p>
+                    </div>
+
+                    <div class="about-principle">
+                        <h3>Working software, not just promises</h3>
+                        <p>
+                            We share progress through working features
+                            and demonstrations so feedback can shape
+                            the product early.
+                        </p>
+                    </div>
+
+                    <div class="about-principle">
+                        <h3>We can work with existing software</h3>
+                        <p>
+                            We review existing applications, identify
+                            technical issues, improve code quality
+                            and help stabilise systems.
+                        </p>
+                    </div>
+
+                    <div class="about-principle">
+                        <h3>AI with human oversight</h3>
+                        <p>
+                            We build AI workflows around business rules,
+                            real data and appropriate human review
+                            instead of trusting every automated output.
+                        </p>
+                    </div>
+
+                    <div class="about-principle">
+                        <h3>Support beyond launch</h3>
+                        <p>
+                            We can continue improving, maintaining
+                            and supporting software as business
+                            requirements evolve.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PROCESS -->
+        <section class="about-section" id="process">
+
+            <div class="about-wrap">
+
+                <p class="about-eyebrow">Our workflow</p>
+
+                <h2 class="mt-5 max-w-2xl">
+                    From the first conversation to launch.
+                </h2>
+
+                <div class="about-process">
+
+                    <div class="about-step">
+                        <span class="about-step-number">01 / DISCOVER</span>
+                        <h3>Understanding your needs</h3>
+                        <p>
+                            We learn about your business, current
+                            challenges, requirements and what a
+                            successful solution should achieve.
+                        </p>
+                    </div>
+
+                    <div class="about-step">
+                        <span class="about-step-number">02 / PLAN</span>
+                        <h3>Solution and proposal</h3>
+                        <p>
+                            We define the scope, features, technical
+                            approach, milestones and estimated timeline.
+                        </p>
+                    </div>
+
+                    <div class="about-step">
+                        <span class="about-step-number">03 / BUILD</span>
+                        <h3>Design and development</h3>
+                        <p>
+                            We develop the solution in manageable
+                            stages, review progress and incorporate
+                            feedback along the way.
+                        </p>
+                    </div>
+
+                    <div class="about-step">
+                        <span class="about-step-number">04 / LAUNCH</span>
+                        <h3>Deployment and handover</h3>
+                        <p>
+                            We prepare the production environment,
+                            configure the application, assist with
+                            data migration and support the launch.
+                        </p>
+                    </div>
+
+                    <div class="about-step">
+                        <span class="about-step-number">05 / SUPPORT</span>
+                        <h3>Ongoing improvements</h3>
+                        <p>
+                            We help maintain the system, resolve
+                            issues and introduce improvements as
+                            your requirements change.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- GLOBAL REACH & TECHNOLOGY -->
+        <section class="about-section sunken">
+
+            <div class="about-wrap about-bottom-grid">
+
+                <div>
+
+                    <p class="about-eyebrow">Working together</p>
+
+                    <h2 class="mt-5">Wherever your business is.</h2>
+
+                    <p class="mt-5 max-w-md text-sm leading-relaxed text-muted">
+                        We work with businesses remotely and coordinate
+                        around project requirements and time zones.
+                        When a project needs in-person technical support,
+                        on-site arrangements can be discussed.
+                    </p>
+
+                    <div class="about-info-list">
+
+                        <div class="about-info-item">
+                            <i data-lucide="clock" class="about-icon"></i>
+                            <div>
+                                <h3>Working hours</h3>
+                                <p data-site="hours"></p>
+                            </div>
+                        </div>
+
+                        <div class="about-info-item">
+                            <i data-lucide="mail" class="about-icon"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <a data-site="email" href="#"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <p class="about-eyebrow">Our technology</p>
+
+                    <h2 class="mt-5">What we build with.</h2>
+
+                    <p class="mt-5 max-w-md text-sm leading-relaxed text-muted">
+                        We use established technologies and tools
+                        to build maintainable applications that
+                        can evolve with your business.
+                    </p>
+
+                    <div class="about-tech-list">
+
+                        <div class="about-tech-item">
+                            <h3>Frontend development</h3>
+                            <p>Vue.js, React, Next.js, JavaScript, Tailwind CSS</p>
+                        </div>
+
+                        <div class="about-tech-item">
+                            <h3>Backend development</h3>
+                            <p>Laravel, PHP, Node.js, Express, Python</p>
+                        </div>
+
+                        <div class="about-tech-item">
+                            <h3>Databases and infrastructure</h3>
+                            <p>PostgreSQL, MySQL, MariaDB, Redis, Docker</p>
+                        </div>
+
+                        <div class="about-tech-item">
+                            <h3>AI and automation</h3>
+                            <p>AI model integration, OCR, APIs, WhatsApp Business Platform and workflow automation</p>
+                        </div>
+
+                        <div class="about-tech-item">
+                            <h3>Deployment and hosting</h3>
+                            <p>Cloud hosting, VPS, Vercel and self-managed infrastructure</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CTA -->
+        <section class="about-cta">
+
+            <div class="about-wrap about-cta-inner">
+
+                <div>
+
+                    <p class="about-eyebrow" style="color:var(--light)">
+                        Let's work together
+                    </p>
+
+                    <h2 class="mt-5">
+                        Have a business problem worth solving?
+                    </h2>
+
+                    <p>
+                        Tell us what you want to build, what is slowing
+                        your operations down or what needs fixing.
+                        Let's discuss a practical way forward.
+                    </p>
+
+                </div>
+
+                <a href="index.html#contact" class="about-cta-button">
+                    Start a conversation
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer-slot"></div>
+
+    <script src="main.js"></script>
+
+    <script>
+        // Render Lucide icons after page content is ready.
+        function renderAboutIcons() {
+            if (window.lucide?.createIcons) {
+                window.lucide.createIcons();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", renderAboutIcons);
+        window.addEventListener("load", renderAboutIcons);
+    </script>
+
 </body>
 </html>

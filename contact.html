@@ -1,43 +1,510 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="assets/js/theme-init.js"></script>
-<title>Contact & Get a Free Quote | SoftVentures</title><meta name="description" content="Get a free quote from SoftVentures. Tell us your business in 2 lines — price + timeline in 1 business day.">
-<meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23477B9A'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>S</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- COMMON CSS - same file on every page -->
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="assets/js/theme-init.js"></script>
+
+    <title>Contact SoftVentures | Get a Free Software Quote</title>
+
+    <meta name="description"
+        content="Have a software project in mind? Contact SoftVentures for custom software, business management systems, SaaS products, websites and AI automation.">
+
+    <meta name="theme-color" content="#477B9A">
+
+    <link rel="icon" href="assets/img/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
+    <script src="assets/js/config.js" defer></script>
 </head>
+
 <body data-page="contact">
-<!-- HEADER loads from header.html -->
-<div id="site-header-slot"></div>
 
-<main>
-<section class="page-hero"><div class="wrap"><p class="breadcrumb">Home / <b>Contact</b></p><h1 class="mt-4">Let's build<br><em>your system.</em></h1><p class="copy mt-4 max-w-2xl">2 lines likho — business kya hai, kya chahiye. 1 business day me price + timeline bhej denge. Free advice, no commitment.</p></div></section>
-<section class="section section-white border-t" style="border-color:var(--border)"><div class="wrap"><div class="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-start">
-<div><div class="card p-7"><h2 class="text-xl font-bold">Direct contact</h2><p class="copy mt-2 text-sm">Email is fastest.</p><div class="mt-5 grid gap-4"><div><small style="color:var(--muted)">EMAIL</small><p class="font-bold">hello@softventures.dev</p></div><div><small style="color:var(--muted)">RESPONSE</small><p class="font-bold">Within 1 business day</p></div><div><small style="color:var(--muted)">AREAS</small><p class="font-bold">US • UK • Middle East • Pakistan</p></div></div><div class="mt-6 p-4 rounded-xl" style="background:var(--primary-soft)"><strong>Free 15-min call</strong><p class="text-sm mt-1" style="color:var(--muted)">Batayein kya chahiye — hum batayenge kaunsa software, kitna price, kitna time.</p></div></div>
-<div class="mt-6"><h3 class="font-bold mb-3">FAQs</h3><div class="grid gap-3"><details class="faq"><summary>Kitna time lagega? <span>+</span></summary><p>Website 3 days, Management 7 days, SaaS MVP 14 days. AI Builder se aur fast.</p></details><details class="faq"><summary>Price kaise pata chalega? <span>+</span></summary><p>Form bharo — scope dekh ke written price + timeline bhejenge. Free, no commitment.</p></details><details class="faq"><summary>Mera data safe hai? <span>+</span></summary><p>Haan. Aapka data aapka hai. Backup + roles + privacy by default.</p></details></div></div></div>
-<div class="card p-7 md:p-8"><h2 class="text-xl font-bold">Get a free quote</h2><p class="copy mt-1 text-sm">Form submit karte hi aapke email app me draft khulega — send dabao, humein mil jayega.</p>
-<form class="mt-6 grid gap-4" onsubmit="sendQuote(event)"><div><label>Your name *</label><input id="q-name" class="input" required placeholder="Ahmed Khan"></div><div class="grid sm:grid-cols-2 gap-4"><div><label>WhatsApp / Email *</label><input id="q-contact" class="input" required placeholder="0300-1234567 / you@email.com"></div><div><label>What do you need?</label><select id="q-type" class="input"><option>Management Software</option><option>Desktop Software</option><option>SaaS Product</option><option>Portfolio / Website</option><option>AI Agent / Automation</option><option>Fix / Takeover</option></select></div></div><div><label>Your business *</label><input id="q-business" class="input" required placeholder="e.g. Clinic in Lahore, 2 branches"></div><div><label>What should the system do?</label><textarea id="q-msg" rows="4" class="input" placeholder="e.g. Appointments, patient records, billing + WhatsApp reminders..."></textarea></div><button class="btn btn-primary w-full" type="submit">Send Quote Request →</button><p class="text-xs text-center" style="color:var(--muted)">No spam. Sirf aapke project ka reply.</p></form></div>
-</div></div></section>
-</main>
-<script>
-function sendQuote(e){ e.preventDefault();
-  const n=document.getElementById('q-name').value, c=document.getElementById('q-contact').value, t=document.getElementById('q-type').value, b=document.getElementById('q-business').value, m=document.getElementById('q-msg').value;
-  const subject=encodeURIComponent('New Project - '+t+' - '+b);
-  const body=encodeURIComponent('Name: '+n+'\nContact: '+c+'\nType: '+t+'\nBusiness: '+b+'\n\nDetails:\n'+m);
-  window.location.href='mailto:hello@softventures.dev?subject='+subject+'&body='+body;
-}
-</script>
+    <!-- HEADER -->
+    <div id="site-header-slot"></div>
 
-<!-- FOOTER loads from footer.html -->
-<div id="site-footer-slot"></div>
-<!-- COMMON JS - loads header/footer + theme + animations -->
-<script src="main.js"></script>
+    <main>
+
+        <!-- HERO -->
+        <section class="page-hero relative overflow-hidden">
+            <div class="wrap">
+
+                <div class="max-w-3xl">
+
+                    <div class="inline-flex items-center gap-2 text-sm font-semibold mb-5"
+                        style="color:var(--primary)">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        LET'S TALK ABOUT YOUR PROJECT
+                    </div>
+
+                    <h1 class="mt-4">
+                        Have an idea?
+                        <br>
+                        <em>Let's build it.</em>
+                    </h1>
+
+                    <p class="copy mt-6 max-w-2xl">
+                        Tell us what your business needs. Whether it's a new
+                        management system, a website, an existing software
+                        problem or an AI-powered solution, let's discuss it.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-5 mt-8 text-sm"
+                        style="color:var(--muted)">
+
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4"
+                                style="color:var(--success)"></i>
+                            Free initial consultation
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"
+                                style="color:var(--success)"></i>
+                            Reply within 1 business day
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+        <section class="section section-white border-t"
+            style="border-color:var(--border)">
+
+            <div class="wrap">
+
+                <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-start">
+
+
+                    <!-- LEFT: CONTACT INFORMATION -->
+                    <div>
+
+                        <div class="mb-8">
+                            <span class="text-xs font-bold tracking-widest"
+                                style="color:var(--primary)">
+                                GET IN TOUCH
+                            </span>
+
+                            <h2 class="text-2xl md:text-3xl font-bold mt-3">
+                                We'd love to hear from you.
+                            </h2>
+
+                            <p class="copy mt-3">
+                                Start with a short message. We'll help you
+                                figure out the right approach for your project.
+                            </p>
+                        </div>
+
+
+                        <!-- EMAIL CARD -->
+                        <div class="card p-6">
+
+                            <div class="flex items-start gap-4">
+
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                                    style="background:var(--primary-soft);color:var(--primary)">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+
+                                <div class="min-w-0">
+                                    <p class="text-xs font-semibold tracking-wider"
+                                        style="color:var(--muted)">
+                                        EMAIL US
+                                    </p>
+
+                                    <a href="mailto:hello@softventures.dev"
+                                        class="font-bold text-lg break-all hover:underline">
+                                        hello@softventures.dev
+                                    </a>
+
+                                    <p class="copy text-sm mt-1">
+                                        Send us your requirements or questions.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="border-t my-5"
+                                style="border-color:var(--border)"></div>
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+
+                                <div>
+                                    <p class="text-xs font-semibold tracking-wider"
+                                        style="color:var(--muted)">
+                                        RESPONSE TIME
+                                    </p>
+
+                                    <p class="font-semibold mt-2">
+                                        Within 1 business day
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <p class="text-xs font-semibold tracking-wider"
+                                        style="color:var(--muted)">
+                                        SERVICE AREAS
+                                    </p>
+
+                                    <p class="font-semibold mt-2">
+                                        Worldwide
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONSULTATION CARD -->
+                        <div class="card p-6 mt-5"
+                            style="background:var(--primary-soft);border-color:transparent">
+
+                            <div class="flex items-center gap-3 mb-3">
+
+                                <div class="w-10 h-10 rounded-xl flex items-center justify-center"
+                                    style="background:var(--card);color:var(--primary)">
+                                    <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                                </div>
+
+                                <h3 class="font-bold text-lg">
+                                    Not sure what you need?
+                                </h3>
+
+                            </div>
+
+                            <p class="copy text-sm">
+                                That's completely fine. Explain your business
+                                problem, and we'll help identify a suitable
+                                software solution.
+                            </p>
+
+                            <a href="#quote-form"
+                                class="inline-flex items-center gap-2 mt-5 font-semibold text-sm"
+                                style="color:var(--primary)">
+                                Discuss your idea
+                                <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                            </a>
+
+                        </div>
+
+
+                        <!-- FAQ -->
+                        <div class="mt-10">
+
+                            <h3 class="text-xl font-bold mb-5">
+                                Frequently asked questions
+                            </h3>
+
+                            <div class="grid gap-3">
+
+                                <details class="faq">
+                                    <summary>
+                                        How much does a project cost?
+                                        <span>+</span>
+                                    </summary>
+
+                                    <p>
+                                        Pricing depends on the features,
+                                        complexity and requirements.
+                                        We'll review your idea and provide
+                                        a quotation before starting.
+                                    </p>
+                                </details>
+
+                                <details class="faq">
+                                    <summary>
+                                        How long does development take?
+                                        <span>+</span>
+                                    </summary>
+
+                                    <p>
+                                        Timelines depend on project scope.
+                                        A simple website may take a few days,
+                                        while larger management systems and
+                                        SaaS products require more planning
+                                        and development time.
+                                    </p>
+                                </details>
+
+                                <details class="faq">
+                                    <summary>
+                                        Can you improve my existing software?
+                                        <span>+</span>
+                                    </summary>
+
+                                    <p>
+                                        Yes. We can review existing systems,
+                                        investigate bugs, improve features,
+                                        optimize databases and help maintain
+                                        software built by other developers.
+                                    </p>
+                                </details>
+
+                                <details class="faq">
+                                    <summary>
+                                        Do you work with international clients?
+                                        <span>+</span>
+                                    </summary>
+
+                                    <p>
+                                        Yes. We can discuss projects with
+                                        businesses and individuals across
+                                        different countries and time zones.
+                                    </p>
+                                </details>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT: QUOTE FORM -->
+                    <div id="quote-form" class="card p-6 md:p-9">
+
+                        <div class="mb-7">
+
+                            <span class="text-xs font-bold tracking-widest"
+                                style="color:var(--primary)">
+                                PROJECT ENQUIRY
+                            </span>
+
+                            <h2 class="text-2xl md:text-3xl font-bold mt-3">
+                                Tell us about your project.
+                            </h2>
+
+                            <p class="copy mt-3 text-sm">
+                                Share a few details and we'll get back to
+                                you with the next steps.
+                            </p>
+
+                        </div>
+
+
+                        <form id="quote-request-form" class="grid gap-5">
+
+                            <!-- NAME -->
+                            <div>
+                                <label for="q-name">Your name *</label>
+
+                                <input
+                                    type="text"
+                                    id="q-name"
+                                    name="name"
+                                    class="input"
+                                    required
+                                    autocomplete="name"
+                                    placeholder="Your full name">
+                            </div>
+
+
+                            <!-- CONTACT + PROJECT TYPE -->
+                            <div class="grid sm:grid-cols-2 gap-5">
+
+                                <div>
+                                    <label for="q-contact">
+                                        Email or WhatsApp *
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="q-contact"
+                                        name="contact"
+                                        class="input"
+                                        required
+                                        autocomplete="email"
+                                        placeholder="Email or phone number">
+                                </div>
+
+                                <div>
+                                    <label for="q-type">
+                                        Service required
+                                    </label>
+
+                                    <select id="q-type" name="type" class="input">
+
+                                        <option value="Management Software">
+                                            Management Software
+                                        </option>
+
+                                        <option value="Desktop Software">
+                                            Desktop Software
+                                        </option>
+
+                                        <option value="SaaS Product">
+                                            SaaS Product
+                                        </option>
+
+                                        <option value="Website Development">
+                                            Website Development
+                                        </option>
+
+                                        <option value="AI Agent / Automation">
+                                            AI Agent / Automation
+                                        </option>
+
+                                        <option value="Existing Software / Fixes">
+                                            Existing Software / Fixes
+                                        </option>
+
+                                        <option value="Other">
+                                            Other
+                                        </option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <!-- BUSINESS -->
+                            <div>
+                                <label for="q-business">
+                                    Your business or organization *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="q-business"
+                                    name="business"
+                                    class="input"
+                                    required
+                                    placeholder="e.g. Retail store, clinic, school">
+                            </div>
+
+
+                            <!-- MESSAGE -->
+                            <div>
+                                <label for="q-msg">
+                                    Tell us what you need
+                                </label>
+
+                                <textarea
+                                    id="q-msg"
+                                    name="message"
+                                    rows="5"
+                                    class="input"
+                                    placeholder="Describe your idea, current problem or the features you need..."></textarea>
+                            </div>
+
+
+                            <!-- PRIVACY NOTE -->
+                            <div class="flex items-start gap-3 text-sm"
+                                style="color:var(--muted)">
+
+                                <i data-lucide="shield-check"
+                                    class="w-5 h-5 shrink-0 mt-0.5"
+                                    style="color:var(--success)"></i>
+
+                                <p>
+                                    Your information will be used to respond
+                                    to your enquiry. Read our
+                                    <a href="privacy.html"
+                                        class="font-semibold underline"
+                                        style="color:var(--primary)">
+                                        Privacy Policy
+                                    </a>
+                                    for details.
+                                </p>
+
+                            </div>
+
+
+                            <!-- SUBMIT -->
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-full">
+
+                                Send Quote Request
+
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 ml-2 inline-block"></i>
+
+                            </button>
+
+
+                            <p class="text-xs text-center"
+                                style="color:var(--muted)">
+                                No obligation. No spam. Just a conversation
+                                about your project.
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <div id="site-footer-slot"></div>
+
+
+    <!-- QUOTE FORM SCRIPT -->
+    <script>
+        document.getElementById('quote-request-form')
+            .addEventListener('submit', function (event) {
+
+                event.preventDefault();
+
+                const name = document.getElementById('q-name').value.trim();
+                const contact = document.getElementById('q-contact').value.trim();
+                const type = document.getElementById('q-type').value;
+                const business = document.getElementById('q-business').value.trim();
+                const message = document.getElementById('q-msg').value.trim();
+
+                if (!name || !contact || !business) {
+                    return;
+                }
+
+                const subject = encodeURIComponent(
+                    'New Project Enquiry - ' + type
+                );
+
+                const body = encodeURIComponent(
+                    'New enquiry from SoftVentures website\n\n' +
+                    'Name: ' + name + '\n' +
+                    'Contact: ' + contact + '\n' +
+                    'Service: ' + type + '\n' +
+                    'Business: ' + business + '\n\n' +
+                    'Project Details:\n' + (message || 'Not provided')
+                );
+
+                window.location.href =
+                    'mailto:hello@softventures.dev?subject=' +
+                    subject + '&body=' + body;
+
+            });
+    </script>
+
+
+    <!-- COMMON JS -->
+    <script src="main.js"></script>
+
 </body>
 </html>

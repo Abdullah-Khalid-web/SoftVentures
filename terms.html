@@ -1,149 +1,531 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Terms of service | NextGen Tech Solutions</title>
-  <meta name="description" content="Terms for projects, AI agents, fixes and maintenance contracts with NextGen Tech Solutions.">
-  <meta name="theme-color" content="#477B9A">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <script src="assets/js/theme-init.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/js/tailwind.config.js"></script>
-  <link rel="stylesheet" href="assets/css/theme.css">
-  <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
-  <script src="assets/js/config.js" defer></script>
-  <script src="components/header.js" defer></script>
-  <script src="components/footer.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms of Service | SoftVentures</title>
+
+    <meta name="description"
+        content="Read the SoftVentures terms of service covering software development, business systems, AI automation, project work and maintenance services.">
+
+    <meta name="theme-color" content="#477B9A">
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+    <script src="assets/js/theme-init.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind.config.js"></script>
+
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
+    <script src="assets/js/config.js" defer></script>
+    <script src="components/header.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 </head>
+
 <body data-page="terms" class="bg-paper font-sans text-ink antialiased">
-  <site-header></site-header>
 
-  <!--
-    NOTE: This is a solid starting draft, not legal advice.
-    Have a lawyer review it for your company and the countries you sell to
-    before you rely on it. Signed contracts override these terms.
-  -->
+    <div id="site-header-slot"></div>
 
-  <main id="main">
-    <section class="mx-auto max-w-site px-5 pb-10 pt-14 sm:px-8 lg:pt-20">
-      <h1 class="display">Terms of service</h1>
-      <p class="mt-5 text-muted">Last updated <span data-site="legalUpdated"></span></p>
-    </section>
+    <main id="main">
 
-    <section class="border-t border-line">
-      <div class="mx-auto grid max-w-site gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[15rem_1fr] lg:gap-16">
-        <nav aria-label="On this page" class="hidden lg:sticky lg:top-28 lg:block lg:self-start">
-          <p class="text-sm font-semibold">On this page</p>
-          <ol class="mt-3 space-y-2 text-[0.92rem] text-muted [&_a:hover]:text-ink">
-            <li><a href="#about">About these terms</a></li>
-            <li><a href="#proposals">Proposals and quotes</a></li>
-            <li><a href="#payments">Payments</a></li>
-            <li><a href="#client">Your responsibilities</a></li>
-            <li><a href="#changes">Changes to scope</a></li>
-            <li><a href="#ownership">Ownership of work</a></li>
-            <li><a href="#third-party">Third-party services</a></li>
-            <li><a href="#agents">AI agents</a></li>
-            <li><a href="#fixes">Fixes and audits</a></li>
-            <li><a href="#warranty">Fix period after launch</a></li>
-            <li><a href="#maintenance">Maintenance contracts</a></li>
-            <li><a href="#confidentiality">Confidentiality</a></li>
-            <li><a href="#liability">Limitation of liability</a></li>
-            <li><a href="#cancellation">Cancellation and refunds</a></li>
-            <li><a href="#law">Governing law</a></li>
-            <li><a href="#updates">Updates to these terms</a></li>
-          </ol>
-        </nav>
+        <!-- PAGE INTRO -->
+        <section class="wrap pt-16 pb-12 lg:pt-24">
+            <div class="max-w-3xl">
 
-        <article class="legal prose-width">
-          <p>These terms apply when you work with <span data-site="legalName"></span> ("we", "us"), a software company based in <span data-site="city"></span>. They cover new projects, AI agents, fixes and maintenance contracts for clients in any country. "You" means the business or person hiring us.</p>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-brand mb-5">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    Legal information
+                </span>
 
-          <h2 id="about">1. About these terms</h2>
-          <p>Each piece of work is described in a written proposal, quote or contract. If that document says something different from these terms, the signed document wins. By approving a proposal or paying an invoice, you agree to these terms.</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+                    Terms of Service
+                </h1>
 
-          <h2 id="proposals">2. Proposals and quotes</h2>
-          <p>A proposal describes the scope, deliverables, timeline, milestones and price. Quotes are valid for 30 days unless the proposal says otherwise. Work starts once you've approved the proposal in writing (email is fine) and paid any advance due.</p>
-          <p>Timelines assume you provide content, feedback, access and decisions on time. Delays on your side move the timeline by the same amount.</p>
+                <p class="mt-6 text-base sm:text-lg leading-8 text-muted max-w-2xl">
+                    These terms explain how we work with clients, manage projects,
+                    deliver software and provide ongoing support.
+                </p>
 
-          <h2 id="payments">3. Payments</h2>
-          <ul>
-            <li>New projects are usually billed as an advance before work starts, with the balance split across agreed milestones.</li>
-            <li>Maintenance contracts are billed monthly or yearly in advance.</li>
-            <li>Invoices are payable within 7 days unless agreed otherwise, in the currency stated on the invoice (usually USD or PKR).</li>
-            <li>Bank and transfer fees on your side are paid by you.</li>
-            <li>If an invoice is more than 14 days overdue, we may pause work and agent services until it is paid. We'll warn you in writing first.</li>
-          </ul>
+                <p class="mt-5 text-sm text-muted">
+                    Last updated:
+                    <span data-site="legalUpdated">November 20, 2026</span>
+                </p>
 
-          <h2 id="client">4. Your responsibilities</h2>
-          <p>You agree to give us accurate information, the access we need (accounts, servers, existing code), and one person who can make decisions. You're responsible for the content, prices, policies and data you give us, and for having the right to use them. You also agree not to use what we build for anything unlawful, for spam, or to mislead people.</p>
+            </div>
+        </section>
 
-          <h2 id="changes">5. Changes to scope</h2>
-          <p>Ideas change during a project, and that's normal. Anything outside the agreed scope is a change request. We'll tell you how it affects time and cost, and do it only after you approve. Small changes may fit within the original estimate; we'll say so when they do.</p>
 
-          <h2 id="ownership">6. Ownership of work</h2>
-          <p>Once you've paid in full for a project, you own the custom source code, designs and documentation we created for it. Until then, we keep ownership and grant you a licence to use the work in progress.</p>
-          <p>We keep ownership of our general tools, libraries and know-how that existed before your project or aren't specific to it. You receive a permanent licence to use them as part of your system. Open-source components remain under their own licences. We may mention you as a client and describe the work in general terms unless you ask us not to.</p>
+        <!-- LEGAL CONTENT -->
+        <section class="border-t border-line">
+            <div class="wrap py-14 lg:py-20">
 
-          <h2 id="third-party">7. Third-party services</h2>
-          <p>Many systems rely on services from other companies, such as hosting, domains, payment gateways, the WhatsApp Business Platform, other Meta platforms, email providers and AI model providers. Wherever possible these accounts are opened in your name, and you accept their terms and pay their fees, either directly or through us at cost.</p>
-          <p>We're not responsible for outages, price changes, policy changes or account suspensions by these providers, though we'll help you resolve them.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] gap-12 lg:gap-20">
 
-          <h2 id="agents">8. AI agents</h2>
-          <p>Our agents are built to work only from the information and rules you provide, to confirm important details before acting, and to hand conversations to your staff when needed. Even so, AI systems can misunderstand messages or make mistakes. So:</p>
-          <ul>
-            <li>You remain responsible for the business decisions, orders, bookings and messages made through your agent.</li>
-            <li>You should review conversation logs regularly, especially in the first weeks.</li>
-            <li>You must have customers' permission to message them, follow WhatsApp and Meta messaging policies, and follow consumer and privacy laws in your country.</li>
-            <li>Agents should not be used to give medical, legal or financial advice without human review.</li>
-          </ul>
-          <p>If an agent makes a mistake caused by a fault in our work, we'll fix it promptly at no cost during the fix period or under an active maintenance contract.</p>
+                    <!-- TABLE OF CONTENTS -->
+                    <aside class="hidden lg:block">
+                        <div class="sticky top-28">
 
-          <h2 id="fixes">9. Fixes and audits</h2>
-          <p>For work on software we didn't build, we first investigate and give you a written estimate. Investigation time is billable when agreed in advance. We can't guarantee to fix every problem in third-party code, and we're not responsible for existing defects we didn't introduce. We'll always tell you what we found, even if the answer is that a rebuild is the better option.</p>
+                            <p class="font-semibold text-sm mb-5">
+                                On this page
+                            </p>
 
-          <h2 id="warranty">10. Fix period after launch</h2>
-          <p>New projects include a fix period of 30 days after launch (or as stated in your proposal). During it we fix, free of charge, any bug where the delivered software doesn't work as agreed in the scope. The fix period doesn't cover new features, changes in requirements, problems caused by changes made by others, or third-party outages.</p>
+                            <nav aria-label="Terms of service sections"
+                                class="space-y-3 text-sm text-muted">
 
-          <h2 id="maintenance">11. Maintenance contracts</h2>
-          <h3>Term and renewal</h3>
-          <p>Maintenance contracts run for the minimum term of the chosen plan and then renew automatically for the same period. Either side can end the contract with 30 days' written notice, effective at the end of the current term.</p>
-          <h3>Response times</h3>
-          <p>Response times in each plan are the time until an engineer starts working on the issue and replies to you. They are not a guarantee of how long a fix will take, since that depends on the problem. A <em>critical issue</em> means the system is down or a core function (such as taking orders or payments) is unusable for most users.</p>
-          <h3>Included hours</h3>
-          <p>Hours for changes are counted per calendar month and don't roll over unless your contract says so. Work beyond the included hours is billed at the rate in your contract, after your approval.</p>
-          <h3>Not included</h3>
-          <p>Large new features, redesigns, recovery from damage caused by others' changes, and third-party costs are not included unless stated in your plan.</p>
+                                <a href="#about" class="f-link block">About these terms</a>
+                                <a href="#proposals" class="f-link block">Proposals and quotes</a>
+                                <a href="#payments" class="f-link block">Payments</a>
+                                <a href="#client" class="f-link block">Your responsibilities</a>
+                                <a href="#changes" class="f-link block">Changes to scope</a>
+                                <a href="#ownership" class="f-link block">Ownership of work</a>
+                                <a href="#third-party" class="f-link block">Third-party services</a>
+                                <a href="#agents" class="f-link block">AI agents</a>
+                                <a href="#fixes" class="f-link block">Fixes and audits</a>
+                                <a href="#warranty" class="f-link block">Fix period after launch</a>
+                                <a href="#maintenance" class="f-link block">Maintenance contracts</a>
+                                <a href="#confidentiality" class="f-link block">Confidentiality</a>
+                                <a href="#liability" class="f-link block">Limitation of liability</a>
+                                <a href="#cancellation" class="f-link block">Cancellation and refunds</a>
+                                <a href="#law" class="f-link block">Governing law</a>
+                                <a href="#updates" class="f-link block">Updates to these terms</a>
 
-          <h2 id="confidentiality">12. Confidentiality</h2>
-          <p>We keep your business information, data and code confidential and use it only to deliver our services. Our team members are bound by confidentiality obligations. We're happy to sign a non-disclosure agreement before you share details. How we handle personal data is explained in our <a href="privacy.html">privacy policy</a>.</p>
+                            </nav>
+                        </div>
+                    </aside>
 
-          <h2 id="liability">13. Limitation of liability</h2>
-          <p>We do our work with professional care. To the extent the law allows, our total liability for any claim related to a project or contract is limited to the amount you paid us for that project or, for maintenance, the fees paid in the 3 months before the claim. We're not liable for indirect losses such as lost profits, lost data that you didn't back up, or business interruption. Nothing in these terms limits liability that cannot be limited by law.</p>
 
-          <h2 id="cancellation">14. Cancellation and refunds</h2>
-          <ul>
-            <li>You can cancel a project at any time in writing. You pay for work completed up to that point, and we hand over that work once paid.</li>
-            <li>Advances cover planning and reserved team time and are non-refundable once work has started, except for any part of the advance that exceeds the work done.</li>
-            <li>Maintenance fees already paid for the current period are not refunded, but the service continues until the end of that period.</li>
-            <li>We can end a project if invoices go unpaid, or if the work is requested for unlawful or harmful purposes.</li>
-          </ul>
+                    <!-- CONTENT -->
+                    <article class="legal prose-width min-w-0">
 
-          <h2 id="law">15. Governing law</h2>
-          <p>These terms are governed by the laws of Pakistan, and disputes are handled by the competent courts of Pakistan, unless your signed contract names another law or forum. Before going to court, both sides agree to try to settle any dispute in good faith through discussion for at least 30 days.</p>
+                        <p>
+                            These Terms of Service apply when you work with
+                            <span data-site="legalName">SoftVentures</span>
+                            ("we", "us", or "our"), a software development and
+                            technology services company based in
+                            <span data-site="city">Pakistan</span>.
+                            They cover software development, business management
+                            systems, SaaS products, AI automation, existing
+                            software improvements, technical fixes and maintenance
+                            services.
+                        </p>
 
-          <h2 id="updates">16. Updates to these terms</h2>
-          <p>We may update these terms from time to time. The date at the top shows the latest version. Changes don't affect projects or contracts already signed, unless both sides agree.</p>
+                        <p>
+                            "You" or "your" means the individual or business
+                            purchasing or using our services.
+                        </p>
 
-          <p class="mt-10">Questions about these terms? Write to <a data-site="email" href="#"></a>.</p>
-        </article>
-      </div>
-    </section>
-  </main>
 
-  <site-footer></site-footer>
+                        <h2 id="about">1. About these terms</h2>
+
+                        <p>
+                            Each project or service is described in a written
+                            proposal, quotation, statement of work or agreement.
+                            If a signed agreement contains terms that conflict
+                            with this document, the signed agreement takes
+                            precedence.
+                        </p>
+
+                        <p>
+                            By approving a proposal, signing an agreement or
+                            paying an invoice, you agree to these Terms of Service.
+                        </p>
+
+
+                        <h2 id="proposals">2. Proposals and quotes</h2>
+
+                        <p>
+                            A proposal may describe the project scope,
+                            deliverables, estimated timeline, milestones,
+                            responsibilities and pricing. Unless stated
+                            otherwise, quotations remain valid for 30 days.
+                        </p>
+
+                        <p>
+                            Work normally begins after written approval and
+                            payment of any agreed advance. Project timelines
+                            depend on receiving the required content, feedback,
+                            access and decisions from you. Delays in providing
+                            these may affect the delivery schedule.
+                        </p>
+
+
+                        <h2 id="payments">3. Payments</h2>
+
+                        <ul>
+                            <li>New projects may require an advance payment before work begins.</li>
+                            <li>Remaining payments are scheduled according to agreed project milestones.</li>
+                            <li>Maintenance services are generally billed monthly or yearly in advance.</li>
+                            <li>Invoices are payable within 7 days unless another arrangement is agreed in writing.</li>
+                            <li>Payments are made in the currency stated on the invoice, usually PKR or USD.</li>
+                            <li>Bank, payment gateway and transfer charges applicable to your payment are your responsibility unless agreed otherwise.</li>
+                            <li>If an invoice remains unpaid for more than 14 days, we may suspend work or services after providing written notice.</li>
+                        </ul>
+
+
+                        <h2 id="client">4. Your responsibilities</h2>
+
+                        <p>
+                            You agree to provide accurate information,
+                            necessary account and server access, relevant
+                            documentation and a designated person who can
+                            approve decisions.
+                        </p>
+
+                        <p>
+                            You are responsible for ensuring that the content,
+                            materials, business information and data you provide
+                            are accurate and that you have the necessary rights
+                            to use them.
+                        </p>
+
+                        <p>
+                            You must not use our services or delivered software
+                            for unlawful activities, spam, fraud, unauthorized
+                            access or misleading purposes.
+                        </p>
+
+
+                        <h2 id="changes">5. Changes to scope</h2>
+
+                        <p>
+                            Requirements may change during a project. Any
+                            request outside the originally agreed scope may be
+                            treated as a change request.
+                        </p>
+
+                        <p>
+                            We will communicate any additional costs and
+                            timeline changes before proceeding. Additional
+                            work will only begin after your approval.
+                            Minor adjustments may be included in the original
+                            estimate where agreed.
+                        </p>
+
+
+                        <h2 id="ownership">6. Ownership of work</h2>
+
+                        <p>
+                            Once all agreed project payments have been received,
+                            you own the custom source code, designs and
+                            documentation specifically created and delivered
+                            for your project, subject to third-party and
+                            open-source licences.
+                        </p>
+
+                        <p>
+                            We retain ownership of our pre-existing tools,
+                            reusable libraries, frameworks, general methods
+                            and technical know-how. Where these are included
+                            in your deliverables, you receive a permanent
+                            licence to use them as part of your system.
+                        </p>
+
+                        <p>
+                            Open-source software and third-party components
+                            remain subject to their respective licences.
+                            We may describe completed work in our portfolio
+                            unless you request confidentiality in writing.
+                        </p>
+
+
+                        <h2 id="third-party">7. Third-party services</h2>
+
+                        <p>
+                            Some projects depend on third-party services,
+                            including hosting providers, domain registrars,
+                            payment gateways, messaging platforms, email
+                            providers, APIs and AI model providers.
+                        </p>
+
+                        <p>
+                            Where practical, these accounts should be
+                            registered in your name. You are responsible for
+                            complying with their terms and paying their
+                            applicable subscription or usage fees.
+                        </p>
+
+                        <p>
+                            We are not responsible for third-party outages,
+                            pricing changes, policy changes, account
+                            restrictions or service interruptions. We may,
+                            however, assist you in investigating and
+                            resolving related issues where agreed.
+                        </p>
+
+
+                        <h2 id="agents">8. AI agents and automation</h2>
+
+                        <p>
+                            AI-powered systems and agents are developed
+                            according to the instructions, business rules
+                            and information provided by you. Although we
+                            aim to implement appropriate safeguards,
+                            AI systems may misunderstand requests,
+                            produce inaccurate responses or behave
+                            unexpectedly.
+                        </p>
+
+                        <ul>
+                            <li>You remain responsible for business decisions, orders, bookings and communications handled through your AI systems.</li>
+                            <li>You should regularly review agent activity, logs and outputs.</li>
+                            <li>You must obtain any required customer consent before sending messages or processing personal information.</li>
+                            <li>You must comply with applicable privacy laws and third-party platform policies.</li>
+                            <li>AI agents should not independently provide medical, legal or financial advice without appropriate human review.</li>
+                        </ul>
+
+                        <p>
+                            If an issue is caused by a defect in our delivered
+                            implementation, we will address it under the
+                            applicable project fix period or active
+                            maintenance agreement.
+                        </p>
+
+
+                        <h2 id="fixes">9. Fixes, audits and existing software</h2>
+
+                        <p>
+                            For software developed by another provider,
+                            we may first need to inspect the existing code,
+                            infrastructure and database before estimating
+                            the work.
+                        </p>
+
+                        <p>
+                            Investigation or audit work may be billable
+                            where agreed in advance. We cannot guarantee
+                            that every issue in third-party software can
+                            be resolved, and we are not responsible for
+                            defects that existed before our involvement.
+                        </p>
+
+                        <p>
+                            We will communicate our findings and recommend
+                            an appropriate solution based on the available
+                            information.
+                        </p>
+
+
+                        <h2 id="warranty">10. Fix period after launch</h2>
+
+                        <p>
+                            New projects generally include a 30-day fix
+                            period after launch, unless the proposal states
+                            a different period.
+                        </p>
+
+                        <p>
+                            During this period, we will correct bugs where
+                            the delivered software does not function
+                            according to the agreed project scope.
+                        </p>
+
+                        <p>
+                            This does not include new features, changes
+                            in requirements, issues caused by modifications
+                            made by others, misuse, unsupported environments
+                            or third-party service interruptions.
+                        </p>
+
+
+                        <h2 id="maintenance">11. Maintenance contracts</h2>
+
+                        <h3>Term and renewal</h3>
+
+                        <p>
+                            Maintenance contracts operate according to
+                            the minimum term and renewal conditions
+                            stated in the selected plan or agreement.
+                            Either party may request cancellation with
+                            30 days' written notice, subject to the
+                            agreed contract terms.
+                        </p>
+
+                        <h3>Response times</h3>
+
+                        <p>
+                            Response times describe when our team aims
+                            to acknowledge an issue and begin reviewing
+                            it. They do not guarantee the time required
+                            to complete a fix.
+                        </p>
+
+                        <p>
+                            A critical issue generally means that the
+                            system is unavailable or a major business
+                            function is unusable for most users.
+                        </p>
+
+                        <h3>Included hours</h3>
+
+                        <p>
+                            Any included maintenance or development
+                            hours are calculated according to the
+                            selected plan. Unused hours do not roll
+                            over unless the agreement states otherwise.
+                            Additional work may be billed separately
+                            after approval.
+                        </p>
+
+                        <h3>Not included</h3>
+
+                        <p>
+                            Major new features, complete redesigns,
+                            third-party charges, and recovery from
+                            unauthorized changes or external damage
+                            are excluded unless specifically included
+                            in your agreement.
+                        </p>
+
+
+                        <h2 id="confidentiality">12. Confidentiality</h2>
+
+                        <p>
+                            We treat your business information, project
+                            materials, data and source code as confidential
+                            and use them only as necessary to provide
+                            agreed services.
+                        </p>
+
+                        <p>
+                            We are willing to sign a separate
+                            non-disclosure agreement where required.
+                            Information about personal data handling
+                            is provided in our
+                            <a href="privacy.html">Privacy Policy</a>.
+                        </p>
+
+
+                        <h2 id="liability">13. Limitation of liability</h2>
+
+                        <p>
+                            We aim to provide our services with reasonable
+                            professional care. To the extent permitted
+                            by applicable law, our total liability
+                            relating to a project or service will not
+                            exceed the amount paid by you for that
+                            specific project or, for maintenance
+                            services, the fees paid during the
+                            three months preceding the claim.
+                        </p>
+
+                        <p>
+                            We are not liable for indirect or
+                            consequential losses, including lost
+                            profits, business interruption or
+                            loss of data where appropriate backups
+                            were not maintained.
+                        </p>
+
+                        <p>
+                            Nothing in these terms excludes or limits
+                            liability that cannot legally be excluded
+                            or limited.
+                        </p>
+
+
+                        <h2 id="cancellation">14. Cancellation and refunds</h2>
+
+                        <ul>
+                            <li>You may request project cancellation in writing. You remain responsible for approved work completed up to the cancellation date.</li>
+                            <li>Completed and paid-for work will be handed over according to the project agreement.</li>
+                            <li>Advance payments may cover planning, resource allocation and reserved team time. Refunds, if applicable, will be determined based on work completed and the agreed terms.</li>
+                            <li>Maintenance fees already paid are generally non-refundable, unless the agreement or applicable law requires otherwise.</li>
+                            <li>We may suspend or terminate services where invoices remain unpaid or services are requested for unlawful or harmful purposes.</li>
+                        </ul>
+
+
+                        <h2 id="law">15. Governing law</h2>
+
+                        <p>
+                            These terms are governed by the laws of
+                            Pakistan, unless a separate signed agreement
+                            specifies otherwise.
+                        </p>
+
+                        <p>
+                            Any dispute will be handled by the
+                            competent courts of Pakistan, subject
+                            to applicable law and any valid
+                            alternative dispute resolution
+                            agreement.
+                        </p>
+
+                        <p>
+                            Before initiating formal proceedings,
+                            both parties are encouraged to attempt
+                            to resolve disputes through good-faith
+                            discussions.
+                        </p>
+
+
+                        <h2 id="updates">16. Updates to these terms</h2>
+
+                        <p>
+                            We may update these Terms of Service
+                            when our services, business practices
+                            or legal requirements change.
+                        </p>
+
+                        <p>
+                            The latest update date will be shown
+                            at the top of this page. Changes will
+                            not automatically modify agreements
+                            already signed unless both parties
+                            agree or applicable law requires it.
+                        </p>
+
+
+                        <!-- CONTACT -->
+                        <div class="mt-12 rounded-2xl border border-line bg-card p-6 sm:p-8">
+
+                            <div class="flex items-start gap-4">
+
+                                <div class="w-11 h-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+
+                                <div>
+                                    <h3 class="text-lg font-bold mb-2">
+                                        Questions about these terms?
+                                    </h3>
+
+                                    <p class="text-sm text-muted leading-7">
+                                        If you have questions about these
+                                        terms or our services, feel free
+                                        to contact our team.
+                                    </p>
+
+                                    <a data-site="email"
+                                        href="mailto:hello@softventures.dev"
+                                        class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-brand">
+                                        hello@softventures.dev
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer-slot"></div>
+    <script src="main.js"></script>
+
 </body>
 </html>

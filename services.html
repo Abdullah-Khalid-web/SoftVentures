@@ -1,37 +1,549 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="assets/js/theme-init.js"></script>
-<title>Services | SoftVentures — Management, Desktop, SaaS & Websites</title><meta name="description" content="All software types from SoftVentures: management, desktop, SaaS and portfolio websites with pricing and delivery time.">
-<meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23477B9A'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>S</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- COMMON CSS - same file on every page -->
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | SoftVentures Software, Support & Business Automation</title>
+    <meta name="description"
+        content="SoftVentures builds custom websites, business management systems, SaaS products, desktop applications and AI-powered business automation. We also fix, maintain and improve existing software.">
+    <meta name="theme-color" content="#477B9A">
+    <meta name="color-scheme" content="light dark">
+      <link rel="icon" href="assets/img/logo.png">
+
+
+    <script src="assets/js/theme-init.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
+
+    <script src="assets/js/config.js" defer></script>
+
 </head>
-<body data-page="services">
-<!-- HEADER loads from header.html -->
-<div id="site-header-slot"></div>
 
-<main>
-<section class="page-hero"><div class="wrap"><p class="breadcrumb">Home / <b>Software</b></p><h1 class="mt-4">Every type of software.<br><em>One team.</em></h1><p class="copy mt-4 max-w-2xl">Management, Desktop, SaaS &amp; Portfolio — detail me neeche. Jo chahiye, us pe click karo ya direct quote lo.</p></div></section>
-<section class="section section-white border-t" style="border-color:var(--border)"><div class="wrap"><div class="grid gap-6">
-<div class="card p-7 md:p-9"><div class="flex flex-col md:flex-row gap-6"><div class="flex-1"><span class="tag">MOST POPULAR</span><h2 class="text-2xl md:text-3xl font-extrabold mt-3">Management Software</h2><p class="copy mt-3">POS, inventory, billing, staff, reports — your whole business in one dashboard. Web + mobile.</p><ul class="grid sm:grid-cols-2 gap-2 mt-5 text-sm"><li class="feature"><span class="check">✓</span> Retail, Clinic, School, Restaurant</li><li class="feature"><span class="check">✓</span> WhatsApp alerts &amp; reports</li><li class="feature"><span class="check">✓</span> Multi-branch + roles</li><li class="feature"><span class="check">✓</span> Offline mode available</li></ul></div><div class="shrink-0"><p class="text-3xl font-extrabold" style="color:var(--primary)">7 days</p><p class="text-sm" style="color:var(--muted)">Average delivery</p><a href="contact.html" class="btn btn-primary mt-4">Get Quote →</a></div></div></div>
-<div class="card p-7 md:p-9"><div class="flex flex-col md:flex-row gap-6"><div class="flex-1"><span class="tag">OFFLINE • FAST</span><h2 class="text-2xl md:text-3xl font-extrabold mt-3">Desktop Software</h2><p class="copy mt-3">Windows / Mac apps that work without internet. Perfect for shops, factories, offices with slow internet.</p><ul class="grid sm:grid-cols-2 gap-2 mt-5 text-sm"><li class="feature"><span class="check">✓</span> No internet needed</li><li class="feature"><span class="check">✓</span> Barcode + printer support</li><li class="feature"><span class="check">✓</span> Local data = full privacy</li><li class="feature"><span class="check">✓</span> Auto backup</li></ul></div><div class="shrink-0"><p class="text-3xl font-extrabold" style="color:var(--primary)">Windows + Mac</p><p class="text-sm" style="color:var(--muted)">One-time / yearly</p><a href="contact.html" class="btn btn-primary mt-4">Get Quote →</a></div></div></div>
-<div class="card p-7 md:p-9"><div class="flex flex-col md:flex-row gap-6"><div class="flex-1"><span class="tag">SELL MONTHLY</span><h2 class="text-2xl md:text-3xl font-extrabold mt-3">SaaS Products</h2><p class="copy mt-3">Your idea as a subscription product. Users sign up, pay monthly, use your software. We build login, payments, dashboards, admin.</p><ul class="grid sm:grid-cols-2 gap-2 mt-5 text-sm"><li class="feature"><span class="check">✓</span> Subscriptions + payments</li><li class="feature"><span class="check">✓</span> Multi-user / teams</li><li class="feature"><span class="check">✓</span> Admin dashboard</li><li class="feature"><span class="check">✓</span> Scales to 10,000+ users</li></ul></div><div class="shrink-0"><p class="text-3xl font-extrabold" style="color:var(--primary)">MVP in 14 days</p><p class="text-sm" style="color:var(--muted)">Launch &amp; sell</p><a href="contact.html" class="btn btn-primary mt-4">Start SaaS →</a></div></div></div>
-<div class="card p-7 md:p-9"><div class="flex flex-col md:flex-row gap-6"><div class="flex-1"><span class="tag">FASTEST</span><h2 class="text-2xl md:text-3xl font-extrabold mt-3">Portfolio &amp; Websites</h2><p class="copy mt-3">Portfolio, business &amp; e-commerce websites that look premium and bring clients. SEO + WhatsApp + fast loading.</p><ul class="grid sm:grid-cols-2 gap-2 mt-5 text-sm"><li class="feature"><span class="check">✓</span> Portfolio / Business / Shop</li><li class="feature"><span class="check">✓</span> WhatsApp + contact form</li><li class="feature"><span class="check">✓</span> SEO ready</li><li class="feature"><span class="check">✓</span> Easy to edit</li></ul></div><div class="shrink-0"><p class="text-3xl font-extrabold" style="color:var(--primary)">Live in 3 days</p><p class="text-sm" style="color:var(--muted)">Design + build</p><a href="contact.html" class="btn btn-primary mt-4">Get Website →</a></div></div></div>
-</div>
-<div class="card mt-8 p-7 flex flex-col md:flex-row md:items-center gap-5" style="background:var(--primary-fill);border-color:var(--primary-fill);color:#fff"><div class="flex-1"><h3 class="text-xl font-bold">Maintenance &amp; Support — for all of it</h3><p style="color:rgba(255,255,255,.85);margin-top:6px">Monthly plan: updates, backups, bug fixes, small changes. Your software never stops.</p></div><a href="contact.html" class="btn btn-white shrink-0">See Maintenance →</a></div>
-</div></section>
-</main>
+<body data-page="services" class="services-page">
+    <div id="site-header-slot"></div>
 
-<!-- FOOTER loads from footer.html -->
-<div id="site-footer-slot"></div>
-<!-- COMMON JS - loads header/footer + theme + animations -->
-<script src="main.js"></script>
+    <main>
+        <!-- HERO -->
+        <section class="services-hero">
+            <div class="section-wrap">
+                <div class="hero-grid">
+                    <div>
+                        <div class="eyebrow"><span class="eyebrow-dot"></span> What we do</div>
+                        <h1 class="hero-heading">Better software.<br><span>Better ways to work.</span></h1>
+                        <p class="hero-description">
+                            We build software around the way your business actually works from a professional website
+                            or a custom business application to complete management systems and AI-powered automation.
+                            Already have software? We can fix, maintain and improve that too.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="contact.html" class="btn btn-primary">Tell us what you need <i
+                                    data-lucide="arrow-up-right"></i></a>
+                            <a href="#services" class="btn btn-ghost">Explore our services <i
+                                    data-lucide="arrow-down"></i></a>
+                        </div>
+
+                        <div class="hero-trust">
+                            <span><i data-lucide="check-circle-2"></i> Built around your workflow</span>
+                            <span><i data-lucide="code-2"></i> Custom-built solutions</span>
+                            <span><i data-lucide="life-buoy"></i> Support beyond launch</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual" aria-label="Illustration of connected business software">
+                        <div class="visual-glow"></div>
+                        <div class="visual-window">
+                            <div class="window-top">
+                                <div class="window-dots"><span></span><span></span><span></span></div>
+                                <span class="window-label">SOFTVENTURES / WORKSPACE</span>
+                            </div>
+                            <div class="visual-title">Your business, connected.</div>
+                            <p class="visual-subtitle">Useful tools. Clear information. Less manual work.</p>
+                            <div class="visual-stats">
+                                <div class="visual-stat">
+                                    <span class="visual-icon"><i data-lucide="layout-dashboard"></i></span>
+                                    <strong>01</strong><small>Management systems</small>
+                                </div>
+                                <div class="visual-stat">
+                                    <span class="visual-icon"><i data-lucide="globe"></i></span>
+                                    <strong>02</strong><small>Websites & platforms</small>
+                                </div>
+                                <div class="visual-stat">
+                                    <span class="visual-icon"><i data-lucide="bot"></i></span>
+                                    <strong>03</strong><small>AI & automation</small>
+                                </div>
+                                <div class="visual-stat">
+                                    <span class="visual-icon"><i data-lucide="wrench"></i></span>
+                                    <strong>04</strong><small>Maintenance & fixes</small>
+                                </div>
+                            </div>
+                            <div class="visual-bottom">
+                                <div><strong>Technology with a purpose.</strong><small>Designed to solve real business
+                                        problems.</small></div>
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+                        </div>
+                        <div class="floating-chip chip-one"><i data-lucide="zap"></i> Less repetitive work</div>
+                        <div class="floating-chip chip-two"><i data-lucide="shield-check"></i> Dependable support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services-section" id="services">
+            <div class="section-wrap">
+                <div class="section-heading">
+                    <p class="section-kicker">What we can help with</p>
+                    <h2 class="section-title">From a single website to your entire business system.</h2>
+                    <p class="section-description">
+                        You do not need to fit your business into off-the-shelf software. We can create the right-sized
+                        solution for your needs, whether that is a focused website, a custom application or a connected
+                        system for your whole operation.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card featured">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="panels-top-left"></i></div>
+                            <span class="service-tag">BUSINESS OPERATIONS</span>
+                        </div>
+                        <h3>ERP & Management Systems</h3>
+                        <p>
+                            Replace scattered spreadsheets and disconnected tools with software that brings your
+                            business processes into one place. We design systems around your teams, rules and daily
+                            work.
+                        </p>
+                        <ul class="service-features">
+                            <li><i data-lucide="check"></i> ERP and business management</li>
+                            <li><i data-lucide="check"></i> POS, inventory and billing</li>
+                            <li><i data-lucide="check"></i> HR, attendance and payroll</li>
+                            <li><i data-lucide="check"></i> School, clinic and retail systems</li>
+                            <li><i data-lucide="check"></i> Reports and dashboards</li>
+                            <li><i data-lucide="check"></i> Roles, branches and permissions</li>
+                        </ul>
+                        <div class="service-footer">
+                            <div class="service-delivery"><small>Built to match your process</small><strong>Custom
+                                    modules & workflows</strong></div>
+                            <a href="contact.html" class="service-link">Discuss a system <i
+                                    data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="globe"></i></div>
+                            <span class="service-tag">WEB DEVELOPMENT</span>
+                        </div>
+                        <h3>Custom Websites & Web Applications</h3>
+                        <p>
+                            Establish your online presence or build a web application that does real work. We create
+                            everything from clean portfolio sites to complex customer portals and business platforms.
+                        </p>
+                        <ul class="service-features">
+                            <li><i data-lucide="check"></i> Personal and company portfolios</li>
+                            <li><i data-lucide="check"></i> Business and corporate websites</li>
+                            <li><i data-lucide="check"></i> E-commerce and booking websites</li>
+                            <li><i data-lucide="check"></i> Customer and staff portals</li>
+                            <li><i data-lucide="check"></i> Responsive, mobile-first layouts</li>
+                            <li><i data-lucide="check"></i> APIs and third-party integrations</li>
+                        </ul>
+                        <div class="service-footer">
+                            <div class="service-delivery"><small>From simple to advanced</small><strong>Website or full
+                                    web app</strong></div>
+                            <a href="contact.html" class="service-link">Build a website <i
+                                    data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="monitor"></i></div>
+                            <span class="service-tag">DESKTOP SOFTWARE</span>
+                        </div>
+                        <h3>Desktop Applications</h3>
+                        <p>
+                            Get purpose-built desktop software for teams that need local processing, device integration
+                            or reliable access in environments where an internet connection is not always available.
+                        </p>
+                        <ul class="service-features">
+                            <li><i data-lucide="check"></i> Windows desktop applications</li>
+                            <li><i data-lucide="check"></i> Offline-first functionality</li>
+                            <li><i data-lucide="check"></i> Barcode and printer integration</li>
+                            <li><i data-lucide="check"></i> Local database support</li>
+                            <li><i data-lucide="check"></i> Data import and export</li>
+                            <li><i data-lucide="check"></i> Backup and sync workflows</li>
+                        </ul>
+                        <div class="service-footer">
+                            <div class="service-delivery"><small>Designed for your environment</small><strong>Custom
+                                    desktop software</strong></div>
+                            <a href="contact.html" class="service-link">Discuss an app <i
+                                    data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="cloud"></i></div>
+                            <span class="service-tag">CLOUD PRODUCTS</span>
+                        </div>
+                        <h3>SaaS Platforms</h3>
+                        <p>
+                            Turn an idea into a software product customers can access online. We can help shape the
+                            product, build its core features and prepare it for subscriptions and growth.
+                        </p>
+                        <ul class="service-features">
+                            <li><i data-lucide="check"></i> MVP and product development</li>
+                            <li><i data-lucide="check"></i> Multi-tenant architecture</li>
+                            <li><i data-lucide="check"></i> Plans and subscriptions</li>
+                            <li><i data-lucide="check"></i> Customer dashboards</li>
+                            <li><i data-lucide="check"></i> Payment/API integrations</li>
+                            <li><i data-lucide="check"></i> Admin and access management</li>
+                        </ul>
+                        <div class="service-footer">
+                            <div class="service-delivery"><small>Start focused, grow over time</small><strong>MVP to
+                                    full platform</strong></div>
+                            <a href="contact.html" class="service-link">Build your SaaS <i
+                                    data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="bot"></i></div>
+                            <span class="service-tag">AI & AUTOMATION</span>
+                        </div>
+                        <h3>AI Bots, Agents & Workflow Automation</h3>
+                        <p>
+                            Reduce repetitive tasks with practical automation. We build chatbots, AI assistants and
+                            connected workflows that help your team respond, process information and move work forward.
+                        </p>
+                        <ul class="service-features">
+                            <li><i data-lucide="check"></i> Website and WhatsApp bots</li>
+                            <li><i data-lucide="check"></i> AI assistants for internal teams</li>
+                            <li><i data-lucide="check"></i> Lead and customer follow-ups</li>
+                            <li><i data-lucide="check"></i> Document and data extraction</li>
+                            <li><i data-lucide="check"></i> Automated reports and alerts</li>
+                            <li><i data-lucide="check"></i> App and API integrations</li>
+                        </ul>
+                        <div class="service-footer">
+                            <div class="service-delivery"><small>Automate the right tasks</small><strong>AI-enabled
+                                    workflows</strong></div>
+                            <a href="#automation" class="service-link">Explore automation <i
+                                    data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="wrench"></i></div>
+                            <span class="service-tag">EXISTING SOFTWARE</span>
+                        </div>
+                        <h3>Bug Fixes, Maintenance & Improvements</h3>
+                        <p>
+                            You do not always need a new system. We can work with your existing website or software,
+                            investigate issues, fix bugs and improve performance without rebuilding everything.
+                        </p>
+                        <ul class="service-features">
+                            <li><i data-lucide="check"></i> Bug investigation and resolution</li>
+                            <li><i data-lucide="check"></i> Broken pages and features</li>
+                            <li><i data-lucide="check"></i> Website updates and maintenance</li>
+                            <li><i data-lucide="check"></i> Performance improvements</li>
+                            <li><i data-lucide="check"></i> Database and API troubleshooting</li>
+                            <li><i data-lucide="check"></i> Security and dependency updates</li>
+                        </ul>
+                        <div class="service-footer">
+                            <div class="service-delivery"><small>For software you already use</small><strong>Fix,
+                                    improve & maintain</strong></div>
+                            <a href="contact.html" class="service-link">Get technical help <i
+                                    data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW AUTOMATION HELPS -->
+        <section class="automation-section" id="automation">
+            <div class="section-wrap">
+                <div class="automation-grid">
+                    <div class="automation-copy">
+                        <p class="section-kicker">Work smarter, not just faster</p>
+                        <h2>Automation that gives your team time back.</h2>
+                        <p>
+                            Many businesses lose hours to repetitive admin: copying information, answering the same
+                            questions, chasing updates and preparing reports. We look for the steps that slow your team
+                            down, then connect software and AI to handle suitable tasks.
+                        </p>
+
+                        <div class="automation-list">
+                            <div class="automation-point">
+                                <span class="mini-check"><i data-lucide="check"></i></span>
+                                <div><strong>Respond to customers sooner</strong>
+                                    <p>Bots can answer common questions, collect enquiries and route requests to the
+                                        right person.</p>
+                                </div>
+                            </div>
+                            <div class="automation-point">
+                                <span class="mini-check"><i data-lucide="check"></i></span>
+                                <div><strong>Reduce repetitive data entry</strong>
+                                    <p>Automate document reading, form processing and moving information between
+                                        systems.</p>
+                                </div>
+                            </div>
+                            <div class="automation-point">
+                                <span class="mini-check"><i data-lucide="check"></i></span>
+                                <div><strong>Keep operations moving</strong>
+                                    <p>Trigger reminders, notifications, approvals and follow-ups when business events
+                                        happen.</p>
+                                </div>
+                            </div>
+                            <div class="automation-point">
+                                <span class="mini-check"><i data-lucide="check"></i></span>
+                                <div><strong>Make decisions with clearer information</strong>
+                                    <p>Bring useful data into dashboards and scheduled reports instead of manual
+                                        spreadsheets.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="automation-panel">
+                        <div class="automation-panel-head">
+                            <strong>Example: an automated enquiry workflow</strong>
+                            <span class="live-label">Connected workflow</span>
+                        </div>
+                        <div class="automation-flow">
+                            <div class="flow-step">
+                                <span class="automation-icon"><i data-lucide="message-circle"></i></span>
+                                <div><strong>1. Customer sends a message</strong><small>Website form, WhatsApp or social
+                                        channel</small></div>
+                            </div>
+                            <div class="flow-connector"></div>
+                            <div class="flow-step">
+                                <span class="automation-icon"><i data-lucide="bot"></i></span>
+                                <div><strong>2. Assistant understands the request</strong><small>Answers routine
+                                        questions and captures details</small></div>
+                            </div>
+                            <div class="flow-connector"></div>
+                            <div class="flow-step">
+                                <span class="automation-icon"><i data-lucide="workflow"></i></span>
+                                <div><strong>3. Business system is updated</strong><small>Creates a lead, assigns a task
+                                        and notifies staff</small></div>
+                            </div>
+                            <div class="flow-connector"></div>
+                            <div class="flow-step">
+                                <span class="automation-icon"><i data-lucide="chart-no-axes-combined"></i></span>
+                                <div><strong>4. Team can follow up</strong><small>Status and activity are visible in one
+                                        place</small></div>
+                            </div>
+                        </div>
+                        <div class="outcome-row">
+                            <div class="outcome"><strong>Less admin</strong><small>Fewer manual steps</small></div>
+                            <div class="outcome"><strong>Faster replies</strong><small>Timely responses</small></div>
+                            <div class="outcome"><strong>Clearer view</strong><small>Trackable work</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY IT MATTERS -->
+        <section class="why-section">
+            <div class="section-wrap">
+                <div class="section-heading">
+                    <p class="section-kicker">The business value</p>
+                    <h2 class="section-title">Technology should improve the way your business runs.</h2>
+                    <p class="section-description">
+                        We do not add technology just for the sake of it. We focus on practical improvements that can
+                        make everyday work easier to manage and give your business a stronger foundation for growth.
+                    </p>
+                </div>
+
+                <div class="why-grid">
+                    <article class="why-card">
+                        <div class="why-icon"><i data-lucide="clock-3"></i></div>
+                        <h3>Save time on routine work</h3>
+                        <p>Reduce repeated entry, manual follow-ups and switching between disconnected tools so your
+                            team can focus on valuable work.</p>
+                    </article>
+                    <article class="why-card">
+                        <div class="why-icon"><i data-lucide="workflow"></i></div>
+                        <h3>Bring work into one process</h3>
+                        <p>Connect teams, records and business activities so information is easier to find and tasks are
+                            less likely to get missed.</p>
+                    </article>
+                    <article class="why-card">
+                        <div class="why-icon"><i data-lucide="chart-no-axes-combined"></i></div>
+                        <h3>Understand what is happening</h3>
+                        <p>Use reports and dashboards to see activity, identify bottlenecks and make decisions with more
+                            reliable information.</p>
+                    </article>
+                    <article class="why-card">
+                        <div class="why-icon"><i data-lucide="users"></i></div>
+                        <h3>Improve customer experience</h3>
+                        <p>Make it easier for customers to find information, contact your team, place requests and
+                            receive timely updates.</p>
+                    </article>
+                    <article class="why-card">
+                        <div class="why-icon"><i data-lucide="trending-up"></i></div>
+                        <h3>Build a foundation for growth</h3>
+                        <p>Start with the features you need today and extend the system as your customers, team and
+                            operations expand.</p>
+                    </article>
+                    <article class="why-card">
+                        <div class="why-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>Keep existing software useful</h3>
+                        <p>Maintain, repair and improve the tools you already depend on instead of replacing them
+                            unnecessarily.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="process-section">
+            <div class="section-wrap">
+                <div class="section-heading">
+                    <p class="section-kicker">How we work</p>
+                    <h2 class="section-title">A clear process, from the first conversation to ongoing support.</h2>
+                    <p class="section-description">You stay involved at every stage. We keep the work practical, explain
+                        the decisions and build towards outcomes that matter to your business.</p>
+                </div>
+
+                <div class="process-strip">
+                    <div class="process-item">
+                        <span class="process-number">01</span>
+                        <div><strong>Understand your business</strong>
+                            <p>We learn how your team works, where the problems are and what a successful outcome should
+                                look like.</p>
+                        </div>
+                    </div>
+                    <div class="process-item">
+                        <span class="process-number">02</span>
+                        <div><strong>Plan, design and build</strong>
+                            <p>We agree on the right approach, develop the solution and review it with you as the work
+                                progresses.</p>
+                        </div>
+                    </div>
+                    <div class="process-item">
+                        <span class="process-number">03</span>
+                        <div><strong>Launch, improve and support</strong>
+                            <p>We deploy the solution, help your team get started and can continue maintaining and
+                                improving it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="maintenance-card">
+                    <div class="maintenance-content">
+                        <div class="maintenance-icon"><i data-lucide="settings"></i></div>
+                        <div>
+                            <h3>Already have a website or software that needs attention?</h3>
+                            <p>
+                                We can review your current setup, identify the cause of issues and help with bug fixing,
+                                broken functionality, website maintenance, integrations, performance and ongoing
+                                updates.
+                                You can improve what you already have without starting from zero.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="maintenance-btn">Get help with existing software <i
+                            data-lucide="arrow-up-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SELECTED WORK -->
+        <section class="work-intro">
+            <div class="section-wrap">
+                <div class="work-heading">
+                    <div>
+                        <p class="section-kicker">Selected work</p>
+                        <h2>Practical software for real-world challenges.</h2>
+                    </div>
+
+                    <div>
+                        <p>
+                            Explore examples of systems, automation and digital products.
+                            Each project starts with a business problem and a clear goal
+                            for the software to solve.
+                        </p>
+
+                        <a href="work.html" class="btn btn-primary">
+                            View all projects
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="final-cta">
+            <div class="section-wrap">
+                <div class="cta-inner">
+                    <div>
+                        <p class="cta-kicker">HAVE A PROJECT OR A SOFTWARE PROBLEM?</p>
+                        <h2>Let's make your day-to-day work easier.</h2>
+                        <p>
+                            Tell us what you are trying to build, what is slowing your business down or what is not
+                            working in your current software. We will help you figure out a sensible next step.
+                        </p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="cta-primary">Start a conversation <i
+                                data-lucide="arrow-up-right"></i></a>
+                        <a href="support.html#fix" class="cta-secondary"><i data-lucide="wrench"></i> Get help with
+                            existing software</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer-slot"></div>
+
+    <script src="main.js"></script>
+
+    <script>
+        // Run after the document and deferred scripts are ready.
+        function renderPageIcons() {
+            if (window.lucide && typeof window.lucide.createIcons === "function") {
+                window.lucide.createIcons();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", renderPageIcons);
+        window.addEventListener("load", renderPageIcons);
+
+        // Header/footer scripts may inject markup after DOMContentLoaded.
+        // Re-render icons when those slots or project cards receive new content.
+        const iconObserver = new MutationObserver(() => renderPageIcons());
+        document.addEventListener("DOMContentLoaded", () => {
+            const targets = [
+                document.getElementById("site-header-slot"),
+                document.getElementById("site-footer-slot"),
+                document.querySelector("[data-projects]")
+            ].filter(Boolean);
+
+            targets.forEach(target => {
+                iconObserver.observe(target, { childList: true, subtree: true });
+            });
+        });
+    </script>
 </body>
+
 </html>

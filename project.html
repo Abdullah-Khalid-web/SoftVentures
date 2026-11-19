@@ -1,36 +1,940 @@
-<!doctype html>
-<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project | NextGen Tech Solutions</title>
-  <meta name="description" content="A project by NextGen Tech Solutions: what the problem was, what we built and how it's working.">
-  <meta name="theme-color" content="#477B9A">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <script src="assets/js/theme-init.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/js/tailwind.config.js"></script>
-  <link rel="stylesheet" href="assets/css/theme.css">
-  <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
-  <script src="assets/js/config.js" defer></script>
-  <script src="components/header.js" defer></script>
-  <script src="components/footer.js" defer></script>
-  <script src="assets/js/projects.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Work | SoftVentures — Software, SaaS & AI</title>
+
+    <meta name="description" content="Explore SoftVentures projects including desktop POS, business management systems, SaaS platforms, university software and AI agents.">
+
+    <meta name="theme-color" content="#477B9A">
+    <meta name="color-scheme" content="light dark">
+
+    <script src="assets/js/theme-init.js"></script>
+    <link rel="icon" href="assets/img/logo.png">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
+    <script src="assets/js/config.js" defer></script>
+
+
+
 </head>
-<!-- One page for every project: project.html?id=<id from assets/js/projects.js>. Filled in by main.js. -->
-<body data-page="work" class="bg-paper font-sans text-ink antialiased">
-  <site-header></site-header>
 
-  <main id="main">
-    <article class="mx-auto max-w-site px-5 pb-8 pt-14 sm:px-8 lg:pt-20" data-project-detail>
-      <p class="text-muted">Loading project…</p>
-    </article>
-  </main>
+<body data-page="work" class="work-page">
 
-  <site-footer></site-footer>
+    <div id="site-header-slot"></div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="work-hero">
+            <div class="work-wrap">
+
+                <h1>
+                    Practical software for
+                    <span>real-world challenges.</span>
+                </h1>
+
+                <p class="work-lead">
+                    From business management systems and desktop applications
+                    to subscription platforms and intelligent AI agents,
+                    we build digital products around the way people actually work.
+                </p>
+
+                <div class="work-hero-bottom">
+
+                    <a href="#all-projects" class="work-button">
+                        Explore our projects
+                        <i data-lucide="arrow-down-right"></i>
+                    </a>
+
+                    <span class="work-hero-note">
+                        Business systems · SaaS · Agentic AI · Custom software
+                    </span>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="work-section" id="all-projects">
+
+            <div class="work-wrap">
+
+                <div class="work-heading">
+
+                    <div>
+                        <p class="work-kicker">A closer look</p>
+
+                        <h2>Projects built to do useful work.</h2>
+
+                        <p>
+                            Explore delivered projects and clearly labelled concept ideas.
+                            Select any project to discover its story.
+                        </p>
+                    </div>
+
+                    <span class="work-count" id="work-count"></span>
+
+                </div>
+
+                <!-- FILTERS -->
+                <div class="work-filters" id="work-filters">
+
+                    <button class="work-filter active" data-filter="all">
+                        All projects
+                    </button>
+
+                    <button class="work-filter" data-filter="system">
+                        Management systems
+                    </button>
+
+                    <button class="work-filter" data-filter="agent">
+                        AI agents
+                    </button>
+
+                    <button class="work-filter" data-filter="automation">
+                        Automation
+                    </button>
+
+                    <button class="work-filter" data-filter="rescue">
+                        Fixes &amp; improvements
+                    </button>
+
+                </div>
+
+                <div class="work-grid" id="work-grid"></div>
+
+            </div>
+        </section>
+
+        <!-- SAME-PAGE PROJECT DETAILS -->
+        <section class="work-detail" id="project-detail"></section>
+
+        <!-- CTA -->
+        <section class="work-cta">
+
+            <div class="work-wrap work-cta-inner">
+
+                <div>
+                    <p class="work-kicker" style="color:#a9c8d9">
+                        Have a project or a software problem?
+                    </p>
+
+                    <h2>Let's make your day-to-day work easier.</h2>
+
+                    <p>
+                        Tell us what you are trying to build, what is slowing
+                        your business down, or what is not working in your
+                        current software. We will help you figure out a
+                        sensible next step.
+                    </p>
+                </div>
+
+                <a href="index.html#contact" class="work-button">
+                    Start a conversation
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer-slot"></div>
+
+    <script src="main.js"></script>
+
+    <script>
+        /*
+         * ALL PROJECT DATA IS HERE.
+         * No external projects.js required.
+         *
+         * Concept projects are clearly labelled.
+         * Replace technology details with verified details
+         * before publishing if they differ from the real implementation.
+         */
+
+        const projects = [
+
+            {
+                id: "ar-cosmetics",
+                type: "system",
+                status: "delivered",
+                title: "AR Cosmetics — Desktop POS",
+                client: "AR Cosmetics",
+                industry: "Retail · Cosmetics",
+                year: "2026",
+                category: "Desktop application",
+
+                image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Cosmetics and beauty products displayed together",
+
+                summary:
+                    "A desktop-based point-of-sale application designed around the shop's daily sales operations, branding and printing requirements.",
+
+                problem:
+                    "The shop needed a practical desktop solution for counter operations, with its own branding and printing requirements incorporated into the daily workflow.",
+
+                solution:
+                    "A desktop POS application was developed around the shop's needs. The solution included shop logo integration and printer configuration to support its everyday counter operations.",
+
+                features: [
+                    "Desktop-based POS application",
+                    "Shop logo and branding integration",
+                    "Printer and receipt configuration",
+                    "Counter sales workflow",
+                    "Shop-specific interface",
+                    "Daily sales operations"
+                ],
+
+                stack: [
+                    "Desktop application",
+                    "POS",
+                    "Printer integration"
+                ]
+            },
+
+            {
+                id: "nafees-baker",
+                type: "system",
+                status: "delivered",
+                title: "Nafees Baker — Complete Bakery System",
+                client: "Nafees Baker",
+                industry: "Bakery · Food business",
+                year: "2026",
+                category: "Business management",
+
+                image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Fresh bread and baked goods in a bakery",
+
+                summary:
+                    "A complete bakery management system connecting shop operations, kitchen activities, sales, inventory, employees and expenses.",
+
+                problem:
+                    "Running a bakery involves more than selling products. Shop operations, kitchen activities, stock, employees and expenses all need to work together. Handling these activities separately can make daily management difficult.",
+
+                solution:
+                    "A complete bakery management system was developed to bring the shop and kitchen into one connected workflow. It provides a central place to manage sales, stock, employees, expenses and operational information.",
+
+                features: [
+                    "Shop and counter operations",
+                    "Kitchen workflow management",
+                    "Sales and transaction records",
+                    "Stock and inventory management",
+                    "Employee management",
+                    "Expense tracking",
+                    "Centralised business records",
+                    "Connected shop-to-kitchen operations"
+                ],
+
+                stack: [
+                    "Custom software",
+                    "Business management",
+                    "Database design"
+                ]
+            },
+
+            {
+                id: "managehub",
+                type: "system",
+                status: "delivered",
+                title: "ManageHub — Business SaaS Platform",
+                client: "ManageHub",
+                industry: "Retail · Restaurants",
+                year: "2026",
+                category: "Subscription SaaS",
+
+                image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Small business point of sale and payment terminal",
+
+                summary:
+                    "A multi-tenant SaaS platform for retail shops and restaurants, designed around business workspaces and subscription-based access.",
+
+                problem:
+                    "Small businesses need software that matches their operations. A subscription-based product also needs a way to manage different businesses, their workspaces and access to the platform.",
+
+                solution:
+                    "ManageHub was designed as a complete SaaS management platform for retail and restaurant businesses. The system introduces tenant-based business environments and a subscription-oriented access model.",
+
+                features: [
+                    "Multi-tenant architecture",
+                    "Retail business workflows",
+                    "Restaurant management workflows",
+                    "Business onboarding",
+                    "Subscription-based access",
+                    "Business-specific workspaces",
+                    "Modular management features"
+                ],
+
+                stack: [
+                    "Node.js",
+                    "Express",
+                    "MySQL",
+                    "SQLite",
+                    "Electron",
+                    "SaaS"
+                ]
+            },
+
+            {
+                id: "restaurant-ai",
+                type: "agent",
+                status: "delivered",
+                title: "Restaurant Table & Pre-Order AI Agent",
+                client: "Restaurant solution",
+                industry: "Restaurants · Hospitality",
+                year: "2026",
+                category: "Agentic AI",
+
+                image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Restaurant dining table prepared for customers",
+
+                summary:
+                    "An agentic AI solution that helps customers check table availability, request reservations and place pre-orders through conversation.",
+
+                problem:
+                    "Restaurant staff can spend a significant amount of time answering booking questions, collecting customer information and managing pre-order requests manually.",
+
+                solution:
+                    "An AI-powered conversational agent was developed to understand customer requests, check relevant availability and guide customers through table reservation and pre-order workflows.",
+
+                features: [
+                    "Natural-language customer conversations",
+                    "Table availability checking",
+                    "Reservation detail collection",
+                    "Table reservation workflow",
+                    "Customer pre-order handling",
+                    "Automated customer assistance",
+                    "Staff handover when required"
+                ],
+
+                stack: [
+                    "Agentic AI",
+                    "LLM integration",
+                    "Workflow automation",
+                    "Restaurant integrations"
+                ]
+            },
+
+            {
+                id: "university-management",
+                type: "system",
+                status: "delivered",
+                title: "University Management System",
+                client: "",
+                industry: "Education · Higher education",
+                year: "2026",
+                category: "Education platform",
+
+                image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "University campus and academic building",
+
+                summary:
+                    "A centralised university management platform designed to connect academic, student and administrative activities.",
+
+                problem:
+                    "Universities manage large amounts of connected information involving students, programmes, courses, terms, staff, attendance, fees and administrative activities.",
+
+                solution:
+                    "A university management system was developed to organise core academic and administrative operations through connected modules in one central application.",
+
+                features: [
+                    "Student records management",
+                    "Programme and course management",
+                    "Academic term management",
+                    "Staff management",
+                    "Attendance management",
+                    "Fee and invoice workflows",
+                    "Administrative operations",
+                    "Centralised university data"
+                ],
+
+                stack: [
+                    "Laravel",
+                    "Vue.js",
+                    "PostgreSQL",
+                    "REST APIs"
+                ]
+            },
+
+            /* SALON AI AGENT CONCEPTS */
+
+            {
+                id: "salon-receptionist",
+                type: "agent",
+                status: "concept",
+                title: "Salon AI Receptionist & Booking Agent",
+                industry: "Salon · Beauty",
+                year: "Concept",
+                category: "AI agent concept",
+
+                image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Modern hair salon interior",
+
+                summary:
+                    "A virtual receptionist concept that answers service questions, checks stylist availability and handles appointment requests.",
+
+                problem:
+                    "Salon teams often spend time answering repeated messages, checking appointment availability and coordinating bookings while also serving customers.",
+
+                solution:
+                    "A proposed AI receptionist that can answer common questions, collect booking details and coordinate with a salon's appointment calendar.",
+
+                features: [
+                    "Service and price enquiries",
+                    "Stylist availability checking",
+                    "Appointment booking requests",
+                    "Rescheduling requests",
+                    "Cancellation requests",
+                    "Human handover for special cases"
+                ],
+
+                stack: [
+                    "Agentic AI",
+                    "Calendar integration",
+                    "Messaging automation"
+                ]
+            },
+
+            {
+                id: "salon-followup",
+                type: "agent",
+                status: "concept",
+                title: "Salon Client Follow-Up Agent",
+                industry: "Salon · Customer experience",
+                year: "Concept",
+                category: "AI agent concept",
+
+                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Beauty salon treatment and customer care setting",
+
+                summary:
+                    "A client-care assistant concept for appointment reminders, after-visit follow-ups and timely rebooking messages.",
+
+                problem:
+                    "Following up with clients is important, but reminders and rebooking messages can be missed when staff have to manage everything manually.",
+
+                solution:
+                    "A proposed agent that uses appointment information and salon-approved rules to prepare helpful reminders and follow-up conversations.",
+
+                features: [
+                    "Appointment reminders",
+                    "After-visit messages",
+                    "Rebooking prompts",
+                    "Customer preference records",
+                    "Follow-up scheduling",
+                    "Staff control and opt-out handling"
+                ],
+
+                stack: [
+                    "Agentic AI",
+                    "CRM integration",
+                    "Messaging automation"
+                ]
+            },
+
+            {
+                id: "salon-inventory",
+                type: "agent",
+                status: "concept",
+                title: "Salon Inventory & Reorder Agent",
+                industry: "Salon · Inventory",
+                year: "Concept",
+                category: "AI agent concept",
+
+                image: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Hair and beauty products arranged on shelves",
+
+                summary:
+                    "An operations assistant concept that monitors product levels, identifies low stock and prepares suggested reorder lists.",
+
+                problem:
+                    "Manual inventory checks can result in shortages of frequently used products or unnecessary purchases of items that are not moving.",
+
+                solution:
+                    "A proposed agent that monitors inventory and product usage, then prepares reorder suggestions for a manager to review and approve.",
+
+                features: [
+                    "Low-stock notifications",
+                    "Product usage monitoring",
+                    "Suggested reorder lists",
+                    "Supplier information lookup",
+                    "Stock movement summaries",
+                    "Approval before ordering"
+                ],
+
+                stack: [
+                    "Agentic AI",
+                    "Inventory integration",
+                    "Workflow automation"
+                ]
+            },
+
+            {
+                id: "salon-scheduling",
+                type: "agent",
+                status: "concept",
+                title: "Salon Staff Scheduling Agent",
+                industry: "Salon · Workforce",
+                year: "Concept",
+                category: "AI agent concept",
+
+                image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Hair salon styling stations",
+
+                summary:
+                    "A scheduling assistant concept that coordinates stylist availability, service durations and appointment capacity.",
+
+                problem:
+                    "Coordinating staff schedules with customer appointments can create scheduling conflicts, idle time and last-minute changes.",
+
+                solution:
+                    "A proposed scheduling agent that checks staff availability and service requirements before suggesting suitable appointments and schedule adjustments.",
+
+                features: [
+                    "Staff availability checking",
+                    "Service-duration awareness",
+                    "Schedule conflict detection",
+                    "Suggested appointment slots",
+                    "Shift planning assistance",
+                    "Manager approval for changes"
+                ],
+
+                stack: [
+                    "Agentic AI",
+                    "Scheduling logic",
+                    "Calendar integration"
+                ]
+            },
+
+            {
+                id: "salon-insights",
+                type: "agent",
+                status: "concept",
+                title: "Salon Owner's Daily Insights Agent",
+                industry: "Salon · Business analytics",
+                year: "Concept",
+                category: "AI agent concept",
+
+                image: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d2?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Contemporary salon interior and reception",
+
+                summary:
+                    "A daily business briefing concept that summarises bookings, sales, cancellations, staff activity and inventory alerts.",
+
+                problem:
+                    "Business owners often need to check several screens and reports to understand what happened during the day and what needs attention.",
+
+                solution:
+                    "A proposed agent that gathers approved business information and turns it into a concise operational briefing with links to relevant records.",
+
+                features: [
+                    "Daily sales summary",
+                    "Booking and cancellation overview",
+                    "Staff activity snapshot",
+                    "Low-stock alerts",
+                    "Business performance highlights",
+                    "Natural-language business questions"
+                ],
+
+                stack: [
+                    "Agentic AI",
+                    "Business analytics",
+                    "Data integrations"
+                ]
+            },
+
+            /* AUTOMATION CONCEPT */
+
+            {
+                id: "invoice-automation",
+                type: "automation",
+                status: "concept",
+                title: "Supplier Invoice Processing Automation",
+                industry: "Wholesale · Operations",
+                year: "Concept",
+                category: "Business automation",
+
+                image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85",
+
+                alt: "Warehouse shelves and logistics operations",
+
+                summary:
+                    "An automation concept that extracts invoice information, matches purchase orders and flags price differences for review.",
+
+                problem:
+                    "Manually entering supplier invoice data takes time and can introduce errors when matching invoices with purchase orders and inventory records.",
+
+                solution:
+                    "A proposed document-processing workflow that extracts invoice details, compares them with purchase records and prepares exceptions for staff approval.",
+
+                features: [
+                    "Invoice document extraction",
+                    "Purchase order matching",
+                    "Price difference detection",
+                    "Inventory update preparation",
+                    "Exception notifications",
+                    "Human approval workflow"
+                ],
+
+                stack: [
+                    "OCR",
+                    "AI document processing",
+                    "Workflow automation",
+                    "API integration"
+                ]
+            }
+
+        ];
+
+        const grid = document.getElementById("work-grid");
+        const count = document.getElementById("work-count");
+        const detail = document.getElementById("project-detail");
+        const filters = document.querySelectorAll(".work-filter");
+
+        const typeNames = {
+            system: "Management system",
+            agent: "Agentic AI",
+            automation: "Automation",
+            rescue: "Fixes & improvements"
+        };
+
+        function escapeHTML(value) {
+            return String(value ?? "").replace(/[&<>"']/g, char => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+            })[char]);
+        }
+
+        /* RENDER PROJECT CARDS */
+
+        function renderProjects(category = "all") {
+
+            const filtered = projects.filter(project =>
+                category === "all" || project.type === category
+            );
+
+            count.textContent =
+                `${filtered.length} ${filtered.length === 1 ? "PROJECT" : "PROJECTS"}`;
+
+            if (!filtered.length) {
+                grid.innerHTML = `
+                    <div style="grid-column:1/-1;text-align:center;padding:50px;color:var(--work-muted)">
+                        No projects found in this category.
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(project => `
+
+                <article class="work-card">
+
+                    <a class="work-card-link"
+                       href="#project/${encodeURIComponent(project.id)}"
+                       aria-label="View ${escapeHTML(project.title)}">
+
+                        <div class="work-image">
+
+                            <img
+                                src="${escapeHTML(project.image)}"
+                                alt="${escapeHTML(project.alt)}"
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80';"
+                            >
+
+                            <span class="work-badge ${project.status === "concept" ? "concept" : ""}">
+                                ${project.status === "concept" ? "Concept showcase" : escapeHTML(project.category)}
+                            </span>
+
+                        </div>
+
+                        <div class="work-card-body">
+
+                            <div class="work-meta">
+                                ${escapeHTML(project.industry)}
+                                ${project.year ? " · " + escapeHTML(project.year) : ""}
+                            </div>
+
+                            <h3>${escapeHTML(project.title)}</h3>
+
+                            <p>${escapeHTML(project.summary)}</p>
+
+                            <div class="work-card-bottom">
+
+                                <span class="work-client">
+                                    ${escapeHTML(project.client || (project.status === "concept" ? "Proposed solution" : "Project showcase"))}
+                                </span>
+
+                                <span class="work-open">
+                                    View project <span>↗</span>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+            `).join("");
+
+        }
+
+        /* RENDER INDIVIDUAL PROJECT */
+
+        function renderProjectDetail(id) {
+
+            const project = projects.find(item => item.id === id);
+
+            if (!project) {
+
+                detail.innerHTML = `
+                    <div class="work-wrap">
+                        <a href="#all-projects" class="work-back">← Back to projects</a>
+                        <h2>Project not found</h2>
+                    </div>
+                `;
+
+                detail.classList.add("visible");
+                return;
+            }
+
+            const conceptNotice = project.status === "concept"
+                ? `<span class="work-tag">Concept showcase proposed solution, not a delivered client project</span>`
+                : "";
+
+            detail.innerHTML = `
+
+                <div class="work-wrap">
+
+                    <a href="#all-projects" class="work-back">
+                        <i data-lucide="arrow-left"></i>
+                        Back to all projects
+                    </a>
+
+                    <div class="work-detail-top">
+
+                        <div>
+
+                            <p class="work-kicker">
+                                ${escapeHTML(typeNames[project.type] || "Selected work")}
+                            </p>
+
+                            <h2>${escapeHTML(project.title)}</h2>
+
+                            <p class="work-detail-summary">
+                                ${escapeHTML(project.summary)}
+                            </p>
+
+                            <div class="work-tags">
+
+                                <span class="work-tag">
+                                    ${escapeHTML(project.industry)}
+                                </span>
+
+                                ${project.year ? `
+                                    <span class="work-tag">
+                                        ${escapeHTML(project.year)}
+                                    </span>
+                                ` : ""}
+
+                                ${project.client ? `
+                                    <span class="work-tag">
+                                        ${escapeHTML(project.client)}
+                                    </span>
+                                ` : ""}
+
+                                ${conceptNotice}
+
+                            </div>
+
+                        </div>
+
+                        <img
+                            class="work-detail-image"
+                            src="${escapeHTML(project.image)}"
+                            alt="${escapeHTML(project.alt)}"
+                        >
+
+                    </div>
+
+                    <div class="work-detail-content">
+
+                        <div class="work-detail-copy">
+
+                            <h3>The challenge</h3>
+
+                            <p>${escapeHTML(project.problem)}</p>
+
+                            <h3>What we built</h3>
+
+                            <p>${escapeHTML(project.solution)}</p>
+
+                            <h3>Key capabilities</h3>
+
+                            <ul class="work-features">
+
+                                ${project.features.map(feature => `
+                                    <li>${escapeHTML(feature)}</li>
+                                `).join("")}
+
+                            </ul>
+
+                            <a href="index.html#contact" class="work-button">
+                                Discuss a similar project
+                                <i data-lucide="arrow-up-right"></i>
+                            </a>
+
+                        </div>
+
+                        <aside class="work-sidebar">
+
+                            <h4>Project overview</h4>
+
+                            <div class="work-side-row">
+                                <small>Category</small>
+                                <span>${escapeHTML(typeNames[project.type] || "Software")}</span>
+                            </div>
+
+                            ${project.client ? `
+                                <div class="work-side-row">
+                                    <small>Client / Product</small>
+                                    <span>${escapeHTML(project.client)}</span>
+                                </div>
+                            ` : ""}
+
+                            <div class="work-side-row">
+                                <small>Industry</small>
+                                <span>${escapeHTML(project.industry)}</span>
+                            </div>
+
+                            <div class="work-side-row">
+                                <small>Year</small>
+                                <span>${escapeHTML(project.year)}</span>
+                            </div>
+
+                            <div class="work-side-row">
+                                <small>Technology & approach</small>
+
+                                <div class="work-tech">
+                                    ${project.stack.map(item => `
+                                        <span>${escapeHTML(item)}</span>
+                                    `).join("")}
+                                </div>
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            `;
+
+            detail.classList.add("visible");
+
+            if (window.lucide?.createIcons) {
+                window.lucide.createIcons();
+            }
+
+            detail.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+        /* HASH ROUTING */
+
+        function handleProjectRoute() {
+
+            const match = location.hash.match(/^#project\/(.+)$/);
+
+            const hero = document.querySelector(".work-hero");
+            const projectSection = document.getElementById("all-projects");
+
+            if (match) {
+
+                const id = decodeURIComponent(match[1]);
+
+                hero.style.display = "none";
+                projectSection.style.display = "none";
+
+                renderProjectDetail(id);
+
+            } else {
+
+                hero.style.display = "";
+                projectSection.style.display = "";
+
+                detail.classList.remove("visible");
+                detail.innerHTML = "";
+
+            }
+
+        }
+
+        /* FILTER EVENTS */
+
+        filters.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                filters.forEach(item => item.classList.remove("active"));
+
+                button.classList.add("active");
+
+                renderProjects(button.dataset.filter);
+
+            });
+
+        });
+
+        /* INITIALISE */
+
+        renderProjects();
+        handleProjectRoute();
+
+        window.addEventListener("hashchange", handleProjectRoute);
+
+        function renderIcons() {
+            if (window.lucide?.createIcons) {
+                window.lucide.createIcons();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", renderIcons);
+        window.addEventListener("load", renderIcons);
+
+    </script>
+
 </body>
 </html>
