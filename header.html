@@ -1,43 +1,90 @@
-<!-- ============ SOFTVENTURES HEADER - EDIT ONCE, APPEARS ON ALL PAGES ============ -->
+
+<!-- ============ SOFTVENTURES HEADER ============ -->
 <header id="site-header" class="site-header">
   <div class="wrap">
     <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
       <a href="index.html" class="flex items-center gap-2 text-xl font-bold tracking-tight">
-        <img src="assets/img/logo.png" alt="SoftVentures Logo" class="h-10 w-auto object-contain">
-        SoftVentures
+        <img
+          src="assets/img/logo.png"
+          alt="SoftVentures Logo"
+          class="h-10 w-auto object-contain"
+          data-site-logo
+        >
+        <span data-site="shortName">SoftVentures</span>
       </a>
-      <nav class="hidden lg:flex items-center gap-6 font-medium">
-        <a href="index.html" class="nav-link" data-nav="index">Home</a>
-        <a href="services.html" class="nav-link" data-nav="services">Services</a>
-        <a href="project.html" class="nav-link" data-nav="Project">Projects</a>
-        <a href="about.html" class="nav-link" data-nav="ablut">About</a>
-        <a href="contact.html" class="nav-link" data-nav="contact">Contact</a>
-      </nav>
+
+      <!-- Desktop Navigation -->
+      <nav
+        class="hidden lg:flex items-center gap-6 font-medium"
+        data-site-nav
+      ></nav>
+
+      <!-- Header Actions -->
       <div class="flex items-center gap-2">
-        <a href="contact.html" class="btn btn-primary hidden md:inline-flex"
-          style="padding:10px 18px;font-size:.9rem">Start a Project</a>
-        <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon w-5 h-5" fill="none"
-            stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg><svg class="icon-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg></button>
-        <button class="icon-btn lg:hidden" id="hamburger-btn" aria-label="Menu"><svg class="w-5 h-5" fill="none"
-            stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg></button>
+
+        <!-- Start Project -->
+        <a
+          href="contact.html"
+          class="btn btn-primary hidden md:inline-flex"
+          style="padding:10px 18px;font-size:.9rem"
+          data-header-cta
+        >
+          Start a Project
+        </a>
+
+        <!-- Theme Toggle -->
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+
+          <svg class="icon-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="icon-btn lg:hidden"
+          id="hamburger-btn"
+          aria-label="Menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
       </div>
     </div>
   </div>
 </header>
+
+<!-- ============ MOBILE MENU ============ -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="index.html" class="mobile-link">Home</a>
-  <a href="services.html" class="mobile-link">Software</a>
-  <a href="systems.html" class="mobile-link" data-nav="systems">Management</a>
-  <a href="ai-builder.html" class="mobile-link">AI Builder</a>
-  <a href="index.html#work" class="mobile-link">Work</a>
-  <a href="contact.html" class="mobile-link">Contact</a>
-  <a href="contact.html" class="btn btn-primary mt-6 w-full">Start a Project →</a>
+
+  <div data-site-mobile-nav></div>
+
+  <a href="contact.html" class="btn btn-primary mt-6 w-full" data-header-mobile-cta>
+    Start a Project →
+  </a>
+
 </div>

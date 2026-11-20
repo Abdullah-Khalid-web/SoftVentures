@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
@@ -7,30 +8,35 @@
 
     <script src="assets/js/theme-init.js"></script>
 
-    <title>Contact SoftVentures | Get a Free Software Quote</title>
+    <title>Contact Us | SoftVentures — Let's Build Something Better</title>
 
     <meta name="description"
-        content="Have a software project in mind? Contact SoftVentures for custom software, business management systems, SaaS products, websites and AI automation.">
+        content="Get in touch with SoftVentures for custom software development, business management systems, websites, SaaS products, AI automation and software support.">
 
     <meta name="theme-color" content="#477B9A">
 
-    <link rel="icon" href="assets/img/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@0.499.0/dist/umd/lucide.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Config must load before main.js -->
     <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+
 </head>
 
-<body data-page="contact">
+<body data-page="contact" class="contact-page">
 
     <!-- HEADER -->
     <div id="site-header-slot"></div>
@@ -39,15 +45,10 @@
 
         <!-- HERO -->
         <section class="page-hero relative overflow-hidden">
+
             <div class="wrap">
 
                 <div class="max-w-3xl">
-
-                    <div class="inline-flex items-center gap-2 text-sm font-semibold mb-5"
-                        style="color:var(--primary)">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i>
-                        LET'S TALK ABOUT YOUR PROJECT
-                    </div>
 
                     <h1 class="mt-4">
                         Have an idea?
@@ -73,7 +74,10 @@
                         <div class="flex items-center gap-2">
                             <i data-lucide="clock" class="w-4 h-4"
                                 style="color:var(--success)"></i>
-                            Reply within 1 business day
+
+                            <span data-contact-response>
+                                Reply within 1 business day.
+                            </span>
                         </div>
 
                     </div>
@@ -81,6 +85,7 @@
                 </div>
 
             </div>
+
         </section>
 
 
@@ -92,11 +97,11 @@
 
                 <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-start">
 
-
                     <!-- LEFT: CONTACT INFORMATION -->
                     <div>
 
                         <div class="mb-8">
+
                             <span class="text-xs font-bold tracking-widest"
                                 style="color:var(--primary)">
                                 GET IN TOUCH
@@ -110,6 +115,7 @@
                                 Start with a short message. We'll help you
                                 figure out the right approach for your project.
                             </p>
+
                         </div>
 
 
@@ -120,23 +126,27 @@
 
                                 <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
                                     style="background:var(--primary-soft);color:var(--primary)">
+
                                     <i data-lucide="mail" class="w-5 h-5"></i>
+
                                 </div>
 
                                 <div class="min-w-0">
+
                                     <p class="text-xs font-semibold tracking-wider"
                                         style="color:var(--muted)">
                                         EMAIL US
                                     </p>
 
-                                    <a href="mailto:hello@softventures.dev"
-                                        class="font-bold text-lg break-all hover:underline">
-                                        hello@softventures.dev
+                                    <a href="#" data-site-email data-contact-email-link
+                                        class="font-bold text-lg break-all hover:underline contact-link">
+                                        Contact us by email
                                     </a>
 
                                     <p class="copy text-sm mt-1">
                                         Send us your requirements or questions.
                                     </p>
+
                                 </div>
 
                             </div>
@@ -147,25 +157,74 @@
                             <div class="grid sm:grid-cols-2 gap-5">
 
                                 <div>
+
                                     <p class="text-xs font-semibold tracking-wider"
                                         style="color:var(--muted)">
                                         RESPONSE TIME
                                     </p>
 
-                                    <p class="font-semibold mt-2">
-                                        Within 1 business day
+                                    <p class="font-semibold mt-2" data-contact-response>
+                                        Reply within 1 business day.
                                     </p>
+
                                 </div>
 
                                 <div>
+
                                     <p class="text-xs font-semibold tracking-wider"
                                         style="color:var(--muted)">
                                         SERVICE AREAS
                                     </p>
 
-                                    <p class="font-semibold mt-2">
-                                        Worldwide
+                                    <p class="font-semibold mt-2" data-contact-service-areas>
+                                        US, UK, Middle East, Pakistan
                                     </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PHONE / WHATSAPP CARD -->
+                        <div class="card p-6 mt-5">
+
+                            <div class="flex items-start gap-4">
+
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                                    style="background:var(--primary-soft);color:var(--primary)">
+
+                                    <i data-lucide="phone" class="w-5 h-5"></i>
+
+                                </div>
+
+                                <div class="min-w-0">
+
+                                    <p class="text-xs font-semibold tracking-wider"
+                                        style="color:var(--muted)">
+                                        CALL OR WHATSAPP
+                                    </p>
+
+                                    <a href="#" data-contact-phone-link data-contact-phone
+                                        class="font-bold text-lg hover:underline contact-link">
+                                        Contact us
+                                    </a>
+
+                                    <p class="copy text-sm mt-1">
+                                        Prefer a quick conversation? Contact us directly.
+                                    </p>
+
+                                    <a href="#" data-contact-whatsapp target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-flex items-center gap-2 mt-4 font-semibold text-sm"
+                                        style="color:var(--primary)">
+
+                                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                        Chat on WhatsApp
+
+                                    </a>
+
                                 </div>
 
                             </div>
@@ -181,7 +240,9 @@
 
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center"
                                     style="background:var(--card);color:var(--primary)">
+
                                     <i data-lucide="lightbulb" class="w-5 h-5"></i>
+
                                 </div>
 
                                 <h3 class="font-bold text-lg">
@@ -199,8 +260,11 @@
                             <a href="#quote-form"
                                 class="inline-flex items-center gap-2 mt-5 font-semibold text-sm"
                                 style="color:var(--primary)">
+
                                 Discuss your idea
+
                                 <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+
                             </a>
 
                         </div>
@@ -216,6 +280,7 @@
                             <div class="grid gap-3">
 
                                 <details class="faq">
+
                                     <summary>
                                         How much does a project cost?
                                         <span>+</span>
@@ -227,9 +292,12 @@
                                         We'll review your idea and provide
                                         a quotation before starting.
                                     </p>
+
                                 </details>
 
+
                                 <details class="faq">
+
                                     <summary>
                                         How long does development take?
                                         <span>+</span>
@@ -242,9 +310,12 @@
                                         SaaS products require more planning
                                         and development time.
                                     </p>
+
                                 </details>
 
+
                                 <details class="faq">
+
                                     <summary>
                                         Can you improve my existing software?
                                         <span>+</span>
@@ -256,9 +327,12 @@
                                         optimize databases and help maintain
                                         software built by other developers.
                                     </p>
+
                                 </details>
 
+
                                 <details class="faq">
+
                                     <summary>
                                         Do you work with international clients?
                                         <span>+</span>
@@ -269,6 +343,7 @@
                                         businesses and individuals across
                                         different countries and time zones.
                                     </p>
+
                                 </details>
 
                             </div>
@@ -279,7 +354,8 @@
 
 
                     <!-- RIGHT: QUOTE FORM -->
-                    <div id="quote-form" class="card p-6 md:p-9 scroll-mt-24">
+                    <div id="quote-form"
+                        class="card p-6 md:p-9 scroll-mt-24">
 
                         <div class="mb-7">
 
@@ -300,110 +376,157 @@
                         </div>
 
 
-                        <form id="quote-request-form" class="grid gap-5">
+                        <!-- FORM -->
+                        <form id="quote-request-form"
+                            class="grid gap-5"
+                            method="POST">
+
+                            <!-- FORMSUBMIT SETTINGS -->
+                            <input type="hidden" name="_subject"
+                                value="New SoftVentures Project Enquiry">
+
+                            <input type="hidden" name="_template"
+                                value="table">
+
+                            <input type="hidden" name="_captcha"
+                                value="true">
+
 
                             <!-- NAME -->
                             <div>
-                                <label for="q-name">Your name *</label>
 
-                                <input
-                                    type="text"
+                                <label for="q-name">
+                                    Your name *
+                                </label>
+
+                                <input type="text"
                                     id="q-name"
                                     name="name"
                                     class="input"
                                     required
+                                    maxlength="100"
                                     autocomplete="name"
                                     placeholder="Your full name">
+
                             </div>
 
 
-                            <!-- CONTACT + PROJECT TYPE -->
-                            <div class="grid sm:grid-cols-2 gap-5">
+                            <!-- EMAIL -->
+                            <div>
 
-                                <div>
-                                    <label for="q-contact">
-                                        Email or WhatsApp *
-                                    </label>
+                                <label for="q-email">
+                                    Email Address *
+                                </label>
 
-                                    <input
-                                        type="text"
-                                        id="q-contact"
-                                        name="contact"
-                                        class="input"
-                                        required
-                                        autocomplete="email"
-                                        placeholder="Email or phone number">
-                                </div>
+                                <input type="email"
+                                    id="q-email"
+                                    name="email"
+                                    class="input"
+                                    required
+                                    maxlength="150"
+                                    autocomplete="email"
+                                    placeholder="you@example.com">
 
-                                <div>
-                                    <label for="q-type">
-                                        Service required
-                                    </label>
+                                <p class="text-xs mt-2"
+                                    style="color:var(--muted)">
+                                    We'll use this email to respond to your enquiry.
+                                </p>
 
-                                    <select id="q-type" name="type" class="input">
+                            </div>
 
-                                        <option value="Management Software">
-                                            Management Software
-                                        </option>
 
-                                        <option value="Desktop Software">
-                                            Desktop Software
-                                        </option>
+                            <!-- WHATSAPP -->
+                            <div>
 
-                                        <option value="SaaS Product">
-                                            SaaS Product
-                                        </option>
+                                <label for="q-whatsapp">
+                                    WhatsApp Number (Optional)
+                                </label>
 
-                                        <option value="Website Development">
-                                            Website Development
-                                        </option>
+                                <input type="tel"
+                                    id="q-whatsapp"
+                                    name="whatsapp"
+                                    class="input"
+                                    maxlength="30"
+                                    autocomplete="tel"
+                                    placeholder="+92 300 1234567">
 
-                                        <option value="AI Agent / Automation">
-                                            AI Agent / Automation
-                                        </option>
+                            </div>
 
-                                        <option value="Existing Software / Fixes">
-                                            Existing Software / Fixes
-                                        </option>
 
-                                        <option value="Other">
-                                            Other
-                                        </option>
+                            <!-- SERVICE -->
+                            <div>
 
-                                    </select>
-                                </div>
+                                <label for="q-type">
+                                    Service required
+                                </label>
+
+                                <select id="q-type" name="service" class="input">
+
+                                    <option value="Management Software">
+                                        Management Software
+                                    </option>
+
+                                    <option value="Desktop Software">
+                                        Desktop Software
+                                    </option>
+
+                                    <option value="SaaS Product">
+                                        SaaS Product
+                                    </option>
+
+                                    <option value="Website Development">
+                                        Website Development
+                                    </option>
+
+                                    <option value="AI Agent / Automation">
+                                        AI Agent / Automation
+                                    </option>
+
+                                    <option value="Existing Software / Fixes">
+                                        Existing Software / Fixes
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                </select>
 
                             </div>
 
 
                             <!-- BUSINESS -->
                             <div>
+
                                 <label for="q-business">
                                     Your business or organization *
                                 </label>
 
-                                <input
-                                    type="text"
+                                <input type="text"
                                     id="q-business"
                                     name="business"
                                     class="input"
                                     required
+                                    maxlength="150"
                                     placeholder="e.g. Retail store, clinic, school">
+
                             </div>
 
 
                             <!-- MESSAGE -->
                             <div>
+
                                 <label for="q-msg">
                                     Tell us what you need
                                 </label>
 
-                                <textarea
-                                    id="q-msg"
+                                <textarea id="q-msg"
                                     name="message"
                                     rows="5"
                                     class="input"
+                                    maxlength="5000"
                                     placeholder="Describe your idea, current problem or the features you need..."></textarea>
+
                             </div>
 
 
@@ -418,26 +541,43 @@
                                 <p>
                                     Your information will be used to respond
                                     to your enquiry. Read our
+
                                     <a href="privacy.html"
                                         class="font-semibold underline"
                                         style="color:var(--primary)">
                                         Privacy Policy
                                     </a>
+
                                     for details.
                                 </p>
 
                             </div>
 
 
+                            <!-- FORM MESSAGE -->
+                            <div id="form-message"
+                                class="form-message"
+                                role="status"
+                                aria-live="polite"></div>
+
+                            <!-- AJAX STATUS -->
+                            <div id="form-status"
+                                class="hidden rounded-xl p-4 text-sm"
+                                role="status"
+                                aria-live="polite"></div>
+
+
                             <!-- SUBMIT -->
-                            <button
-                                type="submit"
+                            <button type="submit"
+                                id="quote-submit-button"
                                 class="btn btn-primary w-full">
 
-                                Send Quote Request
+                                <span id="submit-button-text">
+                                    Send Quote Request
+                                </span>
 
                                 <i data-lucide="arrow-up-right"
-                                    class="w-4 h-4 ml-2 inline-block"></i>
+                                    class="w-4 h-4"></i>
 
                             </button>
 
@@ -465,46 +605,97 @@
     <div id="site-footer-slot"></div>
 
 
-    <!-- QUOTE FORM SCRIPT -->
+    <!-- FORMSUBMIT AJAX CONFIGURATION -->
     <script>
-        document.getElementById('quote-request-form')
-            .addEventListener('submit', function (event) {
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const form = document.getElementById('quote-request-form');
+            const submitButton = document.getElementById('quote-submit-button');
+            const submitButtonText = document.getElementById('submit-button-text');
+            const statusBox = document.getElementById('form-status');
+
+            if (!form || !submitButton || !statusBox) return;
+
+            const email = window.SITE?.email;
+
+            if (!email) {
+                console.error('SoftVentures: SITE.email is missing.');
+                return;
+            }
+
+            // FormSubmit AJAX endpoint
+            const formEndpoint =
+                'https://formsubmit.co/ajax/' + encodeURIComponent(email);
+
+            form.addEventListener('submit', async function (event) {
 
                 event.preventDefault();
+                event.stopImmediatePropagation();
 
-                const name = document.getElementById('q-name').value.trim();
-                const contact = document.getElementById('q-contact').value.trim();
-                const type = document.getElementById('q-type').value;
-                const business = document.getElementById('q-business').value.trim();
-                const message = document.getElementById('q-msg').value.trim();
-
-                if (!name || !contact || !business) {
+                if (!form.checkValidity()) {
+                    form.reportValidity();
                     return;
                 }
 
-                const subject = encodeURIComponent(
-                    'New Project Enquiry - ' + type
-                );
+                // Disable button while sending
+                submitButton.disabled = true;
+                submitButtonText.textContent = 'Sending...';
 
-                const body = encodeURIComponent(
-                    'New enquiry from SoftVentures website\n\n' +
-                    'Name: ' + name + '\n' +
-                    'Contact: ' + contact + '\n' +
-                    'Service: ' + type + '\n' +
-                    'Business: ' + business + '\n\n' +
-                    'Project Details:\n' + (message || 'Not provided')
-                );
+                statusBox.className = 'hidden';
+                statusBox.textContent = '';
 
-                window.location.href =
-                    'mailto:hello@softventures.dev?subject=' +
-                    subject + '&body=' + body;
+                try {
 
-            });
+                    const response = await fetch(formEndpoint, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    const result = await response.json();
+
+                    console.log('FormSubmit response:', result);
+
+                    if (!response.ok || result.success !== 'true') {
+                        throw new Error(
+                            result.message || 'Form submission failed.'
+                        );
+                    }
+
+                    // SUCCESS
+                    statusBox.textContent =
+                        'Email sent successfully! Thank you for contacting SoftVentures. We will get back to you soon.';
+
+                    statusBox.className =
+                        'rounded-xl p-4 text-sm bg-green-500/10 text-green-600';
+
+                    form.reset();
+
+                } catch (error) {
+
+                    console.error('Form submission error:', error);
+
+                    // ERROR
+                    statusBox.textContent =
+                        'Sorry, your message could not be sent. Please try again or contact us directly by email.';
+
+                    statusBox.className =
+                        'rounded-xl p-4 text-sm bg-red-500/10 text-red-600';
+
+                } finally {
+
+                    submitButton.disabled = false;
+                    submitButtonText.textContent = 'Send Quote Request';
+
+                }
+
+            }, true);
+
+        });
     </script>
 
-
-    <!-- COMMON JS -->
-    <script src="main.js"></script>
-
 </body>
+
 </html>

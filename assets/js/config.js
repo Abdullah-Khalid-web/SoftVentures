@@ -1,31 +1,55 @@
-/*
- * SITE CONFIG
- * One place for the company name, contact details and navigation.
- * The header, footer, contact page and legal pages all read from here.
- * Any element with data-site="key" gets its text filled from this object
- * (e.g. <span data-site="email"></span>).
- */
+
 window.SITE = {
-  name: 'NextGen Tech Solutions',
-  shortName: 'NextGen',
-  legalName: 'NextGen Tech Solutions',           // as it appears on contracts
-  city: 'Pakistan',                              // used only on the legal pages; don't name a city
-  email: 'hello@yourdomain.com',                 // TODO: replace with your real address
-  phone: '+92 300 0000000',                      // TODO: shown as text
-  whatsapp: '923000000000',                      // TODO: digits only, with country code, no +
-  hours: '06:00 to 18:00 UTC, Monday to Saturday', // same as 11:00 to 23:00 in Pakistan; also update the "Our engineers" clock in main.js
-  legalUpdated: '17 November 2026',
+  name: 'Soft Ventures',
+  shortName: 'SoftVentures',
+  legalName: 'SoftVentures Tech Solutions',
+
+  country: 'Pakistan',
+  cities: ['Quetta', 'Karachi'],
+
+  email: 'abdullahkhalid8835@gmail.com',
+  phone: '+92 300 0000001',
+  whatsapp: '923000000001',
+
+  description:
+    'Management, Desktop, SaaS & Portfolio software + AI automation. Built in Pakistan, shipped worldwide.',
+
+  responseTime: 'Reply within 1 business day.',
+  serviceAreas: ['US', 'UK', 'Middle East', 'Pakistan'],
+
+  hours: '06:00 to 18:00 UTC, Monday to Saturday',
+  legalUpdated: '21 November 2026',
+
+  logo: 'assets/img/logo.png',
 
   social: {
-    linkedin: 'https://www.linkedin.com/',       // TODO
-    github: 'https://github.com/',               // TODO
+    linkedin: 'https://github.com/',
+    github: 'https://github.com/'
+  },
+
+  footer: {
+    software: [
+      { label: 'Management Software', href: 'services.html' },
+      { label: 'Desktop Software', href: 'services.html' },
+      { label: 'SaaS Products', href: 'services.html' },
+      { label: 'Portfolio Websites', href: 'services.html' }
+    ],
+
+    company: [
+      { label: 'Takeover', href: 'index.html#takeover' },
+      { label: 'Contact / Get Quote', href: 'contact.html' },
+      { label: 'About Us', href: 'about.html' },
+      { label: 'Privacy Policy', href: 'privacy.html' }
+    ],
+
+    tagline: 'Built with precision. Shipped worldwide.'
   },
 
   nav: [
-    { id: 'agents',  label: 'AI agents',          href: 'agents.html' },
-    { id: 'systems', label: 'Management systems', href: 'systems.html' },
-    { id: 'support', label: 'Fixes & maintenance', href: 'support.html' },
-    { id: 'work',    label: 'Work',               href: 'work.html' },
-    { id: 'about',   label: 'About',              href: 'about.html' },
-  ],
+    { id: 'home', label: 'Home', href: 'index.html' },
+    { id: 'services', label: 'Services', href: 'services.html' },
+    { id: 'projects', label: 'Projects', href: 'project.html' },
+    { id: 'about', label: 'About', href: 'about.html' },
+    { id: 'contact', label: 'Contact', href: 'contact.html' }
+  ]
 };
