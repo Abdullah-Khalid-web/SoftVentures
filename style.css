@@ -1604,7 +1604,7 @@ label {
 .work-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform .55s;
 }
 
@@ -1616,7 +1616,7 @@ label {
   content: "";
   position: absolute;
   inset: 50% 0 0;
-  background: linear-gradient(transparent, rgba(26, 26, 26, .35));
+  background: none;
   pointer-events: none;
 }
 
@@ -1746,8 +1746,23 @@ label {
   width: 100%;
   height: 350px;
   border-radius: 20px;
-  object-fit: cover;
+  object-fit: contain;
 }
+
+.work-preview-label {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.work-card .work-image { height: auto; aspect-ratio: 16 / 9; }
 
 .work-tags {
   display: flex;
@@ -3912,6 +3927,20 @@ body.services-page *::after {
 /* =========================================================
    MOBILE-SPECIFIC COMPACT CONTROLS
    ========================================================= */
+@media (max-width: 639px) {
+  #software .card {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 18px;
+  }
+  #software .card > span { width: 32px; height: 32px; font-size: 1.125rem; border-radius: 10px; }
+  #software .card > h3 { margin: 0; font-size: 1rem; line-height: 1.35; }
+  #software .card > p { grid-column: 1 / -1; margin: 0; }
+  #software .card > .copy { font-size: .9375rem; line-height: 1.6; }
+}
+
 @media (max-width: 639px) {
   #management .mgmt-selector {
     grid-template-columns: repeat(3, minmax(0, 1fr));
