@@ -263,6 +263,27 @@ a {
   border-bottom-color: var(--border);
 }
 
+/* Keep essential navigation independent of dynamically generated utilities. */
+#site-header .header-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; height: 64px; }
+#site-header .header-brand { min-width: 0; }
+#site-header .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+#site-header .header-project-link { display: none; }
+#site-header #desktop-nav { display: none; }
+#site-header #hamburger-btn { display: inline-flex; width: 44px; height: 44px; flex: 0 0 44px; }
+#hamburger-btn svg { display: block; width: 20px; height: 20px; flex-shrink: 0; }
+
+@media (min-width: 768px) {
+  #site-header .header-project-link { display: inline-flex; }
+}
+@media (min-width: 1024px) {
+  #site-header #desktop-nav { display: flex; }
+  #site-header #hamburger-btn { display: none; }
+}
+@media (max-width: 359px) {
+  #site-header .header-brand { font-size: .875rem; }
+  #site-header .header-brand img { width: 28px; height: 28px; }
+}
+
 .nav-link {
   position: relative;
   color: var(--muted);
@@ -347,6 +368,11 @@ a {
   font-size: 1.125rem;
   font-weight: 500;
   border-bottom: 1px solid var(--border);
+}
+
+.mobile-link[aria-current="page"] {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 /* =========================================================

@@ -160,7 +160,7 @@
   document.addEventListener('click', e => {
 
     const btn = e.target.closest('#hamburger-btn');
-    const mobileLink = e.target.closest('#mobile-menu .mobile-link');
+    const mobileLink = e.target.closest('#mobile-menu a');
 
     const panel = document.getElementById('mobile-menu');
 
@@ -173,15 +173,13 @@
       btn.setAttribute('aria-expanded', String(open));
       btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
 
-      panel.classList.toggle('hidden', !open);
-      panel.classList.toggle('is-open', open);
+      panel.classList.toggle('open', open);
 
     }
 
     if (mobileLink) {
 
-      panel.classList.remove('is-open');
-      panel.classList.add('hidden');
+      panel.classList.remove('open');
 
       const menuBtn = document.getElementById('hamburger-btn');
 
@@ -204,8 +202,7 @@
 
     if (btn && panel) {
 
-      panel.classList.remove('is-open');
-      panel.classList.add('hidden');
+      panel.classList.remove('open');
 
       btn.setAttribute('aria-expanded', 'false');
       btn.setAttribute('aria-label', 'Menu');
@@ -1803,7 +1800,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         try {
-            const response = await fetch(file);
+            const response = await fetch(file, { cache: 'no-cache' });
 
             if (!response.ok) {
                 throw new Error(`${file} returned HTTP ${response.status}`);
@@ -1815,7 +1812,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 throw new Error(`${file} is empty.`);
             }
 
-            slot.innerHTML = html;
+            // Parse shared documents without Live Server's injected scripts.
+            const layout = new DOMParser().parseFromString(html, 'text/html');
+            layout.querySelectorAll('script').forEach(script => script.remove());
+            slot.replaceChildren(...layout.body.childNodes);
 
             console.log(`SoftVentures: ${file} loaded successfully.`);
 

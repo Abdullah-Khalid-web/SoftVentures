@@ -1,11 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Shared layout</title></head><body>
 
 <!-- ============ SOFTVENTURES HEADER ============ -->
 <header id="site-header" class="site-header">
   <div class="wrap">
-    <div class="flex items-center justify-between h-16">
+    <div class="header-row flex items-center justify-between h-16">
 
       <!-- Logo -->
-      <a href="index.html" class="flex items-center gap-2 text-xl font-bold tracking-tight">
+      <a href="index.html" class="header-brand flex items-center gap-2 text-xl font-bold tracking-tight">
         <img
           src="assets/img/logo.png"
           alt="SoftVentures Logo"
@@ -18,16 +20,16 @@
       <!-- Desktop Navigation -->
       <nav
         class="hidden lg:flex items-center gap-6 font-medium"
-        data-site-nav
+        id="desktop-nav" aria-label="Main navigation" data-site-nav
       ></nav>
 
       <!-- Header Actions -->
-      <div class="flex items-center gap-2">
+      <div class="header-actions flex items-center gap-2">
 
         <!-- Start Project -->
         <a
           href="contact.html"
-          class="btn btn-primary hidden md:inline-flex"
+          class="header-project-link btn btn-primary"
           style="padding:10px 18px;font-size:.9rem"
           data-header-cta
         >
@@ -57,9 +59,9 @@
 
         <!-- Mobile Menu Toggle -->
         <button
-          class="icon-btn lg:hidden"
+          type="button" class="icon-btn"
           id="hamburger-btn"
-          aria-label="Menu"
+          aria-label="Open menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
@@ -88,3 +90,4 @@
   </a>
 
 </div>
+</body></html>
